@@ -9,7 +9,7 @@ The tutorial works through the steps necessary to create this project. To learn 
 To use this project, use `git clone` to clone it. You don’t need to create a new Kedro project. To make sure you have the required dependencies, run (in your virtual environment):
 
 ```bash
-pip install -r src/requirements.txt
+kedro install
 ```
 
 You can run the project with:
