@@ -40,6 +40,7 @@ from click import secho, style
 from kedro.cli import main as kernalai_main
 from kedro.cli.utils import KedroCliError, call, forward_command, python_call
 
+CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 # get our package onto the python path
 PROJ_PATH = Path(__file__).resolve().parent
 sys.path.append(str(PROJ_PATH / "src"))
@@ -49,21 +50,9 @@ os.environ["PYTHONPATH"] = (
 os.environ["IPYTHONDIR"] = str(PROJ_PATH / ".ipython")
 
 
-def __get_kedro_context__():
-    """Provide project configuration to the Kedro CLI and Plugins."""
-
-    return {
-        "template_version": "0.14.0",
-        "project_path": PROJ_PATH,
-        "get_config": "kedro_tutorial.run.get_config",
-        "create_catalog": "kedro_tutorial.run.create_catalog",
-        "create_pipeline": "kedro_tutorial.pipeline.create_pipeline",
-        "cli_group": cli,
-        "project_name": "Kedro Tutorial",
-    }
 
 
-CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
+
 
 
 NO_PYTEST_MESSAGE = """
@@ -78,57 +67,28 @@ nbstripout is not installed. Please make sure nbstripout is in
 """
 
 
-NODE_TAG_ARG = click.option(
-    "--tag",
-    "-t",
-    type=str,
-    default=None,
-    multiple=True,
-    help="Construct the pipeline using only nodes which have this tag "
-    "attached. Option can be used multiple times, what results in a "
-    "pipeline constructed from nodes having any of those tags.",
-)
-
-PARALLEL_ARG = click.option(
-    "--parallel",
-    is_flag=True,
-    multiple=False,
-    help="Run the pipeline using the `ParallelRunner`. If not specified, "
-    "use the `SequentialRunner`. This flag cannot be used together with --runner.",
-)
-
-RUNNER_ARG = click.option(
-    "--runner",
-    type=str,
-    default=None,
-    multiple=False,
-    help="Specify a runner that you want to run the pipeline with. This option cannot "
-    "be used together with --parallel.",
-)
-
-ENV_ARG = click.option(
-    "--env",
-    type=str,
-    default=None,
-    multiple=False,
-    help="Run the pipeline in a configured environment loaded with `ConfigLoader`. "
-         "If not specified, pipeline will run in local environment.",
-)
+TAG_ARG_HELP = """Construct the pipeline using only nodes which have this tag
+attached. Option can be used multiple times, what results in a
+pipeline constructed from nodes having any of those tags."""
 
 
-def ipython_mesage():
-    """Show a message saying how we have configured the IPython env."""
-    ipy_vars = ["proj_dir", "proj_name", "io", "startup_error"]
-    secho("-" * 79, fg="cyan")
-    secho("Starting a Kedro session with the following variables in scope")
-    secho(", ".join(ipy_vars), fg="green")
-    secho(
-        "Use the line magic {} to refresh them".format(
-            style("%reload_kedro", fg="green")
-        )
-    )
-    secho("or to see the error message if they are undefined")
-    secho("-" * 79, fg="cyan")
+ENV_ARG_HELP = """Run the pipeline in a configured environment. If not specified,
+pipeline will run using environment `local`."""
+
+
+PARALLEL_ARG_HELP = """Run the pipeline using the `ParallelRunner`.
+If not specified, use the `SequentialRunner`. This flag cannot be used together
+
+with --runner."""
+
+RUNNER_ARG_HELP = """Specify a runner that you want to run the pipeline with.
+This option cannot be used together with --parallel."""
+
+
+def __get_kedro_context__():
+    """Used to provide this project's context to plugins."""
+    from kedro_tutorial.run import __kedro_context__
+    return __kedro_context__()
 
 
 @click.group(context_settings=CONTEXT_SETTINGS, name=__file__)
@@ -137,10 +97,10 @@ def cli():
 
 
 @cli.command()
-@ENV_ARG
-@PARALLEL_ARG
-@RUNNER_ARG
-@NODE_TAG_ARG
+@click.option("--runner", "-r", type=str, default=None, multiple=False, help=RUNNER_ARG_HELP)
+@click.option("--parallel", "-p", is_flag=True, multiple=False, help=PARALLEL_ARG_HELP)
+@click.option("--env", "-e", type=str, default=None, multiple=False, help=ENV_ARG_HELP)
+@click.option("--tag", "-t", type=str, default=None, multiple=True, help=TAG_ARG_HELP)
 def run(tag, env, parallel, runner):
     """Run the pipeline."""
     from kedro_tutorial.run import main
@@ -171,24 +131,13 @@ def install():
     python_call("pip", ["install", "-U", "-r", "src/requirements.txt"])
 
 
-@cli.command()
-def lint():
-    """Check the Python code quality."""
-    python_call("isort", [])
-    python_call(
-        "pylint", ["-j", "0", "src/kedro_tutorial", "kedro_cli.py"]
-    )
-    python_call(
-        "pylint",
-        ["-j", "0", "--disable=missing-docstring,redefined-outer-name", "src/tests"],
-    )
 
 
 @forward_command(cli, forward_help=True)
 def ipython(args):
     """Open IPython with project specific variables loaded."""
     if "-h" not in args and "--help" not in args:
-        ipython_mesage()
+        ipython_message()
     call(["ipython"] + list(args))
 
 
@@ -261,7 +210,7 @@ def jupyter():
 def jupyter_notebook(ip, args):
     """Open Jupyter Notebook with project specific variables loaded."""
     if "-h" not in args and "--help" not in args:
-        ipython_mesage()
+        ipython_message()
     call(["jupyter-notebook", "--ip=" + ip] + list(args))
 
 
@@ -270,10 +219,23 @@ def jupyter_notebook(ip, args):
 def jupyter_lab(ip, args):
     """Open Jupyter Lab with project specific variables loaded."""
     if "-h" not in args and "--help" not in args:
-        ipython_mesage()
+        ipython_message()
     call(["jupyter-lab", "--ip=" + ip] + list(args))
 
 
+def ipython_message():
+    """Show a message saying how we have configured the IPython env."""
+    ipy_vars = ["proj_dir", "proj_name", "io", "startup_error"]
+    secho("-" * 79, fg="cyan")
+    secho("Starting a Kedro session with the following variables in scope")
+    secho(", ".join(ipy_vars), fg="green")
+    secho(
+        "Use the line magic {} to refresh them".format(
+            style("%reload_kedro", fg="green")
+        )
+    )
+    secho("or to see the error message if they are undefined")
+    secho("-" * 79, fg="cyan")
 if __name__ == "__main__":
     os.chdir(str(PROJ_PATH))
     kernalai_main()

@@ -29,8 +29,8 @@
 """Application entry point."""
 
 import logging.config
-from os.path import abspath, basename, curdir, join
-from typing import Iterable, Optional
+from pathlib import Path
+from typing import Iterable
 
 from kedro.cli.utils import KedroCliError
 from kedro.config import ConfigLoader
@@ -49,7 +49,23 @@ CONF_ROOT = "conf"
 DEFAULT_RUN_ENV = "local"
 
 
-def get_config(project_path: str, env: Optional[str] = None, **kwargs) -> ConfigLoader:
+def __kedro_context__():
+    """Provide this project's context to ``kedro`` CLI and plugins.
+    Please do not rename or remove, as this will break the CLI tool.
+
+    Plugins may request additional objects from this method.
+    """
+    return {
+        "get_config": get_config,
+        "create_catalog": create_catalog,
+        "create_pipeline": create_pipeline,
+        "template_version": "0.14.0",
+        "project_name": "Kedro Tutorial",
+        "project_path": Path.cwd(),
+    }
+
+
+def get_config(project_path: str, env: str = None, **kwargs) -> ConfigLoader:
     """Loads Kedro's configuration at the root of the project.
 
     Args:
@@ -61,10 +77,11 @@ def get_config(project_path: str, env: Optional[str] = None, **kwargs) -> Config
         ConfigLoader which can be queried to access the project config.
 
     """
+    project_path = Path(project_path)
     env = env or DEFAULT_RUN_ENV
     conf_paths = [
-        join(project_path, CONF_ROOT, "base"),
-        join(project_path, CONF_ROOT, env),
+        str(project_path / CONF_ROOT / "base"),
+        str(project_path / CONF_ROOT / env),
     ]
     return ConfigLoader(conf_paths)
 
@@ -81,6 +98,7 @@ def create_catalog(config: ConfigLoader, **kwargs) -> DataCatalog:
 
     """
     conf_logging = config.get("logging*", "logging*/**")
+    logging.config.dictConfig(conf_logging)
     conf_catalog = config.get("catalog*", "catalog*/**")
     conf_creds = config.get("credentials*", "credentials*/**")
     conf_params = config.get("parameters*", "parameters*/**")
@@ -91,9 +109,9 @@ def create_catalog(config: ConfigLoader, **kwargs) -> DataCatalog:
 
 
 def main(
-    tags: Optional[Iterable[str]] = None,
-    env: Optional[str] = None,
-    runner: Optional[str] = None,
+    tags: Iterable[str] = None,
+    env: str = None,
+    runner: str = None,
 ):
     """Application main entry point.
 
@@ -102,8 +120,7 @@ def main(
             filter the nodes of the ``Pipeline``. If specified, only the nodes
             containing *any* of these tags will be added to the ``Pipeline``.
         env: An optional parameter specifying the environment in which
-            the ``Pipeline`` should be run. Default behaviour is using
-            local environment.
+            the ``Pipeline`` should be run. If not specified defaults to "local".
         runner: An optional parameter specifying the runner that you want to run
             the pipeline with.
 
@@ -112,22 +129,19 @@ def main(
 
     """
     # Report project name
-    logging.info("** Kedro project {}".format(basename(abspath(curdir))))
+    logging.info("** Kedro project {}".format(Path.cwd().name))
 
     # Load Catalog
-    conf = get_config(project_path=curdir, env=env)
+    conf = get_config(project_path=str(Path.cwd()), env=env)
     catalog = create_catalog(config=conf)
 
     # Load the pipeline
     pipeline = create_pipeline()
     pipeline = pipeline.only_nodes_with_tags(*tags) if tags else pipeline
     if not pipeline.nodes:
-        msg = (
-            "Run aborted since the resulting pipeline does not contain any "
-            "nodes. Please review your pipeline definition and/or run tags "
-            "if it is not an expected behaviour."
-        )
-        raise KedroCliError(msg)
+        if tags:
+            raise KedroCliError("Pipeline contains no nodes with tags: " + str(tags))
+        raise KedroCliError("Pipeline contains no nodes")
 
     # Load the runner
     # When either --parallel or --runner is used, class_obj is assigned to runner
