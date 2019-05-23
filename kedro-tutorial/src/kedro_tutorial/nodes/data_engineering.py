@@ -10,7 +10,6 @@ def log_running_time(func: Callable) -> Callable:
 
         Args:
             func: Function to be executed.
-            
         Returns:
             Decorator for logging the running time.
 
