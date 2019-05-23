@@ -14,7 +14,6 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> List:
         Args:
             data: Source data.
             parameters: Parameters defined in parameters.yml.
-            
         Returns:
             A list containing split data.
 
