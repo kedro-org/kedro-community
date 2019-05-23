@@ -28,9 +28,7 @@
 
 from setuptools import find_packages, setup
 
-entry_point = (
-    "kedro-tutorial = kedro_tutorial.run:main"
-)
+entry_point = "kedro-tutorial = kedro_tutorial.run:main"
 
 # get the dependencies and installs
 with open("requirements.txt", "r", encoding="utf-8") as f:

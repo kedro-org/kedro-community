@@ -1,8 +1,9 @@
-import pandas as pd
+import pandas as pd 
 from functools import wraps
 from typing import Callable
 import time
 import logging
+
 
 def log_running_time(func: Callable) -> Callable:
     """Decorator for logging node execution time.
@@ -14,6 +15,7 @@ def log_running_time(func: Callable) -> Callable:
             Decorator for logging the running time.
 
     """
+
     @wraps(func)
     def with_time(*args, **kwargs):
         log = logging.getLogger(__name__)
@@ -23,7 +25,9 @@ def log_running_time(func: Callable) -> Callable:
         elapsed = t_end - t_start
         log.info("Running %r took %.2f seconds", func.__name__, elapsed)
         return result
+
     return with_time
+
 
 def _is_true(x):
     return x == "t"
@@ -37,6 +41,7 @@ def _parse_percentage(x):
 
 def _parse_money(x):
     return float(x.replace("$", "").replace(",", ""))
+
 
 @log_running_time
 def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
@@ -54,6 +59,7 @@ def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
     companies["company_rating"] = companies["company_rating"].apply(_parse_percentage)
 
     return companies
+
 
 @log_running_time
 def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
@@ -74,8 +80,8 @@ def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
     shuttles["price"] = shuttles["price"].apply(_parse_money)
 
     return shuttles
-    
-import pandas as pd
+
+
 
 def create_master_table(
     shuttles: pd.DataFrame, companies: pd.DataFrame, reviews: pd.DataFrame

@@ -9,6 +9,7 @@ import pandas as pd
 
 from kedro.io import AbstractDataSet, ExistsMixin
 
+
 class ExcelLocalDataSet(AbstractDataSet, ExistsMixin):
     """``ExcelLocalDataSet`` loads and saves data to a local Excel file. The
     underlying functionality is supported by pandas, so it supports all
@@ -31,10 +32,12 @@ class ExcelLocalDataSet(AbstractDataSet, ExistsMixin):
     """
 
     def _describe(self) -> Dict[str, Any]:
-        return dict(filepath=self._filepath,
-                    engine=self._engine,
-                    load_args=self._load_args,
-                    save_args=self._save_args)
+        return dict(
+            filepath=self._filepath,
+            engine=self._engine,
+            load_args=self._load_args,
+            save_args=self._save_args,
+        )
 
     def __init__(
         self,
@@ -67,10 +70,16 @@ class ExcelLocalDataSet(AbstractDataSet, ExistsMixin):
         default_save_args = {}
         default_load_args = {"engine": "xlrd"}
 
-        self._load_args = {**default_load_args, **load_args} \
-            if load_args is not None else default_load_args
-        self._save_args = {**default_save_args, **save_args} \
-            if save_args is not None else default_save_args
+        self._load_args = (
+            {**default_load_args, **load_args}
+            if load_args is not None
+            else default_load_args
+        )
+        self._save_args = (
+            {**default_save_args, **save_args}
+            if save_args is not None
+            else default_save_args
+        )
         self._engine = engine
 
     def _load(self) -> Union[pd.DataFrame, Dict[str, pd.DataFrame]]:

@@ -37,7 +37,11 @@ from kedro_tutorial.nodes.data_engineering import (
     log_running_time,
 )
 
-from kedro_tutorial.nodes.price_prediction import split_data, train_model, evaluate_model
+from kedro_tutorial.nodes.price_prediction import (
+    split_data,
+    train_model,
+    evaluate_model,
+)
 
 # Here you can define your data-driven pipeline by importing your functions
 # and adding them to the pipeline as follows:

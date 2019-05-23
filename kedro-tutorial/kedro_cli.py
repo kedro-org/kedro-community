@@ -50,11 +50,6 @@ os.environ["PYTHONPATH"] = (
 os.environ["IPYTHONDIR"] = str(PROJ_PATH / ".ipython")
 
 
-
-
-
-
-
 NO_PYTEST_MESSAGE = """
 pytest is not installed. Please make sure pytest is in
 src/requirements.txt and run `kedro install`.
@@ -88,6 +83,7 @@ This option cannot be used together with --parallel."""
 def __get_kedro_context__():
     """Used to provide this project's context to plugins."""
     from kedro_tutorial.run import __kedro_context__
+
     return __kedro_context__()
 
 
@@ -97,13 +93,16 @@ def cli():
 
 
 @cli.command()
-@click.option("--runner", "-r", type=str, default=None, multiple=False, help=RUNNER_ARG_HELP)
+@click.option(
+    "--runner", "-r", type=str, default=None, multiple=False, help=RUNNER_ARG_HELP
+)
 @click.option("--parallel", "-p", is_flag=True, multiple=False, help=PARALLEL_ARG_HELP)
 @click.option("--env", "-e", type=str, default=None, multiple=False, help=ENV_ARG_HELP)
 @click.option("--tag", "-t", type=str, default=None, multiple=True, help=TAG_ARG_HELP)
 def run(tag, env, parallel, runner):
     """Run the pipeline."""
     from kedro_tutorial.run import main
+
     if parallel and runner:
         raise KedroCliError(
             "Both --parallel and --runner options cannot be used together. "
@@ -131,8 +130,6 @@ def install():
     python_call("pip", ["install", "-U", "-r", "src/requirements.txt"])
 
 
-
-
 @forward_command(cli, forward_help=True)
 def ipython(args):
     """Open IPython with project specific variables loaded."""
@@ -153,20 +150,10 @@ def build_docs():
     """Build the project documentation."""
     python_call("pip", ["install", "src/[docs]"])
     python_call("pip", ["install", "-r", "src/requirements.txt"])
-    python_call(
-        "ipykernel", ["install", "--user", "--name=kedro_tutorial"]
-    )
+    python_call("ipykernel", ["install", "--user", "--name=kedro_tutorial"])
     if Path("docs/build").exists():
         shutil.rmtree("docs/build")
-    call(
-        [
-            "sphinx-apidoc",
-            "--module-first",
-            "-o",
-            "docs/source",
-            "src/kedro_tutorial",
-        ]
-    )
+    call(["sphinx-apidoc", "--module-first", "-o", "docs/source", "src/kedro_tutorial"])
     call(["sphinx-build", "-M", "html", "docs/source", "docs/build", "-a"])
 
 
@@ -236,6 +223,8 @@ def ipython_message():
     )
     secho("or to see the error message if they are undefined")
     secho("-" * 79, fg="cyan")
+
+
 if __name__ == "__main__":
     os.chdir(str(PROJ_PATH))
     kernalai_main()
