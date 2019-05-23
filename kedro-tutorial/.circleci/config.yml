@@ -1,0 +1,60 @@
+version: 2
+jobs:
+  build:
+     docker:
+       - image: circleci/python:3.5-jessie-node-browsers
+     environment:
+       REQUIREMENTS: src/requirements.txt
+     steps:
+       - checkout
+       - run:
+          name: Install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -U "pip>=18.0, <19.0" "setuptools>=38.0, <39.0" wheel
+       - run:
+          name: Configure QB's pypi
+          command: |
+            mkdir ~/.pip
+            echo "[global]
+                  extra-index-url = https://${ENV_QB_ARTIFACTORY_USER}:${ENV_QB_ARTIFACTORY_PASSWORD}@quantumblack.jfrog.io/quantumblack/api/pypi/pypi-qb/simple
+                  index = https://${ENV_QB_ARTIFACTORY_USER}:${ENV_QB_ARTIFACTORY_PASSWORD}@quantumblack.jfrog.io/quantumblack/api/pypi/pypi-qb/simple" > ~/.pip/pip.conf
+       - restore_cache:
+          keys:
+            - pip-packages-v1-{{ checksum "${REQUIREMENTS}" }}
+            - pip-packages-v1-{{ .Branch }}
+            - pip-packages-v1-
+       - run:
+          name: Force no-caching for master or develop
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              rm -r ~/project/venv/
+              python3 -m venv venv
+              . venv/bin/activate
+              pip install -U "pip>=18.0, <19.0" "setuptools>=38.0, <39.0" wheel
+            fi
+       - run:
+          name: Install requirements
+          command: |
+            . venv/bin/activate
+            pip install -r ${REQUIREMENTS} -U
+       - save_cache:
+          paths:
+            - ~/project/venv/
+          key: pip-packages-v1-{{ checksum "${REQUIREMENTS}" }}
+       - run:
+          name: Run pylint
+          command: |
+            . venv/bin/activate
+            kedro lint
+       - run:
+          name: Run tests
+          command: |
+            . venv/bin/activate
+            kedro test
+       - run:
+          name: Install the package
+          command: |
+            . venv/bin/activate
+            kedro install
