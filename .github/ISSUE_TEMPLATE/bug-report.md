@@ -36,8 +36,7 @@ Tell us what happens instead.
 ## Your Environment
 Include as many relevant details about the environment you experienced the bug in:
 
-* Kedro-Docker plugin version used (get it by running `pip show kedro-docker`):
-* Docker version (`docker --version`):
+* Kedro-Example: 
 * Kedro version used (`pip show kedro` or `kedro -V`):
 * Python version used (`python -V`):
 * Operating system and version:

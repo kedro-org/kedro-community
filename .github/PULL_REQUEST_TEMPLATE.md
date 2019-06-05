@@ -17,4 +17,3 @@ What testing strategies have you used?
 - [ ] Opened this PR as a 'Draft Pull Request' if it is work-in-progress
 - [ ] Assigned myself to the PR
 - [ ] Added tests to cover my changes
-- [ ] Added new entries to the `RELEASE.md` file
