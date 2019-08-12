@@ -71,8 +71,18 @@ def create_pipeline(**kwargs):
     """
     de_pipeline = Pipeline(
         [
-            node(preprocess_companies, "companies", "preprocessed_companies"),
-            node(preprocess_shuttles, "shuttles", "preprocessed_shuttles"),
+            node(
+                preprocess_companies,
+                "companies",
+                "preprocessed_companies",
+                name="preprocess1",
+            ),
+            node(
+                preprocess_shuttles,
+                "shuttles",
+                "preprocessed_shuttles",
+                name="preprocess2",
+            ),
             node(
                 create_master_table,
                 ["preprocessed_shuttles", "preprocessed_companies", "reviews"],

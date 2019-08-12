@@ -17,6 +17,7 @@ class ExcelLocalDataSet(AbstractDataSet):
 
     Example:
     ::
+
         >>> import pandas as pd
         >>>
         >>> data = pd.DataFrame({'col1': [1, 2], 'col2': [4, 5],
