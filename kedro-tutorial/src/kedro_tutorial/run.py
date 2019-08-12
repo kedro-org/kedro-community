@@ -45,11 +45,12 @@ class ProjectContext(KedroContext):
     """
 
     project_name = "kedro-tutorial"
-    project_version = "0.14.3"
+    project_version = "0.15.0"
 
     @property
     def pipeline(self) -> Pipeline:
         return create_pipeline()
+
 
 def main(
     tags: Iterable[str] = None,

@@ -55,4 +55,4 @@ class TestProjectContext:
         assert project_context.project_name == "kedro-tutorial"
 
     def test_project_version(self, project_context):
-        assert project_context.project_version == "0.14.3"
+        assert project_context.project_version == "0.15.0"
