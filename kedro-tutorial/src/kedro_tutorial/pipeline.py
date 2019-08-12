@@ -61,10 +61,13 @@ from kedro_tutorial.nodes.price_prediction import (
 
 def create_pipeline(**kwargs):
     """Create the project's pipeline.
+
     Args:
         kwargs: Ignore any additional arguments added in the future.
+
     Returns:
         Pipeline: The resulting pipeline.
+
     """
     de_pipeline = Pipeline(
         [
