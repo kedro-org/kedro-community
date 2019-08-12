@@ -14,8 +14,8 @@
 # ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-# The QuantumBlack Visual Analytics Limited (“QuantumBlack”) name and logo
-# (either separately or in combination, “QuantumBlack Trademarks”) are
+# The QuantumBlack Visual Analytics Limited ("QuantumBlack") name and logo
+# (either separately or in combination, "QuantumBlack Trademarks") are
 # trademarks of QuantumBlack. The License does not grant you any right or
 # license to the QuantumBlack Trademarks. You may not use the QuantumBlack
 # Trademarks or any confusingly similar mark as a trademark for your product,
@@ -27,9 +27,7 @@
 # limitations under the License.
 """Pipeline construction."""
 
-from kedro.pipeline import Pipeline
-
-from kedro.pipeline import node
+from kedro.pipeline import Pipeline, node
 from kedro_tutorial.nodes.data_engineering import (
     preprocess_companies,
     preprocess_shuttles,
@@ -42,6 +40,7 @@ from kedro_tutorial.nodes.price_prediction import (
     train_model,
     evaluate_model,
 )
+
 
 # Here you can define your data-driven pipeline by importing your functions
 # and adding them to the pipeline as follows:
@@ -62,13 +61,10 @@ from kedro_tutorial.nodes.price_prediction import (
 
 def create_pipeline(**kwargs):
     """Create the project's pipeline.
-
     Args:
         kwargs: Ignore any additional arguments added in the future.
-
     Returns:
         Pipeline: The resulting pipeline.
-
     """
     de_pipeline = Pipeline(
         [

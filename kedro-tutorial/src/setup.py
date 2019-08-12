@@ -14,8 +14,8 @@
 # ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-# The QuantumBlack Visual Analytics Limited (“QuantumBlack”) name and logo
-# (either separately or in combination, “QuantumBlack Trademarks”) are
+# The QuantumBlack Visual Analytics Limited ("QuantumBlack") name and logo
+# (either separately or in combination, "QuantumBlack Trademarks") are
 # trademarks of QuantumBlack. The License does not grant you any right or
 # license to the QuantumBlack Trademarks. You may not use the QuantumBlack
 # Trademarks or any confusingly similar mark as a trademark for your product,
@@ -28,7 +28,9 @@
 
 from setuptools import find_packages, setup
 
-entry_point = "kedro-tutorial = kedro_tutorial.run:main"
+entry_point = (
+    "kedro-tutorial = kedro_tutorial.run:main"
+)
 
 # get the dependencies and installs
 with open("requirements.txt", "r", encoding="utf-8") as f:
@@ -46,7 +48,9 @@ setup(
             "sphinx_rtd_theme==0.4.1",
             "nbsphinx==0.3.4",
             "nbstripout==0.3.3",
+            "recommonmark==0.5.0",
             "sphinx-autodoc-typehints==1.6.0",
+            "sphinx_copybutton==0.2.5",
             "jupyter_client>=5.1.0, <6.0",
             "tornado>=4.2, <6.0",
             "ipykernel>=4.8.1, <5.0",

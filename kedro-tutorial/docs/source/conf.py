@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Copyright 2018-2019 QuantumBlack Visual Analytics Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +17,8 @@
 # ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-# The QuantumBlack Visual Analytics Limited (“QuantumBlack”) name and logo
-# (either separately or in combination, “QuantumBlack Trademarks”) are
+# The QuantumBlack Visual Analytics Limited ("QuantumBlack") name and logo
+# (either separately or in combination, "QuantumBlack Trademarks") are
 # trademarks of QuantumBlack. The License does not grant you any right or
 # license to the QuantumBlack Trademarks. You may not use the QuantumBlack
 # Trademarks or any confusingly similar mark as a trademark for your product,
@@ -26,9 +29,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-#
 # kedro_tutorial documentation build
 # configuration file, created by sphinx-quickstart.
 #
@@ -46,6 +46,9 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import re
+
+from kedro.cli.utils import find_stylesheets
+from recommonmark.transform import AutoStructify
 
 from kedro_tutorial import __version__ as release
 
@@ -79,7 +82,13 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.mathjax",
     "nbsphinx",
+    "recommonmark",
+    "sphinx_copybutton",
 ]
+
+# enable autosummary plugin (table of contents for modules/classes/class
+# methods)
+autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -87,8 +96,7 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = {".rst": "restructuredtext", ".md": "markdown"}
 
 # The master toctree document.
 master_doc = "index"
@@ -119,7 +127,7 @@ html_theme = "sphinx_rtd_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {"collapse_navigation": False, "style_external_links": True}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -181,7 +189,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, "kedro_tutorial", "kedro_tutorial Documentation", [author], 1)
+    (
+        master_doc,
+        "kedro_tutorial",
+        "kedro_tutorial Documentation",
+        [author],
+        1,
+    )
 ]
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -213,13 +227,6 @@ todo_include_todos = False
 # https://nbsphinx.readthedocs.io/en/0.3.1/prolog-and-epilog.html
 # """
 
-# nbsphinx_epilog = """
-# .. note::
-#
-#      Found a bug, or didn't find what you were looking for? `🙏Please file a
-#      ticket <https://github.com/quantumblack/kedro_tutorial/issues/new>`_
-# """
-
 # -- NBconvert kernel config -------------------------------------------------
 nbsphinx_kernel_name = "python3"
 
@@ -242,3 +249,9 @@ def skip(app, what, name, obj, skip, options):
 def setup(app):
     app.connect("autodoc-process-docstring", autodoc_process_docstring)
     app.connect("autodoc-skip-member", skip)
+    # add Kedro stylesheets
+    for stylesheet in find_stylesheets():
+        app.add_stylesheet(stylesheet)
+    # enable rendering RST tables in Markdown
+    app.add_config_value("recommonmark_config", {"enable_eval_rst": True}, True)
+    app.add_transform(AutoStructify)

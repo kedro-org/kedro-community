@@ -1,4 +1,4 @@
-import pandas as pd 
+import pandas as pd
 from functools import wraps
 from typing import Callable
 import time
@@ -79,7 +79,6 @@ def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
     shuttles["price"] = shuttles["price"].apply(_parse_money)
 
     return shuttles
-
 
 
 def create_master_table(
