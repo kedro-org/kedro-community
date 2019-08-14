@@ -41,7 +41,7 @@ def train_model(X_train: np.ndarray, y_train: np.ndarray) -> LinearRegression:
         Args:
             X_train: Training data of independent features.
             y_train: Training data for price.
-            
+
         Returns:
             Trained model.
 

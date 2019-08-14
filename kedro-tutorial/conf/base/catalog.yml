@@ -3,7 +3,6 @@
 # Documentation for this file format can be found in the kedro docs under `Accessing data`
 # You can access the kedro docs by running `kedro docs`
 
-
 companies:
   type: CSVLocalDataSet
   filepath: data/01_raw/companies.csv

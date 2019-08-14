@@ -7,16 +7,17 @@ from typing import Any, Union, Dict
 
 import pandas as pd
 
-from kedro.io import AbstractDataSet, ExistsMixin
+from kedro.io import AbstractDataSet
 
 
-class ExcelLocalDataSet(AbstractDataSet, ExistsMixin):
+class ExcelLocalDataSet(AbstractDataSet):
     """``ExcelLocalDataSet`` loads and saves data to a local Excel file. The
     underlying functionality is supported by pandas, so it supports all
     allowed pandas options for loading and saving Excel files.
 
     Example:
     ::
+
         >>> import pandas as pd
         >>>
         >>> data = pd.DataFrame({'col1': [1, 2], 'col2': [4, 5],
