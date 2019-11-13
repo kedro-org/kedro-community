@@ -43,7 +43,7 @@ def create_pipeline(**kwargs):
                 preprocess_shuttles,
                 "shuttles",
                 "preprocessed_shuttles",
-                name="preprocess2",
+                name="preprocessing_shuttles",
             ),
             node(
                 create_master_table,
