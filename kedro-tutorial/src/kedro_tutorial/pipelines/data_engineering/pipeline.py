@@ -34,21 +34,21 @@ def create_pipeline(**kwargs):
     return Pipeline(
         [
             node(
-                preprocess_companies,
-                "companies",
-                "preprocessed_companies",
+                func=preprocess_companies,
+                inputs="companies",
+                outputs="preprocessed_companies",
                 name="preprocessing_companies",
             ),
             node(
-                preprocess_shuttles,
-                "shuttles",
-                "preprocessed_shuttles",
+                func=preprocess_shuttles,
+                inputs="shuttles",
+                outputs="preprocessed_shuttles",
                 name="preprocessing_shuttles",
             ),
             node(
-                create_master_table,
-                ["preprocessed_shuttles", "preprocessed_companies", "reviews"],
-                "master_table",
+                func=create_master_table,
+                inputs=["preprocessed_shuttles", "preprocessed_companies", "reviews"],
+                outputs="master_table",
             ),
         ]
     )

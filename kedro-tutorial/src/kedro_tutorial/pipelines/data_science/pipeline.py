@@ -34,11 +34,15 @@ def create_pipeline(**kwargs):
     return Pipeline(
         [
             node(
-                split_data,
-                ["master_table", "parameters"],
-                ["X_train", "X_test", "y_train", "y_test"],
+                func=split_data,
+                inputs=["master_table", "parameters"],
+                outputs=["X_train", "X_test", "y_train", "y_test"],
             ),
-            node(train_model, ["X_train", "y_train"], "regressor"),
-            node(evaluate_model, ["regressor", "X_test", "y_test"], None),
+            node(func=train_model, inputs=["X_train", "y_train"], outputs="regressor"),
+            node(
+                func=evaluate_model,
+                inputs=["regressor", "X_test", "y_test"],
+                outputs=None,
+            ),
         ]
     )
