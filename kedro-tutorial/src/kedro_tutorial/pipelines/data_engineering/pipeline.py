@@ -37,7 +37,7 @@ def create_pipeline(**kwargs):
                 preprocess_companies,
                 "companies",
                 "preprocessed_companies",
-                name="preprocess1",
+                name="preprocessing_companies",
             ),
             node(
                 preprocess_shuttles,
