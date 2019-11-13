@@ -25,3 +25,20 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from kedro.pipeline import Pipeline, node
+
+from .nodes import evaluate_model, split_data, train_model
+
+
+def create_pipeline(**kwargs):
+    return Pipeline(
+        [
+            node(
+                split_data,
+                ["master_table", "parameters"],
+                ["X_train", "X_test", "y_train", "y_test"],
+            ),
+            node(train_model, ["X_train", "y_train"], "regressor"),
+            node(evaluate_model, ["regressor", "X_test", "y_test"], None),
+        ]
+    )

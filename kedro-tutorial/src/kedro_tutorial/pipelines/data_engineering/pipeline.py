@@ -25,3 +25,30 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from kedro.pipeline import Pipeline, node
+
+from .nodes import create_master_table, preprocess_companies, preprocess_shuttles
+
+
+def create_pipeline(**kwargs):
+    return Pipeline(
+        [
+            node(
+                preprocess_companies,
+                "companies",
+                "preprocessed_companies",
+                name="preprocess1",
+            ),
+            node(
+                preprocess_shuttles,
+                "shuttles",
+                "preprocessed_shuttles",
+                name="preprocess2",
+            ),
+            node(
+                create_master_table,
+                ["preprocessed_shuttles", "preprocessed_companies", "reviews"],
+                "master_table",
+            ),
+        ]
+    )
