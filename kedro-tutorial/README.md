@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a tutorial project, which was generated using `Kedro 0.15.0`. It is the completed version of the [Space Flights tutorial](https://kedro.readthedocs.io/en/latest/03_tutorial/02_tutorial_template.html) described in the Kedro [documentation](https://kedro.readthedocs.io) and includes the data necessary to run the project.
+This is a tutorial project, which was generated using `Kedro 0.15.4`. It is the completed version of the [Space Flights tutorial](https://kedro.readthedocs.io/docs/build/html/03_tutorial/02_tutorial_template.html) described in the Kedro [documentation](https://kedro.readthedocs.io) and includes the data necessary to run the project.
 
 The tutorial works through the steps necessary to create this project. To learn the most about Kedro, we recommend that you start with a blank template as the tutorial describes, and follow through all the working. However, if you prefer to read swiftly through the documentation and get to work on the code, you may want to clone this example because the steps have been done for you.
 

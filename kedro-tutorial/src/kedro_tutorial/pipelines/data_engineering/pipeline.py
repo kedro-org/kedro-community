@@ -25,34 +25,30 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from kedro.pipeline import Pipeline, node
 
-"""
-This module contains an example test.
-
-Tests should be placed in ``src/tests``, in modules that mirror your
-project's structure, and in files named test_*.py. They are simply functions
-named ``test_*`` which test a unit of logic.
-
-To run the tests, run ``kedro test``.
-"""
-from os.path import abspath, curdir, join
-from pathlib import Path
-
-import pytest
-from kedro.config import ConfigLoader
-from kedro.io import DataCatalog
-
-from kedro_tutorial.run import ProjectContext
+from .nodes import create_master_table, preprocess_companies, preprocess_shuttles
 
 
-@pytest.fixture
-def project_context():
-    return ProjectContext(str(Path.cwd()))
-
-
-class TestProjectContext:
-    def test_project_name(self, project_context):
-        assert project_context.project_name == "kedro-tutorial"
-
-    def test_project_version(self, project_context):
-        assert project_context.project_version == "0.15.4"
+def create_pipeline(**kwargs):
+    return Pipeline(
+        [
+            node(
+                func=preprocess_companies,
+                inputs="companies",
+                outputs="preprocessed_companies",
+                name="preprocessing_companies",
+            ),
+            node(
+                func=preprocess_shuttles,
+                inputs="shuttles",
+                outputs="preprocessed_shuttles",
+                name="preprocessing_shuttles",
+            ),
+            node(
+                func=create_master_table,
+                inputs=["preprocessed_shuttles", "preprocessed_companies", "reviews"],
+                outputs="master_table",
+            ),
+        ]
+    )

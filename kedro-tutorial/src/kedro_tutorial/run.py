@@ -29,13 +29,12 @@
 """Application entry point."""
 
 from pathlib import Path
-from typing import Iterable, Type
+from typing import Dict
 
-from kedro.context import KedroContext
-from kedro.runner import AbstractRunner
+from kedro.context import KedroContext, load_context
 from kedro.pipeline import Pipeline
 
-from kedro_tutorial.pipeline import create_pipeline
+from kedro_tutorial.pipeline import create_pipelines
 
 
 class ProjectContext(KedroContext):
@@ -45,43 +44,20 @@ class ProjectContext(KedroContext):
     """
 
     project_name = "kedro-tutorial"
-    project_version = "0.15.0"
+    project_version = "0.15.4"
 
-    @property
-    def pipeline(self) -> Pipeline:
-        return create_pipeline()
+    def _get_pipelines(self) -> Dict[str, Pipeline]:
+        return create_pipelines()
 
 
-def main(
-    tags: Iterable[str] = None,
-    env: str = None,
-    runner: Type[AbstractRunner] = None,
-    node_names: Iterable[str] = None,
-    from_nodes: Iterable[str] = None,
-    to_nodes: Iterable[str] = None,
-):
-    """Application main entry point.
-
-    Args:
-        tags: An optional list of node tags which should be used to
-            filter the nodes of the ``Pipeline``. If specified, only the nodes
-            containing *any* of these tags will be run.
-        env: An optional parameter specifying the environment in which
-            the ``Pipeline`` should be run.
-        runner: An optional parameter specifying the runner that you want to run
-            the pipeline with.
-        node_names: An optional list of node names which should be used to filter
-            the nodes of the ``Pipeline``. If specified, only the nodes with these
-            names will be run.
-        from_nodes: An optional list of node names which should be used as a
-            starting point of the new ``Pipeline``.
-        to_nodes: An optional list of node names which should be used as an
-            end point of the new ``Pipeline``.
-
-    """
-    context = ProjectContext(Path.cwd(), env)
-    context.run(tags, runner, node_names, from_nodes, to_nodes)
+def run_package():
+    # entry point for running pip-installed projects
+    # using `<project_package>` command
+    project_context = load_context(Path.cwd())
+    project_context.run()
 
 
 if __name__ == "__main__":
-    main()
+    # entry point for running pip-installed projects
+    # using `python -m <project_package>.run` command
+    run_package()
