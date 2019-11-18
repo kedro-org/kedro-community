@@ -48,7 +48,7 @@ Create a new virtual environment in this directory by running:
 
 ```bash
 python -m venv env/kedro-environment  # macOS / Linux
-python -m venv env/kedro-environment # Windows
+python -m venv env\kedro-environment  # Windows
 ```
 
 We can activate this virtual environment with:
