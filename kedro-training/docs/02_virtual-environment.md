@@ -47,7 +47,7 @@ This will create a `kedro-environment` directory for your `virtualenv` in your c
 Create a new virtual environment in this directory by running:
 
 ```bash
-python3 -m venv env/kedro-environment # macOS / Linux
+python -m venv env/kedro-environment  # macOS / Linux
 python -m venv env/kedro-environment # Windows
 ```
 
