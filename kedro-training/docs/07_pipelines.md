@@ -252,6 +252,13 @@ def create_pipeline(**kwargs) -> Dict[str, Pipeline]:
     return ds_pipeline
 ```
 
+We also need to modify `conf/base/parameters.yml` by replacing its contents with the following:
+
+```yaml
+test_size: 0.2
+random_state: 3
+```
+
 Don't forget to create an empty file `src/kedro_training/pipelines/data_science/__init__.py`.
 
 Finally, let's add Data Science pipeline to `src/kedro_training/pipeline.py`:
