@@ -12,7 +12,7 @@ reviews:
   filepath: data/01_raw/reviews.csv
 
 shuttles:
-  type: kedro_example_pharma.io.xls_local.ExcelLocalDataSet
+  type: ExcelLocalDataSet
   filepath: data/01_raw/shuttles.xlsx
 
 preprocessed_companies:
