@@ -1,6 +1,6 @@
-# What is `kedro-examples`?
+# What is `kedro-example-pharma``?
 
-This repo contains example code to help you learn how to use [Kedro](https://github.com/quantumblacklabs/kedro).
+This repo contains example code to demonstrate how to use [Kedro](https://github.com/quantumblacklabs/kedro) in a pharma project.
 
 ## How do I use it?
 
