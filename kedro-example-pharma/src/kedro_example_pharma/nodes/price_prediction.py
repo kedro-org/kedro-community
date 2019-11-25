@@ -35,7 +35,7 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> List:
     return [X_train, X_test, y_train, y_test]
 
 
-def train_model(X_train: np.ndarray, y_train: np.ndarray) -> LinearRegression:
+def train_cox_ph_model(X_train: np.ndarray, y_train: np.ndarray) -> LinearRegression:
     """Train the linear regression model.
 
         Args:

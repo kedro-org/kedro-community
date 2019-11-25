@@ -43,7 +43,7 @@ def _parse_money(x):
 
 
 @log_running_time
-def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
+def preprocess_observations(companies: pd.DataFrame) -> pd.DataFrame:
     """Preprocess the data for companies.
 
         Args:
@@ -61,7 +61,7 @@ def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
 
 
 @log_running_time
-def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
+def preprocess_diagnosis(shuttles: pd.DataFrame) -> pd.DataFrame:
     """Preprocess the data for shuttles.
 
         Args:

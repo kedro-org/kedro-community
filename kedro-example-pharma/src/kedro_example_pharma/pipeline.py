@@ -29,15 +29,15 @@
 
 from kedro.pipeline import Pipeline, node
 from kedro_example_pharma.nodes.data_engineering import (
-    preprocess_companies,
-    preprocess_shuttles,
+    preprocess_observations,
+    preprocess_diagnosis,
     create_master_table,
     log_running_time,
 )
 
 from kedro_example_pharma.nodes.price_prediction import (
     split_data,
-    train_model,
+    train_cox_ph_model,
     evaluate_model,
 )
 
@@ -58,6 +58,33 @@ from kedro_example_pharma.nodes.price_prediction import (
 # $ kedro run
 #
 
+def pass_through(*vargs, **kwargs):
+    return None
+
+
+def preprocess_labs(*vargs, **kwargs):
+    return None
+
+
+def combine_lab_values_and_ranges(*vargs, **kwargs):
+    pass
+
+
+def transform_observations(*vargs, **kwargs):
+    pass
+
+
+def create_endpoint_stomach_cancer(*vargs, **kwargs):
+    return None
+
+
+def create_demographics(*vargs, **kwargs):
+    return None
+
+
+def create_model_input_stomach_cancer(*vargs, **kwargs):
+    return None
+
 
 def create_pipeline(**kwargs):
     """Create the project's pipeline.
@@ -72,37 +99,102 @@ def create_pipeline(**kwargs):
     de_pipeline = Pipeline(
         [
             node(
-                preprocess_companies,
-                "companies",
-                "preprocessed_companies",
-                name="preprocess1",
+                preprocess_observations,
+                "raw: observations",
+                "int: typed_observations",
+                tags=["observations", "master", "raw"]
             ),
             node(
-                preprocess_shuttles,
-                "shuttles",
-                "preprocessed_shuttles",
-                name="preprocess2",
+                preprocess_diagnosis,
+                "raw: diagnosis",
+                "int: typed_diagnosis",
+                tags=["diagnosis", "master", "raw"]
             ),
             node(
-                create_master_table,
-                ["preprocessed_shuttles", "preprocessed_companies", "reviews"],
-                "master_table",
+                preprocess_labs,
+                "raw: lab_values",
+                "int: typed_lab_values",
+                tags=["labs", "master", "raw"]
+            ),
+            node(
+                preprocess_labs,
+                "raw: lab_ranges",
+                "int: typed_lab_ranges",
+                tags=["labs", "master", "raw"]
+            ),
+            node(
+                pass_through,
+                "raw: patients",
+                "int: patients",
+                tags=["patients", "master", "raw"]
+            ),
+            node(
+                pass_through,
+                "int: patients",
+                "prm: patients",
+                tags=["patients", "master", "raw"]
+            ),
+            node(
+                transform_observations,
+                "int: typed_observations",
+                "prm: patient_indexed_observations",
+                tags=["observations", "master", "int"]
+            ),
+            node(
+                pass_through,
+                "int: typed_diagnosis",
+                "prm: diagnosis",
+                tags=["diagnosis", "master", "int"]
+            ),
+            node(
+                combine_lab_values_and_ranges,
+                ["int: typed_lab_ranges", "int: typed_lab_values"],
+                "prm: labs",
+                tags=["labs", "master", "int"]
+            ),
+            node(
+                create_endpoint_stomach_cancer,
+                ["prm: patient_indexed_observations", "prm: diagnosis", "prm: labs"],
+                "fea: endpoint_stomach_cancer",
+                tags=["master", "prm", "endpoints"]
+
+            ),
+            node(
+                create_demographics,
+                ["prm: patients"],
+                "fea: demographics",
+                tags=["master", "prm", "features"]
+            ),
+            node(
+                create_model_input_stomach_cancer,
+                ["fea: endpoint_stomach_cancer", "fea: demographics"],
+                "model_input: cancer_incidence",
+                tags=["master", "model_input"]
+
             ),
         ],
-        name="de",
+        tags=["de"]
     ).decorate(log_running_time)
 
     ds_pipeline = Pipeline(
         [
             node(
                 split_data,
-                ["master_table", "parameters"],
+                ["model_input: cancer_incidence", "param: train_split_proportion"],
                 ["X_train", "X_test", "y_train", "y_test"],
             ),
-            node(train_model, ["X_train", "y_train"], "regressor"),
-            node(evaluate_model, ["regressor", "X_test", "y_test"], None),
+            node(
+                train_cox_ph_model,
+                ["X_train", "y_train"],
+                "model_cancer_proportional_hazards"
+            ),
+            node(
+                evaluate_model,
+                ["model_cancer_proportional_hazards", "X_test", "y_test"],
+                None
+            ),
         ],
-        name="ds",
+        tags=["ds"],
     ).decorate(log_running_time)
 
     return de_pipeline + ds_pipeline
