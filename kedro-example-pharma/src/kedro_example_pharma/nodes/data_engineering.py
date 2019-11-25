@@ -1,31 +1,5 @@
 import pandas as pd
-from functools import wraps
-from typing import Callable
-import time
-import logging
-
-
-def log_running_time(func: Callable) -> Callable:
-    """Decorator for logging node execution time.
-
-        Args:
-            func: Function to be executed.
-        Returns:
-            Decorator for logging the running time.
-
-    """
-
-    @wraps(func)
-    def with_time(*args, **kwargs):
-        log = logging.getLogger(__name__)
-        t_start = time.time()
-        result = func(*args, **kwargs)
-        t_end = time.time()
-        elapsed = t_end - t_start
-        log.info("Running %r took %.2f seconds", func.__name__, elapsed)
-        return result
-
-    return with_time
+from kedro.pipeline.decorators import log_time
 
 
 def _is_true(x):
@@ -42,7 +16,7 @@ def _parse_money(x):
     return float(x.replace("$", "").replace(",", ""))
 
 
-@log_running_time
+@log_time
 def preprocess_observations(companies: pd.DataFrame) -> pd.DataFrame:
     """Preprocess the data for companies.
 
@@ -60,7 +34,7 @@ def preprocess_observations(companies: pd.DataFrame) -> pd.DataFrame:
     return companies
 
 
-@log_running_time
+@log_time
 def preprocess_diagnosis(shuttles: pd.DataFrame) -> pd.DataFrame:
     """Preprocess the data for shuttles.
 
