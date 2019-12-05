@@ -27,19 +27,9 @@
 # limitations under the License.
 """Pipeline construction."""
 
-from kedro.pipeline import Pipeline, node
-from kedro_tutorial.nodes.data_engineering import (
-    preprocess_companies,
-    preprocess_shuttles,
-    create_master_table,
-    log_running_time,
-)
-
-from kedro_tutorial.nodes.price_prediction import (
-    split_data,
-    train_model,
-    evaluate_model,
-)
+from .pipelines.data_science import pipeline as ds
+from .pipelines.data_engineering import pipeline as de
+from .pipelines.data_engineering.nodes import log_running_time
 
 
 # Here you can define your data-driven pipeline by importing your functions
@@ -59,50 +49,21 @@ from kedro_tutorial.nodes.price_prediction import (
 #
 
 
-def create_pipeline(**kwargs):
+def create_pipelines(**kwargs):
     """Create the project's pipeline.
 
     Args:
         kwargs: Ignore any additional arguments added in the future.
 
     Returns:
-        Pipeline: The resulting pipeline.
+        A mapping from a pipeline name to a ``Pipeline`` object.
 
     """
-    de_pipeline = Pipeline(
-        [
-            node(
-                preprocess_companies,
-                "companies",
-                "preprocessed_companies",
-                name="preprocess1",
-            ),
-            node(
-                preprocess_shuttles,
-                "shuttles",
-                "preprocessed_shuttles",
-                name="preprocess2",
-            ),
-            node(
-                create_master_table,
-                ["preprocessed_shuttles", "preprocessed_companies", "reviews"],
-                "master_table",
-            ),
-        ],
-        name="de",
-    ).decorate(log_running_time)
+    data_engineering_pipeline = de.create_pipeline().decorate(log_running_time)
+    data_science_pipeline = ds.create_pipeline().decorate(log_running_time)
 
-    ds_pipeline = Pipeline(
-        [
-            node(
-                split_data,
-                ["master_table", "parameters"],
-                ["X_train", "X_test", "y_train", "y_test"],
-            ),
-            node(train_model, ["X_train", "y_train"], "regressor"),
-            node(evaluate_model, ["regressor", "X_test", "y_test"], None),
-        ],
-        name="ds",
-    ).decorate(log_running_time)
-
-    return de_pipeline + ds_pipeline
+    return {
+        "de": data_engineering_pipeline,
+        "ds": data_science_pipeline,
+        "__default__": data_engineering_pipeline + data_science_pipeline,
+    }
