@@ -17,7 +17,6 @@ Our community of Kedro users are creating their own profile projects, you can ha
 - [Response Recommendation System for BarefootLaw](https://github.com/dssg/barefoot-winnie-public) by Kasun Amarasinghe, Carlos Caro, Nupoor Gandhi and Raphaelle Roffo, an extensive Data Science for Social Good (DSSG) at Imperial College London project that recommends responses to law related queries
 - [Augury](https://github.com/tipresias/augury) by [Craig Franklin](https://github.com/cfranklin11), machine-learning functionality for predicting AFL match results in the Tipresias app
 - [CausalLift](https://github.com/Minyus/causallift) by [Yusuke Minami](https://github.com/Minyus), a Python package for Uplift Modeling in real-world business
-- [Fraud Detection](https://github.com/cnielly/fraud-detection), a project under the Data Science for Business course between Ecole Polytechnique and HEC Paris focused on credit card fraud detection
 - [kedro-mlflow-example](https://github.com/tgoldenberg/kedro-mlflow-example) by [Tom Goldenberg](https://github.com/tgoldenberg), a project that demonstrates how to integrate MLflow with a Kedro codebase
 
 ## What licence do you use?
