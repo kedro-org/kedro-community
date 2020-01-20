@@ -34,6 +34,83 @@ def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
 
     """
 
+    # This function should preprocess the 'companies' DataFrame by doing the following:
+    # 1. Convert 'iata_approved' column to boolean by applying _is_true function inplace
+    # 2. Convert 'company_rating' column to float by applying _parse_percentage function inplace
+
+    return companies
+
+
+def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
+    """Preprocess the data for shuttles.
+
+        Args:
+            shuttles: Source data.
+        Returns:
+            Preprocessed data.
+
+    """
+
+    # This function should preprocess the 'shuttles' DataFrame by doing the following:
+    # 1. Convert 'd_check_complete' and 'moon_clearance_complete' columns to boolean
+    # by applying _is_true function inplace
+    # 2. Convert 'price' column to float by applying _parse_money function inplace
+
+    return shuttles
+
+
+def create_master_table(
+    shuttles: pd.DataFrame, companies: pd.DataFrame, reviews: pd.DataFrame
+) -> pd.DataFrame:
+    """Combines all data to create a master table.
+        Args:
+            shuttles: Preprocessed data for shuttles.
+            companies: Preprocessed data for companies.
+            reviews: Source data for reviews.
+        Returns:
+            Master table.
+    """
+
+    # This function should prepare the master table by doing the following:
+    # 1. Join 'shuttles' with 'reviews' based on shuttle IDs
+    # 2. Join the result of step 1 with 'companies' based on company IDs
+    # 3. Drop 'shuttle_id' and 'company_id' columns from the resulting master table
+    # 4. Drop NAs from the resulting master table
+
+    return master_table
+```
+
+<details>
+<summary><b>CLICK TO SEE THE ANSWER</b></summary>
+
+```python
+import pandas as pd
+
+
+def _is_true(x):
+    return x == "t"
+
+
+def _parse_percentage(x):
+    if isinstance(x, str):
+        return float(x.replace("%", "")) / 100
+    return float("NaN")
+
+
+def _parse_money(x):
+    return float(x.replace("$", "").replace(",", ""))
+
+
+def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
+    """Preprocess the data for companies.
+
+        Args:
+            companies: Source data.
+        Returns:
+            Preprocessed data.
+
+    """
+
     companies["iata_approved"] = companies["iata_approved"].apply(_is_true)
 
     companies["company_rating"] = companies["company_rating"].apply(_parse_percentage)
@@ -82,6 +159,7 @@ def create_master_table(
     master_table = master_table.dropna()
     return master_table
 ```
+</details>
 
 ## Assemble nodes into a modular pipeline
 
@@ -92,14 +170,47 @@ You have utility functions and two processing functions, `preprocess_companies` 
 Next you should create the Data Engineering pipeline, which represents a collection of `Node` objects.  To do so, add the following code to `src/kedro_training/pipelines/data_engineering/pipeline.py`:
 
 ```python
-from typing import Dict
-
 from kedro.pipeline import Pipeline, node
 
 from .nodes import preprocess_companies, preprocess_shuttles, create_master_table
 
 
-def create_pipeline(**kwargs) -> Dict[str, Pipeline]:
+def create_pipeline(**kwargs) -> Pipeline:
+    """Create the project's pipeline.
+
+    Args:
+        kwargs: Ignore any additional arguments added in the future.
+
+    Returns:
+        Pipeline object.
+
+    """
+
+    # Here you need to construct a Data Engineering ('de_pipeline') object, which
+    # satisfies the following requirements:
+    # 1. Is an instance of a Pipeline class
+    # 2. Contains 3 pipeline nodes:
+    #   a. A node called 'preprocessing_companies' that maps 'companies' 
+    #      to 'preprocessed_companies' by using 'preprocess_companies' function from above
+    #   b. A node called 'preprocessing_shuttles' that maps 'shuttles' 
+    #      to 'preprocessed_shuttles' by using 'preprocess_shuttles' function from above
+    #   c. A node called 'creating_master_table' that takes 'preprocessed_shuttles',
+    #      'preprocessed_companies' and 'reviews' as inputs and produces a single output
+    #      called 'master_table' by using 'create_master_table' function from above
+
+    return de_pipeline
+```
+
+<details>
+<summary><b>CLICK TO SEE THE ANSWER</b></summary>
+
+```python
+from kedro.pipeline import Pipeline, node
+
+from .nodes import preprocess_companies, preprocess_shuttles, create_master_table
+
+
+def create_pipeline(**kwargs) -> Pipeline:
     """Create the project's pipeline.
 
     Args:
@@ -133,6 +244,7 @@ def create_pipeline(**kwargs) -> Dict[str, Pipeline]:
 
     return de_pipeline
 ```
+</details>
 
 > Note: The `inputs` and `outputs` arguments are not passed into the underlying function as-is. Instead, Kedro locates the dataset with that name from `conf/base/catalog.yml`, loads it and passes the loaded data as the input for your function call. Outputs are handled similarly - Kedro captures all the outputs and saves them into the corresponding datasets.
 
@@ -143,7 +255,7 @@ Finally, we need to register the newly created modular pipeline in `src/kedro_tr
 ```python
 from typing import Dict
 
-from kedro.pipeline import Pipeline, node
+from kedro.pipeline import Pipeline
 
 from kedro_training.pipelines import data_engineering as de
 
@@ -194,6 +306,76 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> List:
             A list containing split data.
 
     """
+
+    # 1. Create X object that contains the following subset of the columns from 'data':
+    # engines, passenger_capacity, crew, d_check_complete, moon_clearance_complete
+    # 2. Take the values of 'price' column and put them into 'y' object
+    # 3. Split X and y into train and test sets X_train, X_test, y_train, y_test by
+    # using 'train_test_split' function and 'test_size' and 'random_state' parameters
+
+    return [X_train, X_test, y_train, y_test]
+
+
+def train_model(X_train: np.ndarray, y_train: np.ndarray) -> LinearRegression:
+    """Train the linear regression model.
+
+        Args:
+            X_train: Training data of independent features.
+            y_train: Training data for price.
+
+        Returns:
+            Trained model.
+
+    """
+    regressor = LinearRegression()
+    regressor.fit(X_train, y_train)
+    return regressor
+
+
+def evaluate_model(regressor: LinearRegression, X_test: np.ndarray, y_test: np.ndarray):
+    """Calculate the coefficient of determination and log the result.
+
+        Args:
+            regressor: Trained model.
+            X_test: Testing data of independent features.
+            y_test: Testing data for price.
+
+    """
+    # 1. Calculate predictions for 'X_test' using 'regressor' object
+    # 2. Calculate R^2 score for the calculated predictions
+    # 3. Log calculated R^2 score. Hint:
+    # logger = logging.getLogger(__name__)
+    # logger.info(<Your message>)
+    
+```
+
+<details>
+<summary><b>CLICK TO SEE THE ANSWER</b></summary>
+
+```python
+import logging
+from typing import Dict, List
+
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+from sklearn.model_selection import train_test_split
+
+
+def split_data(data: pd.DataFrame, parameters: Dict) -> List:
+    """Splits data into training and test sets.
+
+        Args:
+            data: Source data.
+            parameters: Parameters defined in parameters.yml.
+        Returns:
+            A list containing split data.
+
+    """
+    
+    # Split the 'data' into X_train, X_test, y_train, y_test based on 
+
     X = data[
         [
             "engines",
@@ -241,6 +423,7 @@ def evaluate_model(regressor: LinearRegression, X_test: np.ndarray, y_test: np.n
     logger = logging.getLogger(__name__)
     logger.info("Model has a coefficient R^2 of %.3f.", score)
 ```
+</details>
 
 Then we have to build the data science pipeline definition in `src/kedro_training/pipelines/data_science/pipeline.py`:
 
@@ -253,6 +436,42 @@ from .nodes import split_data, train_model, evaluate_model
 
 
 def create_pipeline(**kwargs) -> Dict[str, Pipeline]:
+    """Create the project's pipeline.
+
+    Args:
+        kwargs: Ignore any additional arguments added in the future.
+
+    Returns:
+        Pipeline object.
+
+    """
+
+    # Here you need to construct a Data Science ('ds_pipeline') object, which satisfies
+    # the following requirements:
+    # 1. Is an instance of a Pipeline class
+    # 2. Contains 3 pipeline nodes:
+    #   a. Split data: a node that takes 'master_table' and 'parameters' as inputs and
+    #   produces 4 objects: 'X_train', 'X_test', 'y_train', 'y_test' by using
+    #   'split_data' function
+    #   b. Train model: a node that takes 'X_train' and 'y_train' inputs and produces
+    #   'regressor' object by using 'train_model' function
+    #   c. Evaluate model: a node that takes 'regressor', 'X_test', 'y_test' inputs and
+    #   runs 'evaluate_model' function - note that this node does not produce any
+    #   outputs
+
+    return ds_pipeline
+```
+
+<details>
+<summary><b>CLICK TO SEE THE ANSWER</b></summary>
+
+```python
+from kedro.pipeline import Pipeline, node
+
+from .nodes import split_data, train_model, evaluate_model
+
+
+def create_pipeline(**kwargs) -> Pipeline:
     """Create the project's pipeline.
 
     Args:
@@ -278,6 +497,7 @@ def create_pipeline(**kwargs) -> Dict[str, Pipeline]:
 
     return ds_pipeline
 ```
+</details>
 
 We also need to modify `conf/base/parameters.yml` by replacing its contents with the following:
 
@@ -293,7 +513,39 @@ Finally, let's add Data Science pipeline to `src/kedro_training/pipeline.py`:
 ```python
 from typing import Dict
 
-from kedro.pipeline import Pipeline, node
+from kedro.pipeline import Pipeline
+
+from kedro_training.pipelines import data_engineering as de, data_science as ds
+
+
+def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
+    """Create the project's pipeline.
+
+    Args:
+        kwargs: Ignore any additional arguments added in the future.
+
+    Returns:
+        A mapping from a pipeline name to a ``Pipeline`` object.
+
+    """
+
+    # Modify this function such that:
+    # 1. The Data Science pipeline object is created using 'create_pipeline' function
+    # from the above
+    # 2. The Data Science pipeline object is added to '__default__' pipeline
+
+    return {
+        ...
+    }
+```
+
+<details>
+<summary><b>CLICK TO SEE THE ANSWER</b></summary>
+
+```python
+from typing import Dict
+
+from kedro.pipeline import Pipeline
 
 from kedro_training.pipelines import data_engineering as de, data_science as ds
 
@@ -317,6 +569,7 @@ def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
         "__default__": data_engineering_pipeline + data_science_pipeline,
     }
 ```
+</details>
 
 ## Run a modular pipeline
 
@@ -370,7 +623,7 @@ pip install -r src/kedro_training/pipelines/<pipeline_name>/requirements.txt
 
 It is important to emphasise that the Kedro pipeline is runnable only if _all_ free inputs, i.e. the datasets that are not produced by any of the nodes, are defined in `catalog.yml`. In the Spaceflights project those free inputs are: `companies`, `shuttles`, `reviews`.
 
-All intermediary datasets, however, can be missing from the `catalog.yml`, and your pipeline will still run without errors. This is because Kedro automatically creates a `MemoryDataSet` for each intermediary dataset that is not defined in the `DataCatalog`. Intermediary datasets in the Spaceflights project are: `preprocessed_companies`, `preprocessed_shuttles`, `master_table`, `X_train`, `X_test`, `y_train`, `y_test`, `regressor`. 
+All intermediary datasets, however, can be missing from the `catalog.yml`, and your pipeline will still run without errors. This is because Kedro automatically creates a `MemoryDataSet` for each intermediary dataset that is not defined in the `DataCatalog`. Intermediary datasets in the Spaceflights project are: `preprocessed_companies`, `preprocessed_shuttles`, `master_table`, `X_train`, `X_test`, `y_train`, `y_test`, `regressor`.
 
 These `MemoryDataSet`s pass data across nodes during the run, but are automatically deleted after the run finishes, therefore if you want to have an access to those intermediary datasets after the run, you need to define them in `catalog.yml`. 
 
