@@ -35,7 +35,7 @@ This might be useful when you want to programmatically create your project as pa
 Once you have successfully run `kedro new`, you should get the following project structure:
 
 <details>
-<summary>Click to expand</summary>
+<summary><b>Click to expand</b></summary>
 
 ```console
 kedro-training
