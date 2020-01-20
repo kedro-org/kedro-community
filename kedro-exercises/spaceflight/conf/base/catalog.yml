@@ -1,0 +1,33 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in the kedro docs under `Accessing data`
+# You can access the kedro docs by running `kedro docs`
+
+companies:
+  type: CSVLocalDataSet
+  filepath: data/01_raw/companies.csv
+
+reviews:
+  type: CSVLocalDataSet
+  filepath: data/01_raw/reviews.csv
+
+shuttles:
+  type: kedro_tutorial.io.xls_local.ExcelLocalDataSet
+  filepath: data/01_raw/shuttles.xlsx
+
+preprocessed_companies:
+  type: CSVLocalDataSet
+  filepath: data/02_intermediate/preprocessed_companies.csv
+
+preprocessed_shuttles:
+  type: CSVLocalDataSet
+  filepath: data/02_intermediate/preprocessed_shuttles.csv
+
+master_table:
+  type: CSVLocalDataSet
+  filepath: data/03_primary/master_table.csv
+
+regressor:
+  type: PickleLocalDataSet
+  filepath: data/06_models/regressor.pickle
+  versioned: true
