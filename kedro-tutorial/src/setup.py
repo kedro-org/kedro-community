@@ -28,13 +28,19 @@
 
 from setuptools import find_packages, setup
 
-entry_point = (
-    "kedro-tutorial = kedro_tutorial.run:main"
-)
+entry_point = "kedro-tutorial = kedro_tutorial.run:run_package"
+
 
 # get the dependencies and installs
 with open("requirements.txt", "r", encoding="utf-8") as f:
-    requires = [x.strip() for x in f if x.strip()]
+    # Make sure we strip all comments and options (e.g "--extra-index-url")
+    # that arise from a modified pip.conf file that configure global options
+    # when running kedro build-reqs
+    requires = []
+    for line in f:
+        req = line.split("#", 1)[0].strip()
+        if req and not req.startswith("--"):
+            requires.append(req)
 
 setup(
     name="kedro_tutorial",
