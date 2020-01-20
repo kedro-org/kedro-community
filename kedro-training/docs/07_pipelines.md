@@ -374,8 +374,6 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> List:
 
     """
     
-    # Split the 'data' into X_train, X_test, y_train, y_test based on 
-
     X = data[
         [
             "engines",
