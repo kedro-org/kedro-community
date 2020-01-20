@@ -428,14 +428,12 @@ def evaluate_model(regressor: LinearRegression, X_test: np.ndarray, y_test: np.n
 Then we have to build the data science pipeline definition in `src/kedro_training/pipelines/data_science/pipeline.py`:
 
 ```python
-from typing import Dict
-
 from kedro.pipeline import Pipeline, node
 
 from .nodes import split_data, train_model, evaluate_model
 
 
-def create_pipeline(**kwargs) -> Dict[str, Pipeline]:
+def create_pipeline(**kwargs) -> Pipeline:
     """Create the project's pipeline.
 
     Args:
