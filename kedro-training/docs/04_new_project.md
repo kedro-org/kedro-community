@@ -34,6 +34,9 @@ This might be useful when you want to programmatically create your project as pa
 
 Once you have successfully run `kedro new`, you should get the following project structure:
 
+<details>
+<summary>Click to expand</summary>
+
 ```console
 kedro-training
 ├── conf
@@ -85,6 +88,7 @@ kedro-training
 ├── kedro_cli.py
 └── setup.cfg
 ```
+</details>
 
 This structure may seem overwhelming at the first glance, but rest assured that you will master it very quickly. Also please bear in mind that this structure intends to fit most analytics projects and is a result of the lessons learned from a number of QuantumBlack's analytics studies. Therefore certain sections may not be applicable for your specific use cases. In the next section we will break down those components into 3 categories:
 1. _core_ components that are essential for Kedro project
