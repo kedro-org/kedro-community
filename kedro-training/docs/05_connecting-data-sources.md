@@ -1,6 +1,6 @@
 ## Adding your datasets to `data`
 
-Before you start a Kedro project, you need to prepare datasets. This tutorial will make use of fictional datasets for spaceflight companies shuttling customers to the Moon and back. You will use the data to train a model to predict the price of shuttle hire.
+Before you start a Kedro project, you need to prepare the datasets. This tutorial will make use of fictional datasets for spaceflight companies shuttling customers to the Moon and back. You will use the data to train a model to predict the price of shuttle hire.
 
 The spaceflight tutorial has three files and uses two data formats: `.csv` and `.xlsx`. Download and save the files to the `data/01_raw/` folder of your project directory:
 
@@ -10,6 +10,9 @@ The spaceflight tutorial has three files and uses two data formats: `.csv` and `
 
 Here is an example of how you can [download the files from GitHub](https://www.quora.com/How-do-I-download-something-from-GitHub) to `data/01_raw` directory inside your project using [cURL](https://curl.haxx.se/download.html) in a Unix terminal:
 
+<details>
+<summary><b>CLICK TO EXPAND</b></summary>
+
 ```bash
 # reviews
 curl -o data/01_raw/reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
@@ -18,8 +21,12 @@ curl -o data/01_raw/companies.csv https://raw.githubusercontent.com/quantumblack
 # shuttles
 curl -o data/01_raw/shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
 ```
+</details>
 
 Or through using [Wget](https://www.gnu.org/software/wget/):
+
+<details>
+<summary><b>CLICK TO EXPAND</b></summary>
 
 ```bash
 # reviews
@@ -29,22 +36,31 @@ wget -O data/01_raw/companies.csv https://raw.githubusercontent.com/quantumblack
 # shuttles
 wget -O data/01_raw/shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
 ```
+</details>
 
 Alternatively, if you are a Windows user, try [Wget for Windows](https://eternallybored.org/misc/wget/) and the following commands instead:
+
+<details>
+<summary><b>CLICK TO EXPAND</b></summary>
 
 ```bat
 wget -O data\01_raw\reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
 wget -O data\01_raw\companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/companies.csv
 wget -O data\01_raw\shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
 ```
+</details>
 
 or [cURL for Windows](https://curl.haxx.se/windows/):
+
+<details>
+<summary><b>CLICK TO EXPAND</b></summary>
 
 ```bat
 curl -o data\01_raw\reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
 curl -o data\01_raw\companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/companies.csv
 curl -o data\01_raw\shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
 ```
+</details>
 
 ## Using the Data Catalog with `catalog.yml`
 
