@@ -60,8 +60,6 @@ kedro-training
 ├── docs
 ├── logs
 ├── notebooks
-├── references
-├── results
 ├── src
 │   ├── kedro_training
 │   │   ├── nodes
@@ -104,7 +102,6 @@ This structure may seem overwhelming at the first glance, but rest assured that 
 | `docs` | `docs` is where your auto-generated project documentation is saved | Nice to have |
 | `logs` | A directory for your Kedro pipeline execution logs | Nice to have |
 | `notebooks` |  Kedro supports a Jupyter workflow, that allows you to experiment and iterate quickly on your models. `notebooks` is the folder where you can store your Jupyter Notebooks | Nice to have |
-| `references`<br/><br/>`results` | Auxiliary folders for project references and standalone results like model artifacts, plots, papers and statistics | Non-essential
 | `src` | Source directory that contains all your pipeline code | Core |
 
 #### `src` folder
