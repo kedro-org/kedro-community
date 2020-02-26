@@ -1,0 +1,641 @@
+{
+    "edges": [
+        {
+            "source": "128970fd",
+            "target": "5e68fa2b"
+        },
+        {
+            "source": "091a9c95",
+            "target": "5e68fa2b"
+        },
+        {
+            "source": "5e68fa2b",
+            "target": "3b39547e"
+        },
+        {
+            "source": "19ae6d33",
+            "target": "713870c0"
+        },
+        {
+            "source": "713870c0",
+            "target": "e0eefeb0"
+        },
+        {
+            "source": "cf6016a4",
+            "target": "c9281b28"
+        },
+        {
+            "source": "ece2aab5",
+            "target": "c9281b28"
+        },
+        {
+            "source": "3b39547e",
+            "target": "c9281b28"
+        },
+        {
+            "source": "c9281b28",
+            "target": "4af72673"
+        },
+        {
+            "source": "4af72673",
+            "target": "68ec5f23"
+        },
+        {
+            "source": "e0eefeb0",
+            "target": "68ec5f23"
+        },
+        {
+            "source": "68ec5f23",
+            "target": "07d58338"
+        },
+        {
+            "source": "fe5a34c1",
+            "target": "5332f83c"
+        },
+        {
+            "source": "872981f9",
+            "target": "5332f83c"
+        },
+        {
+            "source": "f6d9538c",
+            "target": "5332f83c"
+        },
+        {
+            "source": "9c1a69fe",
+            "target": "9ecab9fc"
+        },
+        {
+            "source": "9ecab9fc",
+            "target": "19ae6d33"
+        },
+        {
+            "source": "2319b54c",
+            "target": "2dc5c160"
+        },
+        {
+            "source": "2dc5c160",
+            "target": "ece2aab5"
+        },
+        {
+            "source": "c0d2798e",
+            "target": "993e9353"
+        },
+        {
+            "source": "993e9353",
+            "target": "9c1a69fe"
+        },
+        {
+            "source": "bebe750d",
+            "target": "09700140"
+        },
+        {
+            "source": "09700140",
+            "target": "2319b54c"
+        },
+        {
+            "source": "a64b4093",
+            "target": "75fa81cb"
+        },
+        {
+            "source": "75fa81cb",
+            "target": "128970fd"
+        },
+        {
+            "source": "e44c6eca",
+            "target": "2d043c58"
+        },
+        {
+            "source": "2d043c58",
+            "target": "091a9c95"
+        },
+        {
+            "source": "4ab04668",
+            "target": "b40f9535"
+        },
+        {
+            "source": "b40f9535",
+            "target": "4b493499"
+        },
+        {
+            "source": "07d58338",
+            "target": "26b0a1b9"
+        },
+        {
+            "source": "f0344ef7",
+            "target": "26b0a1b9"
+        },
+        {
+            "source": "26b0a1b9",
+            "target": "cae2d1c7"
+        },
+        {
+            "source": "26b0a1b9",
+            "target": "872981f9"
+        },
+        {
+            "source": "26b0a1b9",
+            "target": "9ca016a8"
+        },
+        {
+            "source": "26b0a1b9",
+            "target": "f6d9538c"
+        },
+        {
+            "source": "cae2d1c7",
+            "target": "c1f51b9c"
+        },
+        {
+            "source": "9ca016a8",
+            "target": "c1f51b9c"
+        },
+        {
+            "source": "c1f51b9c",
+            "target": "fe5a34c1"
+        },
+        {
+            "source": "4b493499",
+            "target": "fa440d8c"
+        },
+        {
+            "source": "fa440d8c",
+            "target": "cf6016a4"
+        }
+    ],
+    "nodes": [
+        {
+            "full_name": "combine_lab_values_and_ranges",
+            "id": "5e68fa2b",
+            "name": "Combine Lab Values And Ranges",
+            "tags": [
+                "2 - intermediate",
+                "de",
+                "labs"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "create_demographics",
+            "id": "713870c0",
+            "name": "Create Demographics",
+            "tags": [
+                "3 - primary",
+                "de",
+                "features"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "create_endpoint_stomach_cancer",
+            "id": "c9281b28",
+            "name": "Create Endpoint Stomach Cancer",
+            "tags": [
+                "3 - primary",
+                "de",
+                "endpoints"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "create_model_input_stomach_cancer",
+            "id": "68ec5f23",
+            "name": "Create Model Input Stomach Cancer",
+            "tags": [
+                "4 - feature",
+                "de"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "evaluate_model",
+            "id": "5332f83c",
+            "name": "Evaluate Model",
+            "tags": [
+                "ds"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "pass_through",
+            "id": "9ecab9fc",
+            "name": "Pass Through",
+            "tags": [
+                "2 - intermediate",
+                "de",
+                "patients"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "pass_through",
+            "id": "2dc5c160",
+            "name": "Pass Through",
+            "tags": [
+                "2 - intermediate",
+                "de",
+                "diagnosis"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "pass_through",
+            "id": "993e9353",
+            "name": "Pass Through",
+            "tags": [
+                "1 - raw",
+                "de",
+                "patients"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "preprocess_diagnosis",
+            "id": "09700140",
+            "name": "Preprocess Diagnosis",
+            "tags": [
+                "1 - raw",
+                "de",
+                "diagnosis"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "preprocess_labs",
+            "id": "75fa81cb",
+            "name": "Preprocess Labs",
+            "tags": [
+                "1 - raw",
+                "de",
+                "labs"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "preprocess_labs",
+            "id": "2d043c58",
+            "name": "Preprocess Labs",
+            "tags": [
+                "1 - raw",
+                "de",
+                "labs"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "preprocess_observations",
+            "id": "b40f9535",
+            "name": "Preprocess Observations",
+            "tags": [
+                "1 - raw",
+                "de",
+                "observations"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "split_data",
+            "id": "26b0a1b9",
+            "name": "Split Data",
+            "tags": [
+                "5 - model input",
+                "ds"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "train_cox_ph_model",
+            "id": "c1f51b9c",
+            "name": "Train Cox Ph Model",
+            "tags": [
+                "ds"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "transform_observations",
+            "id": "fa440d8c",
+            "name": "Transform Observations",
+            "tags": [
+                "2 - intermediate",
+                "de",
+                "observations"
+            ],
+            "type": "task"
+        },
+        {
+            "full_name": "X_test",
+            "id": "872981f9",
+            "name": "X Test",
+            "tags": [
+                "5 - model input",
+                "ds"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "X_train",
+            "id": "cae2d1c7",
+            "name": "X Train",
+            "tags": [
+                "5 - model input",
+                "ds"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "fea: demographics",
+            "id": "e0eefeb0",
+            "name": "Fea: Demographics",
+            "tags": [
+                "3 - primary",
+                "4 - feature",
+                "de",
+                "features"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "fea: endpoint_stomach_cancer",
+            "id": "4af72673",
+            "name": "Fea: Endpoint Stomach Cancer",
+            "tags": [
+                "3 - primary",
+                "4 - feature",
+                "de",
+                "endpoints"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "inp: cancer_incidence",
+            "id": "07d58338",
+            "name": "Inp: Cancer Incidence",
+            "tags": [
+                "4 - feature",
+                "5 - model input",
+                "de",
+                "ds"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "int: patients",
+            "id": "9c1a69fe",
+            "name": "Int: Patients",
+            "tags": [
+                "1 - raw",
+                "2 - intermediate",
+                "de",
+                "patients"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "int: typed_diagnosis",
+            "id": "2319b54c",
+            "name": "Int: Typed Diagnosis",
+            "tags": [
+                "1 - raw",
+                "2 - intermediate",
+                "de",
+                "diagnosis"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "int: typed_lab_ranges",
+            "id": "128970fd",
+            "name": "Int: Typed Lab Ranges",
+            "tags": [
+                "1 - raw",
+                "2 - intermediate",
+                "de",
+                "labs"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "int: typed_lab_values",
+            "id": "091a9c95",
+            "name": "Int: Typed Lab Values",
+            "tags": [
+                "1 - raw",
+                "2 - intermediate",
+                "de",
+                "labs"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "int: typed_observations",
+            "id": "4b493499",
+            "name": "Int: Typed Observations",
+            "tags": [
+                "1 - raw",
+                "2 - intermediate",
+                "de",
+                "observations"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "model_cancer_proportional_hazards",
+            "id": "fe5a34c1",
+            "name": "Model Cancer Proportional Hazards",
+            "tags": [
+                "ds"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "param: train_split_proportion",
+            "id": "f0344ef7",
+            "name": "Param: Train Split Proportion",
+            "tags": [
+                "5 - model input",
+                "ds"
+            ],
+            "type": "parameters"
+        },
+        {
+            "full_name": "prm: diagnosis",
+            "id": "ece2aab5",
+            "name": "Prm: Diagnosis",
+            "tags": [
+                "2 - intermediate",
+                "3 - primary",
+                "de",
+                "diagnosis",
+                "endpoints"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "prm: labs",
+            "id": "3b39547e",
+            "name": "Prm: Labs",
+            "tags": [
+                "2 - intermediate",
+                "3 - primary",
+                "de",
+                "endpoints",
+                "labs"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "prm: patient_indexed_observations",
+            "id": "cf6016a4",
+            "name": "Prm: Patient Indexed Observations",
+            "tags": [
+                "2 - intermediate",
+                "3 - primary",
+                "de",
+                "endpoints",
+                "observations"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "prm: patients",
+            "id": "19ae6d33",
+            "name": "Prm: Patients",
+            "tags": [
+                "2 - intermediate",
+                "3 - primary",
+                "de",
+                "features",
+                "patients"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "raw: diagnosis",
+            "id": "bebe750d",
+            "name": "Raw: Diagnosis",
+            "tags": [
+                "1 - raw",
+                "de",
+                "diagnosis"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "raw: lab_ranges",
+            "id": "a64b4093",
+            "name": "Raw: Lab Ranges",
+            "tags": [
+                "1 - raw",
+                "de",
+                "labs"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "raw: lab_values",
+            "id": "e44c6eca",
+            "name": "Raw: Lab Values",
+            "tags": [
+                "1 - raw",
+                "de",
+                "labs"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "raw: observations",
+            "id": "4ab04668",
+            "name": "Raw: Observations",
+            "tags": [
+                "1 - raw",
+                "de",
+                "observations"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "raw: patients",
+            "id": "c0d2798e",
+            "name": "Raw: Patients",
+            "tags": [
+                "1 - raw",
+                "de",
+                "patients"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "y_test",
+            "id": "f6d9538c",
+            "name": "Y Test",
+            "tags": [
+                "5 - model input",
+                "ds"
+            ],
+            "type": "data"
+        },
+        {
+            "full_name": "y_train",
+            "id": "9ca016a8",
+            "name": "Y Train",
+            "tags": [
+                "5 - model input",
+                "ds"
+            ],
+            "type": "data"
+        }
+    ],
+    "tags": [
+        {
+            "id": "1 - raw",
+            "name": "1 Raw"
+        },
+        {
+            "id": "2 - intermediate",
+            "name": "2 Intermediate"
+        },
+        {
+            "id": "3 - primary",
+            "name": "3 Primary"
+        },
+        {
+            "id": "4 - feature",
+            "name": "4 Feature"
+        },
+        {
+            "id": "5 - model input",
+            "name": "5 Model Input"
+        },
+        {
+            "id": "de",
+            "name": "De"
+        },
+        {
+            "id": "diagnosis",
+            "name": "Diagnosis"
+        },
+        {
+            "id": "ds",
+            "name": "Ds"
+        },
+        {
+            "id": "endpoints",
+            "name": "Endpoints"
+        },
+        {
+            "id": "features",
+            "name": "Features"
+        },
+        {
+            "id": "labs",
+            "name": "Labs"
+        },
+        {
+            "id": "observations",
+            "name": "Observations"
+        },
+        {
+            "id": "patients",
+            "name": "Patients"
+        }
+    ]
+}
