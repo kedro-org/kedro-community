@@ -8,7 +8,7 @@ Each example has an README.md that explains what each project does and how to wo
 
 ## What will I find in this repository?
 
-- We recommend you start with [`kedro-tutorial`](https://github.com/quantumblacklabs/kedro-examples/tree/master/kedro-tutorial), which is the complete version of the [Space Flights tutorial](https://kedro.readthedocs.io/en/latest/03_tutorial/02_tutorial_template.html) described in the Kedro [documentation](https://kedro.readthedocs.io) and includes the data necessary to run the project
+- We recommend you start with [`kedro-tutorial`](https://github.com/quantumblacklabs/kedro-examples/tree/master/kedro-tutorial), which is the complete version of the [Space Flights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html) described in the Kedro [documentation](https://kedro.readthedocs.io) and includes the data necessary to run the project
 - Documentation that you can use to deliver Kedro training in [`kedro-training`](https://github.com/quantumblacklabs/kedro-examples/tree/master/kedro-training)
 
 ## Where can I find more `kedro-examples`?
