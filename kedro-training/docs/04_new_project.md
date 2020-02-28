@@ -98,7 +98,7 @@ This structure may seem overwhelming at the first glance, but rest assured that 
 | Folder | Description | Priority |
 | ------ | ----------- | -------- |
 | `conf` | The `conf` directory is the place where all your project configuration is located. Kedro has a powerful built-in mechanism for loading configuration. Using `conf` encourages a clear and strict separation between project code and configuration. | Core |
-| `data` | A place to store _local_ project data according to a suggested [Data Engineering Convention](https://kedro.readthedocs.io/en/latest/06_resources/01_faq.html#what-is-data-engineering-convention). For production workloads we do not recommend storing data locally, but rather utilising cloud storage (AWS S3, Azure Blob Storage), distributed file storage or database interfaces through Kedro's Data Catalog | Non-essential |
+| `data` | A place to store _local_ project data according to a suggested [Data Engineering Convention](https://kedro.readthedocs.io/en/stable/06_resources/01_faq.html#what-is-data-engineering-convention). For production workloads we do not recommend storing data locally, but rather utilising cloud storage (AWS S3, Azure Blob Storage), distributed file storage or database interfaces through Kedro's Data Catalog | Non-essential |
 | `docs` | `docs` is where your auto-generated project documentation is saved | Nice to have |
 | `logs` | A directory for your Kedro pipeline execution logs | Nice to have |
 | `notebooks` |  Kedro supports a Jupyter workflow, that allows you to experiment and iterate quickly on your models. `notebooks` is the folder where you can store your Jupyter Notebooks | Nice to have |
@@ -108,7 +108,7 @@ This structure may seem overwhelming at the first glance, but rest assured that 
 
 Source folder by default contains the following components:
 1. Your Kedro project Python package - `kedro_training` in this case
-2. `tests` folder with example unit tests; newly generated projects are preconfigured to run these tests using the [pytest framework](https://docs.pytest.org/en/latest/)
+2. `tests` folder with example unit tests; newly generated projects are preconfigured to run these tests using the [pytest framework](https://docs.pytest.org/en/stable/)
 3. `requirements.txt` file that contains all Python package dependencies
 4. `setup.py` - used by [Python Distutils](https://docs.python.org/3/library/distutils.html) for packaging the project
 

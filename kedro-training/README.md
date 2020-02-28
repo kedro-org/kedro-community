@@ -1,6 +1,6 @@
 # Kedro Training
 
-This repository contains training materials that will teach you how to use [Kedro](https://github.com/quantumblacklabs/kedro/). This content is based on the [Spaceflights tutorial](https://kedro.readthedocs.io/en/latest/03_tutorial/02_tutorial_template.html) specified in our documentation.
+This repository contains training materials that will teach you how to use [Kedro](https://github.com/quantumblacklabs/kedro/). This content is based on the [Spaceflights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html) specified in our documentation.
 
 ## Scenario
 
@@ -18,4 +18,4 @@ This tutorial covers:
 
 ## License
 
-This work, "Kedro Training", is a derivative of the ["Airflow Tutorial"](https://github.com/trallard/airflow-tutorial/) by [Tania Allard](https://github.com/trallard), used under CC BY-SA 4.0. We derived content from the [`README.md`](https://github.com/trallard/airflow-tutorial/blob/master/README.md) and ["Setup"](https://airflow-tutorial.readthedocs.io/en/latest/setup.html). "Kedro Training" is licensed under CC BY-SA 4.0 by QuantumBlack Visual Analytics Limited.
+This work, "Kedro Training", is a derivative of the ["Airflow Tutorial"](https://github.com/trallard/airflow-tutorial/) by [Tania Allard](https://github.com/trallard), used under CC BY-SA 4.0. We derived content from the [`README.md`](https://github.com/trallard/airflow-tutorial/blob/master/README.md) and ["Setup"](https://airflow-tutorial.readthedocs.io/en/stable/setup.html). "Kedro Training" is licensed under CC BY-SA 4.0 by QuantumBlack Visual Analytics Limited.

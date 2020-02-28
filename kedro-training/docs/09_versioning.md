@@ -26,7 +26,7 @@ regressor:
 
 This will save versioned pickle models everytime you run the pipeline.
 
-> *Note:* The list of the datasets supporting versioning can be find in [the documentation](https://kedro.readthedocs.io/en/latest/04_user_guide/08_advanced_io.html#supported-datasets).
+> *Note:* The list of the datasets supporting versioning can be find in [the documentation](https://kedro.readthedocs.io/en/stable/04_user_guide/08_advanced_io.html#supported-datasets).
 
 ## Loading a versioned dataset
 By default, the `DataCatalog` will load the latest version of the dataset. However, you can run the pipeline with a particular versioned data set with `--load-version` flag as follows:

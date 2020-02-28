@@ -101,7 +101,7 @@ If you, however, want to parameterize the run, you can also specify the followin
 | Argument name | Accepted types | Description |
 | :--------: | :--------: | :----------- |
 | `tags` | `Iterable[str]` | Construct the pipeline using only nodes which have this tag attached. A node is included in the resulting pipeline if it contains _any_ of those tags | 
-| `runner` | `AbstractRunner` | An instance of Kedro [AbstractRunner](https://kedro.readthedocs.io/en/latest/kedro.runner.AbstractRunner.html); for example, can be an instance of a [ParallelRunner](https://kedro.readthedocs.io/en/latest/kedro.runner.ParallelRunner.html) |
+| `runner` | `AbstractRunner` | An instance of Kedro [AbstractRunner](https://kedro.readthedocs.io/en/stable/kedro.runner.AbstractRunner.html); for example, can be an instance of a [ParallelRunner](https://kedro.readthedocs.io/en/stable/kedro.runner.ParallelRunner.html) |
 | `node_names` | `Iterable[str]` | Run only nodes with specified names |
 | `from_nodes` | `Iterable[str]` | A list of node names which should be used as a starting point |
 | `to_nodes`   | `Iterable[str]` | A list of node names which should be used as an end point |
