@@ -42,3 +42,5 @@ Text editors are tools with powerful features designed to optimize writing code.
 Docker is a tool that makes it easier to create, deploy and run applications. It uses containers to package an application along with its dependencies and then runs the application in an isolated virtualised environment.
 
 If Docker is a tool that you use internally then make sure to carefully read the prerequisites and instructions here: https://docs.docker.com/install/.
+
+[Go to the next session](./02_virtual-environment.md)
