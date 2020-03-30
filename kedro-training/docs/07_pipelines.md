@@ -165,7 +165,7 @@ def create_master_table(
 
 ### Creating the data engineering pipeline
 
-You have utility functions and two processing functions, `preprocess_companies` and `preprocess_shuttles`, which take Pandas dataframes for `companies` and `shuttles` respectively and output preprocessed versions of those dataframes. 
+You have utility functions and two processing functions, `preprocess_companies` and `preprocess_shuttles`, which take Pandas dataframes for `companies` and `shuttles` respectively and output preprocessed versions of those dataframes.
 
 Next you should create the Data Engineering pipeline, which represents a collection of `Node` objects.  To do so, add the following code to `src/kedro_training/pipelines/data_engineering/pipeline.py`:
 
@@ -190,9 +190,9 @@ def create_pipeline(**kwargs) -> Pipeline:
     # satisfies the following requirements:
     # 1. Is an instance of a Pipeline class
     # 2. Contains 3 pipeline nodes:
-    #   a. A node called 'preprocessing_companies' that maps 'companies' 
+    #   a. A node called 'preprocessing_companies' that maps 'companies'
     #      to 'preprocessed_companies' by using 'preprocess_companies' function from above
-    #   b. A node called 'preprocessing_shuttles' that maps 'shuttles' 
+    #   b. A node called 'preprocessing_shuttles' that maps 'shuttles'
     #      to 'preprocessed_shuttles' by using 'preprocess_shuttles' function from above
     #   c. A node called 'creating_master_table' that takes 'preprocessed_shuttles',
     #      'preprocessed_companies' and 'reviews' as inputs and produces a single output
@@ -223,15 +223,15 @@ def create_pipeline(**kwargs) -> Pipeline:
     de_pipeline = Pipeline(
         [
             node(
-                func=preprocess_companies, 
-                inputs="companies", 
-                outputs="preprocessed_companies", 
+                func=preprocess_companies,
+                inputs="companies",
+                outputs="preprocessed_companies",
                 name="preprocessing_companies"
             ),
             node(
                 func=preprocess_shuttles,
-                inputs="shuttles", 
-                outputs="preprocessed_shuttles", 
+                inputs="shuttles",
+                outputs="preprocessed_shuttles",
                 name="preprocessing_shuttles"
             ),
             node(
@@ -346,7 +346,7 @@ def evaluate_model(regressor: LinearRegression, X_test: np.ndarray, y_test: np.n
     # 3. Log calculated R^2 score. Hint:
     # logger = logging.getLogger(__name__)
     # logger.info(<Your message>)
-    
+
 ```
 
 <details>
@@ -373,7 +373,7 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> List:
             A list containing split data.
 
     """
-    
+
     X = data[
         [
             "engines",
@@ -581,7 +581,7 @@ Or run this pipeline from a Jupyter Notebook cell:
 context.run(pipeline_name="de")
 ```
 
-> Note: It is considered best-practice to restart your Jupyter Notebook kernel (`Kernel` menu -> `Restart`) every time you have made some changes to the pipeline and / or node code. 
+> Note: It is considered best-practice to restart your Jupyter Notebook kernel (`Kernel` menu -> `Restart`) every time you have made some changes to the pipeline and / or node code.
 
 ## Modular pipeline structure
 
@@ -603,11 +603,11 @@ where
 
 ### Unsupported components
 
-Kedro _does not_ automatically handle the following components of modular pipelines: 
+Kedro _does not_ automatically handle the following components of modular pipelines:
 * external package dependencies defined in, say, `src/kedro_training/pipelines/<pipeline_name>/requirements.txt`, those are _not_ currently installed by `kedro install` command
 * YAML configuration files - for example, `src/kedro_training/pipelines/<pipeline_name>/conf/base/catalog.yml`, these config files are _not_ discoverage by Kedro `ConfigLoader` by default
 
-If your modular pipeline requires installation of some third-party Python packages (e.g., `pandas`, `numpy`, `pyspark`, etc.), you need to explicitly document this in `README.md` and, ideally, provide the relevant installation command, for example: 
+If your modular pipeline requires installation of some third-party Python packages (e.g., `pandas`, `numpy`, `pyspark`, etc.), you need to explicitly document this in `README.md` and, ideally, provide the relevant installation command, for example:
 
 ```bash
 pip install -r src/kedro_training/pipelines/<pipeline_name>/requirements.txt
@@ -621,7 +621,7 @@ It is important to emphasise that the Kedro pipeline is runnable only if _all_ f
 
 All intermediary datasets, however, can be missing from the `catalog.yml`, and your pipeline will still run without errors. This is because Kedro automatically creates a `MemoryDataSet` for each intermediary dataset that is not defined in the `DataCatalog`. Intermediary datasets in the Spaceflights project are: `preprocessed_companies`, `preprocessed_shuttles`, `master_table`, `X_train`, `X_test`, `y_train`, `y_test`, `regressor`.
 
-These `MemoryDataSet`s pass data across nodes during the run, but are automatically deleted after the run finishes, therefore if you want to have an access to those intermediary datasets after the run, you need to define them in `catalog.yml`. 
+These `MemoryDataSet`s pass data across nodes during the run, but are automatically deleted after the run finishes, therefore if you want to have an access to those intermediary datasets after the run, you need to define them in `catalog.yml`.
 
 Let's say, we want to persist the `regressor` dataset to local disk. `regressor` is a `LinearRegression` object returned by the `train_model` node. We can't use, for instance, `CSVLocalDataSet` since it only works with `pandas` DataFrames, but we can instead utilise `PickleLocalDataSet` that allows to serialise Python objects and store them in the file system. Now all you have to do is to add the following dataset definition to `conf/base/catalog.yml`:
 
@@ -638,14 +638,14 @@ As you can see, dataset configuration contains `versioned: true` flag, which ena
 
 Kedro has a flexible mechanism to filter the pipeline that you intend to run. Here is a list of CLI options supported out of the box:
 
-| CLI command | Description | Multiple options allowed? |
-| ----------- | ----------- | ---- |
-| `kedro run --pipeline de` | Run the whole pipeline by its name | No |
-| `kedro run --node debug_me --node debug_me_too` | Run only nodes with specified names | Yes |
-| `kedro run --from-nodes node1,node2` | A list of node names which should be used as a starting point | No |
-| `kedro run --to-nodes node3,node4` | A list of node names which should be used as an end point | No |
-| `kedro run --from-inputs dataset1,dataset2` | A list of dataset names which should be used as a starting point | No |
-| `kedro run --tag some_tag1 --tag some_tag2` | Run only nodes which have any of these tags attached | Yes |
+| CLI command                                     | Description                                                      | Multiple options allowed? |
+| ----------------------------------------------- | ---------------------------------------------------------------- | ------------------------- |
+| `kedro run --pipeline de`                       | Run the whole pipeline by its name                               | No                        |
+| `kedro run --node debug_me --node debug_me_too` | Run only nodes with specified names                              | Yes                       |
+| `kedro run --from-nodes node1,node2`            | A list of node names which should be used as a starting point    | No                        |
+| `kedro run --to-nodes node3,node4`              | A list of node names which should be used as an end point        | No                        |
+| `kedro run --from-inputs dataset1,dataset2`     | A list of dataset names which should be used as a starting point | No                        |
+| `kedro run --tag some_tag1 --tag some_tag2`     | Run only nodes which have any of these tags attached             | Yes                       |
 
 You can also combine these options together, so the command `kedro run --from-nodes split --to-nodes predict,report` will run all the nodes from `split` to `predict` and `report`.
 
@@ -672,11 +672,11 @@ Kedro-Viz shows you how your Kedro data pipelines are structured. With Kedro-Viz
  - See how your datasets and Python functions (nodes) are resolved in Kedro so that you can understand how your data pipeline is built
  - Get a clear picture when you have lots of datasets and nodes by using tags to visualise sub-pipelines
  - Search for nodes and datasets
- 
- You should already have `kedro-viz` installed according to these instructions [**here**](https://github.com/quantumblack/kedro-training/blob/master/docs/project-setup.md#kedro-install). 
- 
+
+ You should already have `kedro-viz` installed according to these instructions [**here**](https://github.com/quantumblack/kedro-training/blob/master/docs/project-setup.md#kedro-install).
+
 ### Using `kedro-viz`
- 
+
 From your terminal, run:
 
 ```
@@ -687,7 +687,10 @@ This command will run a server on http://127.0.0.1:4141 and will open up your vi
 
 > *Note:* If port `4141` is already occupied, you can run Kedro-Viz server on a different port by executing `kedro viz --port <alternative-port>`.
 
-### Examples of `kedro-viz` 
+### Examples of `kedro-viz`
 
  - You can have a look at a retail ML use case [**here**](https://quantumblacklabs.github.io/kedro-viz/)
- - And an example of this Spaceflights pipeline [**here**](https://medium.com/@QuantumBlack/demystifying-machine-learning-complexity-through-visualisation-11a9d73db3c5) 
+ - And an example of this Spaceflights pipeline [**here**](https://medium.com/@QuantumBlack/demystifying-machine-learning-complexity-through-visualisation-11a9d73db3c5)
+
+### Next section
+[Go to the next section](./08_transformers.md)

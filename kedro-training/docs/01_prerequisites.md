@@ -43,4 +43,5 @@ Docker is a tool that makes it easier to create, deploy and run applications. It
 
 If Docker is a tool that you use internally then make sure to carefully read the prerequisites and instructions here: https://docs.docker.com/install/.
 
-[Go to the next session](./02_virtual-environment.md)
+### Next section
+[Go to the next section](./02_virtual-environment.md)

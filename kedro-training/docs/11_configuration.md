@@ -11,7 +11,7 @@ class ProjectContext(KedroContext):
 
 ## Loading configuration
 
-Kedro ships a purpose-built `ConfigLoader` class that helps you load configuration from various file formats including: YAML, JSON, INI, Pickle, XML and more. 
+Kedro ships a purpose-built `ConfigLoader` class that helps you load configuration from various file formats including: YAML, JSON, INI, Pickle, XML and more.
 
 When searching for the configs, `ConfigLoader` does that in the specified config environments, `base` and `local` by default, which represent the directories inside your root config directory.
 
@@ -66,7 +66,7 @@ class ProjectContext(KedroContext):
             globals_dict={  # extra keys to add to the globals dictionary, take precedence over globals_pattern
                 "bucket_name": "another_bucket_name",
                 "non_string_key": 10
-            }  
+            }
         )
 ```
 
@@ -123,3 +123,6 @@ raw_car_data:
 ```
 
 > Note: `TemplatedConfigLoader` uses `jmespath` package in the background to extract elements from global dictionary. For more information about JMESPath syntax please see: https://github.com/jmespath/jmespath.py.
+
+### Next section
+[Go to the next section](./12_transcoding.md)

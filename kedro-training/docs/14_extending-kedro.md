@@ -129,3 +129,5 @@ kedro run --parameter="param_key:param_value"
 ```
 This way, `"params:param_key"` will become available in a node input in your pipeline.
 
+### Next section
+[Go to the next section](./15_plugins.md)
