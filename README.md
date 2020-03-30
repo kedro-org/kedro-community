@@ -4,7 +4,7 @@ This repo contains example code to help you learn how to use [Kedro](https://git
 
 ## How do I use it?
 
-Each example has an README.md that explains what each project does and how to work with it. 
+Each example has an README.md that explains what each project does and how to work with it.
 
 ## What will I find in this repository?
 
@@ -13,7 +13,7 @@ Each example has an README.md that explains what each project does and how to wo
 
 ## Where can I find more `kedro-examples`?
 
-Our community of Kedro users are creating their own profile projects, you can have a look at: 
+Our community of Kedro users are creating their own profile projects, you can have a look at:
 - [Response Recommendation System for BarefootLaw](https://github.com/dssg/barefoot-winnie-public) by Kasun Amarasinghe, Carlos Caro, Nupoor Gandhi and Raphaelle Roffo, an extensive Data Science for Social Good (DSSG) at Imperial College London project that recommends responses to law related queries
 - [Augury](https://github.com/tipresias/augury) by [Craig Franklin](https://github.com/cfranklin11), machine-learning functionality for predicting AFL match results in the Tipresias app
 - [CausalLift](https://github.com/Minyus/causallift) by [Yusuke Minami](https://github.com/Minyus), a Python package for Uplift Modeling in real-world business
