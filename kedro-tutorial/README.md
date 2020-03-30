@@ -1,137 +1,20 @@
-# kedro-tutorial
+# Kedro Tutorial
 
 ## Overview
 
-This is your new Kedro project, which was generated using `Kedro 0.15.8` by running:
+This is a tutorial project, which was generated using `Kedro 0.15.8`. It is the completed version of the [Space Flights tutorial](https://kedro.readthedocs.io/docs/build/html/03_tutorial/02_tutorial_template.html) described in the Kedro [documentation](https://kedro.readthedocs.io) and includes the data necessary to run the project.
 
-```
-kedro new
-```
+The tutorial works through the steps necessary to create this project. To learn the most about Kedro, we recommend that you start with a blank template as the tutorial describes, and follow through all the working. However, if you prefer to read swiftly through the documentation and get to work on the code, you may want to clone this example because the steps have been done for you.
 
-Take a look at the [documentation](https://kedro.readthedocs.io) to get started.
+To use this project, use `git clone` to clone it. You don’t need to create a new Kedro project. To make sure you have the required dependencies, run in your virtual environment (see [the documentation](https://kedro.readthedocs.io/en/stable/02_getting_started/01_prerequisites.html#python-virtual-environments) for how to set up your virtual environment):
 
-## Rules and guidelines
-
-In order to get the best out of the template:
- * Please don't remove any lines from the `.gitignore` file provided
- * Make sure your results can be reproduced by following a data engineering convention, e.g. the one we suggest [here](https://kedro.readthedocs.io/en/stable/06_resources/01_faq.html#what-is-data-engineering-convention)
- * Don't commit any data to your repository
- * Don't commit any credentials or local configuration to your repository
- * Keep all credentials or local configuration in `conf/local/`
-
-## Installing dependencies
-
-Dependencies should be declared in `src/requirements.txt` for pip installation and `src/environment.yml` for conda installation.
-
-To install them, run:
-
-```
+```bash
+pip install kedro==0.15.8
 kedro install
 ```
 
-## Running Kedro
+You can run the project with:
 
-You can run your Kedro project with:
-
-```
+```bash
 kedro run
 ```
-
-## Testing Kedro
-
-Have a look at the file `src/tests/test_run.py` for instructions on how to write your tests. You can run your tests with the following command:
-
-```
-kedro test
-```
-
-To configure the coverage threshold, please have a look at the file `.coveragerc`.
-
-
-### Working with Kedro from notebooks
-
-In order to use notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-For using Jupyter Lab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-You can also start Jupyter Lab:
-
-```
-kedro jupyter lab
-```
-
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-Running Jupyter or IPython this way provides the following variables in
-scope: `proj_dir`, `proj_name`, `conf`, `io`, `parameters` and `startup_error`.
-
-#### Converting notebook cells to nodes in a Kedro project
-
-Once you are happy with a notebook, you may want to move your code over into the Kedro project structure for the next stage in your development. This is done through a mixture of [cell tagging](https://jupyter-notebook.readthedocs.io/en/stable/changelog.html#cell-tags) and Kedro CLI commands.
-
-By adding the `node` tag to a cell and running the command below, the cell's source code will be copied over to a Python file within `src/<package_name>/nodes/`.
-```
-kedro jupyter convert <filepath_to_my_notebook>
-```
-> *Note:* The name of the Python file matches the name of the original notebook.
-
-Alternatively, you may want to transform all your notebooks in one go. To this end, you can run the following command to convert all notebook files found in the project root directory and under any of its sub-folders.
-```
-kedro jupyter convert --all
-```
-
-#### Ignoring notebook output cells in `git`
-
-In order to automatically strip out all output cell contents before committing to `git`, you can run `kedro activate-nbstripout`. This will add a hook in `.git/config` which will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be left intact locally.
-
-## Package the project
-
-In order to package the project's Python code in `.egg` and / or a `.wheel` file, you can run:
-
-```
-kedro package
-```
-
-After running that, you can find the two packages in `src/dist/`.
-
-## Building API documentation
-
-To build API docs for your code using Sphinx, run:
-
-```
-kedro build-docs
-```
-
-See your documentation by opening `docs/build/html/index.html`.
-
-## Building the project requirements
-
-To generate or update the dependency requirements for your project, run:
-
-```
-kedro build-reqs
-```
-
-This will copy the contents of `src/requirements.txt` into a new file `src/requirements.in` which will be used as the source for `pip-compile`. You can see the output of the resolution by opening `src/requirements.txt`.
-
-After this, if you'd like to update your project requirements, please update `src/requirements.in` and re-run `kedro build-reqs`.
