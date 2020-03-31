@@ -1,4 +1,4 @@
-# Copyright 2018-2019 QuantumBlack Visual Analytics Limited
+# Copyright 2020 QuantumBlack Visual Analytics Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,28 +25,13 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Pipeline construction."""
+
+"""Construction of the master pipeline.
+"""
 
 from .pipelines.data_science import pipeline as ds
 from .pipelines.data_engineering import pipeline as de
 from .pipelines.data_engineering.nodes import log_running_time
-
-
-# Here you can define your data-driven pipeline by importing your functions
-# and adding them to the pipeline as follows:
-#
-# from nodes.data_wrangling import clean_data, compute_features
-#
-# pipeline = Pipeline([
-#     node(clean_data, 'customers', 'prepared_customers'),
-#     node(compute_features, 'prepared_customers', ['X_train', 'Y_train'])
-# ])
-#
-# Once you have your pipeline defined, you can run it from the root of your
-# project by calling:
-#
-# $ kedro run
-#
 
 
 def create_pipelines(**kwargs):
