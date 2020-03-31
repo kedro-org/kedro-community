@@ -147,3 +147,6 @@ kedro.db
 kedro/html
 docs/tmp-build-artifacts
 docs/build
+
+# mlflow
+mlruns

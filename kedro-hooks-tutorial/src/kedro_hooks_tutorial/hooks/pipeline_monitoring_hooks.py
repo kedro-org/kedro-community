@@ -37,7 +37,7 @@ class PipelineMonitoringHooks:
 
     def __init__(self):
         self._timers = {}
-        self._client = statsd.TCPStatsClient(prefix='kedro', port=8125)
+        self._client = statsd.StatsClient(prefix='kedro')
 
     @hook_impl
     def before_node_run(self, node: Node) -> None:

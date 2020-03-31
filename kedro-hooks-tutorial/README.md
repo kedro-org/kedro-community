@@ -6,8 +6,18 @@
 
 This tutorial project built upon the [basic tutorial](../kedro-tutorial) to illustrate how to use hooks to extend Kedro for the following use cases:
 
-* Adding data validation to node's inputs and outputs using [Great Expectations](https://docs.greatexpectations.io/en/latest/).
-* Adding metrics tracking to your model with [MLflow](https://mlflow.org/)
+* [Adding data validation](src/kedro_hooks_tutorial/hooks/data_validation_hooks.py) to node's inputs and outputs using [Great Expectations](https://docs.greatexpectations.io/en/latest/).
+
+![](docs/images/data_validation.png)
+
+* Adding observability to your pipeline with [statsd](https://statsd.readthedocs.io/en/v3.3/configure.html) and visualise using [Grafana](https://grafana.com/).
+
+![](docs/images/pipeline_observability.png)
+
+* Adding metrics tracking to your model with [MLflow](https://mlflow.org/).
+
+![](docs/images/mlflow.png)
+
 
 ## Setup
 

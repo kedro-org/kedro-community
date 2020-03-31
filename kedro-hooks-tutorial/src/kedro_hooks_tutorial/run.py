@@ -33,6 +33,7 @@ from typing import Dict
 from kedro.context import KedroContext, load_context
 from kedro.pipeline import Pipeline
 
+from kedro_hooks_tutorial.hooks.model_tracking_hooks import ModelTrackingHooks
 from kedro_hooks_tutorial.hooks.pipeline_monitoring_hooks import PipelineMonitoringHooks
 from kedro_hooks_tutorial.pipeline import create_pipelines
 
@@ -50,7 +51,8 @@ class ProjectContext(KedroContext):
 
     hooks = [
         DataValidationHooks(),
-        PipelineMonitoringHooks()
+        ModelTrackingHooks(),
+        PipelineMonitoringHooks(),
     ]
 
     def _get_pipelines(self) -> Dict[str, Pipeline]:

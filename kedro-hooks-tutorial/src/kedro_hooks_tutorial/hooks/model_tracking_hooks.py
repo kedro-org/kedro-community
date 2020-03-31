@@ -25,3 +25,36 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from typing import Any, Dict
+
+import mlflow
+import mlflow.sklearn
+from kedro.hooks import hook_impl
+from kedro.pipeline.node import Node
+
+
+class ModelTrackingHooks:
+
+    @hook_impl
+    def before_pipeline_run(self, run_params: Dict[str, Any]):
+        mlflow.start_run(run_name=run_params['run_id'])
+        mlflow.log_params(run_params)
+
+    @hook_impl
+    def after_node_run(
+        self, node: Node, outputs: Dict[str, Any], inputs: Dict[str, Any],
+    ) -> None:
+        """ Validate outputs data from a node based on using great expectation
+        if an expectation suite is defined in ``DATASET_EXPECTATION_MAPPING``.
+        """
+        if node._func_name == 'split_data':
+            mlflow.log_params(inputs['parameters'])
+        elif node._func_name == 'train_model':
+            model = outputs['regressor']
+            mlflow.sklearn.log_model(model, "model")
+        elif node._func_name == 'evaluate_model':
+            mlflow.log_metric("r2", outputs["r2"])
+
+    @hook_impl
+    def after_pipeline_run(self):
+        mlflow.end_run()
