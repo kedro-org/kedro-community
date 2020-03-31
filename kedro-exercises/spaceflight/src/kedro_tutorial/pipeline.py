@@ -25,30 +25,36 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
+"""Pipeline construction."""
 
-"""Construction of the master pipeline.
-"""
+from typing import Dict
 
-from .pipelines.data_science import pipeline as ds
-from .pipelines.data_engineering import pipeline as de
-from .pipelines.data_engineering.nodes import log_running_time
+from kedro.pipeline import Pipeline
 
 
-def create_pipelines(**kwargs):
+# Here you can define your data-driven pipeline by importing your functions
+# and adding them to the pipeline as follows:
+#
+# from nodes.data_wrangling import clean_data, compute_features
+#
+# pipeline = Pipeline([
+#     node(clean_data, 'customers', 'prepared_customers'),
+#     node(compute_features, 'prepared_customers', ['X_train', 'Y_train'])
+# ])
+#
+# Once you have your pipeline defined, you can run it from the root of your
+# project by calling:
+#
+# $ kedro run
+#
+
+
+def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
     """Create the project's pipeline.
-
     Args:
         kwargs: Ignore any additional arguments added in the future.
-
     Returns:
         A mapping from a pipeline name to a ``Pipeline`` object.
-
     """
-    data_engineering_pipeline = de.create_pipeline().decorate(log_running_time)
-    data_science_pipeline = ds.create_pipeline().decorate(log_running_time)
-
-    return {
-        "de": data_engineering_pipeline,
-        "ds": data_science_pipeline,
-        "__default__": data_engineering_pipeline + data_science_pipeline,
-    }
+    # TODO: WRITE YOUR CODE HERE
+    return {"__default__": Pipeline([])}
