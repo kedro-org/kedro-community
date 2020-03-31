@@ -1,1 +1,1 @@
-context_path: kedro_tutorial.run.ProjectContext
+context_path: kedro_hooks_tutorial.run.ProjectContext
