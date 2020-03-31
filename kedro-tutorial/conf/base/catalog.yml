@@ -48,7 +48,7 @@ reviews:
   filepath: data/01_raw/reviews.csv
 
 shuttles:
-  type: kedro_tutorial.io.xls_local.ExcelDataSet
+  type: kedro_tutorial.io.xls_local.ExcelLocalDataSet
   filepath: data/01_raw/shuttles.xlsx
 
 preprocessed_companies:
