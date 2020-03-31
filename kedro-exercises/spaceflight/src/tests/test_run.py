@@ -1,4 +1,4 @@
-# Copyright 2018-2019 QuantumBlack Visual Analytics Limited
+# Copyright 2020 QuantumBlack Visual Analytics Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,12 +35,9 @@ named ``test_*`` which test a unit of logic.
 
 To run the tests, run ``kedro test``.
 """
-from os.path import abspath, curdir, join
 from pathlib import Path
 
 import pytest
-from kedro.config import ConfigLoader
-from kedro.io import DataCatalog
 
 from kedro_tutorial.run import ProjectContext
 
@@ -55,4 +52,4 @@ class TestProjectContext:
         assert project_context.project_name == "kedro-tutorial"
 
     def test_project_version(self, project_context):
-        assert project_context.project_version == "0.15.5"
+        assert project_context.project_version == "0.15.8"
