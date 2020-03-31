@@ -1,4 +1,4 @@
-# Copyright 2018-2019 QuantumBlack Visual Analytics Limited
+# Copyright 2020 QuantumBlack Visual Analytics Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@
 # limitations under the License.
 
 """Application entry point."""
-
 from pathlib import Path
 from typing import Dict
 
@@ -38,20 +37,19 @@ from kedro_tutorial.pipeline import create_pipelines
 
 
 class ProjectContext(KedroContext):
-    """Users can override the remaining methods from the parent class here, or create new ones
-    (e.g. as required by plugins)
-
+    """Users can override the remaining methods from the parent class here,
+    or create new ones (e.g. as required by plugins)
     """
 
     project_name = "kedro-tutorial"
-    project_version = "0.15.5"
+    project_version = "0.15.8"
 
     def _get_pipelines(self) -> Dict[str, Pipeline]:
         return create_pipelines()
 
 
 def run_package():
-    # entry point for running pip-installed projects
+    # entry point for running pip-install projects
     # using `<project_package>` command
     project_context = load_context(Path.cwd())
     project_context.run()

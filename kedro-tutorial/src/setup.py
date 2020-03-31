@@ -1,4 +1,4 @@
-# Copyright 2018-2019 QuantumBlack Visual Analytics Limited
+# Copyright 2020 QuantumBlack Visual Analytics Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@
 
 from setuptools import find_packages, setup
 
-entry_point = "kedro-tutorial = kedro_tutorial.run:run_package"
+entry_point = (
+    "kedro-tutorial = kedro_tutorial.run:run_package"
+)
 
 
 # get the dependencies and installs
