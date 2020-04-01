@@ -1,14 +1,14 @@
 # Kedro transformers
 
-[Transformers](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transforming-datasets) intercept the load and save operations on Kedro `DataSet`s. Some use cases that transformers enable include: performing data validation, tracking operation performance and converting a data format (although we would recommend [Transcoding](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transcoding-datasets) for this). We will cover _tracking operation performance_ with the following: 
+[Transformers](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transforming-datasets) intercept the load and save operations on Kedro `DataSet`s. Some use cases that transformers enable include: performing data validation, tracking operation performance and converting a data format (although we would recommend [Transcoding](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transcoding-datasets) for this). We will cover _tracking operation performance_ with the following:
 1. Applying built-in transformers for monitoring load and save operation latency
-2. Developing our own transformer for tracking memory consumption 
+2. Developing our own transformer for tracking memory consumption
 
 ## Applying built-in transformers
 
-Transformers are applied at the `DataCatalog` level. To apply the built-in `ProfileTimeTransformer`, you need to: 
+Transformers are applied at the `DataCatalog` level. To apply the built-in `ProfileTimeTransformer`, you need to:
 1. Navigate to `src/kedro_training/run.py`
-2. Override `_create_catalog` method for your `ProjectContext` class using the following:  
+2. Override `_create_catalog` method for your `ProjectContext` class using the following:
 
 ```python
 from typing import Dict, Any
@@ -175,3 +175,6 @@ $ kedro run
 2019-11-13 15:55:13,933 - ProfileTimeTransformer - INFO - Loading master_table took 1.576 seconds
 ...
 ```
+
+### Next section
+[Go to the next section](./09_versioning.md)

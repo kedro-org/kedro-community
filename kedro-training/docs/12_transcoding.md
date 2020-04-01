@@ -41,3 +41,6 @@ In this example, Kedro understands that `my_dataframe` is the same dataset in it
 
 In the pipeline, Kedro uses the `SparkDataSet` implementation for saving and `ParquetLocalDataSet`
 for loading, so the first node should output a `pyspark.sql.DataFrame`, while the second node would receive a `pandas.Dataframe`.
+
+### Next section
+[Go to the next section](./13_custom-datasets.md)

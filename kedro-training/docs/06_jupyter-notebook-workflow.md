@@ -56,7 +56,7 @@ df.head()
 
 Saving operation in the example below is analogous to the load.
 
-Let's put the following dataset entry in `conf/base/catalog.yml`: 
+Let's put the following dataset entry in `conf/base/catalog.yml`:
 
 ```yaml
 my_dataset:
@@ -98,16 +98,16 @@ which will run all the nodes from your default project pipeline in a sequential 
 
 If you, however, want to parameterize the run, you can also specify the following optional arguments for `context.run()`:
 
-| Argument name | Accepted types | Description |
-| :--------: | :--------: | :----------- |
-| `tags` | `Iterable[str]` | Construct the pipeline using only nodes which have this tag attached. A node is included in the resulting pipeline if it contains _any_ of those tags | 
-| `runner` | `AbstractRunner` | An instance of Kedro [AbstractRunner](https://kedro.readthedocs.io/en/stable/kedro.runner.AbstractRunner.html); for example, can be an instance of a [ParallelRunner](https://kedro.readthedocs.io/en/stable/kedro.runner.ParallelRunner.html) |
-| `node_names` | `Iterable[str]` | Run only nodes with specified names |
-| `from_nodes` | `Iterable[str]` | A list of node names which should be used as a starting point |
-| `to_nodes`   | `Iterable[str]` | A list of node names which should be used as an end point |
-| `from_inputs` | `Iterable[str]` | A list of dataset names which should be used as a starting point |
-| `load_versions` | `Dict[str, str]` | A mapping of a dataset name to a specific dataset version (timestamp) for loading - this applies to the versioned datasets only |
-| `pipeline_name` | `str` | Name of the modular pipeline to run - must be one of those returned by `create_pipelines` function from `src/<package_name>/pipeline.py` |
+|  Argument name  |  Accepted types  | Description                                                                                                                                                                                                                                    |
+| :-------------: | :--------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `tags`      | `Iterable[str]`  | Construct the pipeline using only nodes which have this tag attached. A node is included in the resulting pipeline if it contains _any_ of those tags                                                                                          |
+|    `runner`     | `AbstractRunner` | An instance of Kedro [AbstractRunner](https://kedro.readthedocs.io/en/stable/kedro.runner.AbstractRunner.html); for example, can be an instance of a [ParallelRunner](https://kedro.readthedocs.io/en/stable/kedro.runner.ParallelRunner.html) |
+|  `node_names`   | `Iterable[str]`  | Run only nodes with specified names                                                                                                                                                                                                            |
+|  `from_nodes`   | `Iterable[str]`  | A list of node names which should be used as a starting point                                                                                                                                                                                  |
+|   `to_nodes`    | `Iterable[str]`  | A list of node names which should be used as an end point                                                                                                                                                                                      |
+|  `from_inputs`  | `Iterable[str]`  | A list of dataset names which should be used as a starting point                                                                                                                                                                               |
+| `load_versions` | `Dict[str, str]` | A mapping of a dataset name to a specific dataset version (timestamp) for loading - this applies to the versioned datasets only                                                                                                                |
+| `pipeline_name` |      `str`       | Name of the modular pipeline to run - must be one of those returned by `create_pipelines` function from `src/<package_name>/pipeline.py`                                                                                                       |
 
 This list of options is fully compatible with the list of CLI options for `kedro run` command. In fact, `kedro run` is calling `context.run()` behind the scenes.
 
@@ -135,3 +135,6 @@ def convert_me():
 * run from your terminal: `kedro jupyter convert notebooks/my_notebook.ipynb` - this will create a Python file `src/<package_name>/nodes/my_notebook.py` containing `convert_me` function definition
 > Tip: You can also convert all your notebooks at once by calling `kedro jupyter convert --all`
 * now `convert_me` function can be used in your Kedro pipelines
+
+### Next section
+[Go to the next section](./07_pipelines.md)

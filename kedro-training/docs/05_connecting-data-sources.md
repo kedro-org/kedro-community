@@ -105,3 +105,5 @@ When you have finished, simply close `ipython` session by typing the following:
 exit()
 ```
 
+### Next section
+[Go to the next section](./06_jupyter-notebook-workflow.md)
