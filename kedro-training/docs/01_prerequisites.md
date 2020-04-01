@@ -8,7 +8,7 @@ Kedro supports Python 3.5, 3.6 and 3.7. We recommend using [Anaconda](https://ww
 
 ### `PySpark`
 
-[Java 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) will need to be installed if `PySpark` is a workflow requirement.
+[Java 8+](https://www.oracle.com/technetwork/java/javase/downloads/index.html) will need to be installed if `PySpark` is a workflow requirement.
 
 > _Note:_ Windows users will require admin rights to install [Anaconda](https://www.anaconda.com/download) and [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
