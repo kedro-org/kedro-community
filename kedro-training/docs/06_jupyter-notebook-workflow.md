@@ -135,3 +135,6 @@ def convert_me():
 * run from your terminal: `kedro jupyter convert notebooks/my_notebook.ipynb` - this will create a Python file `src/<package_name>/nodes/my_notebook.py` containing `convert_me` function definition
 > Tip: You can also convert all your notebooks at once by calling `kedro jupyter convert --all`
 * now `convert_me` function can be used in your Kedro pipelines
+
+### Next section
+[Go to the next section](./07_pipelines.md)

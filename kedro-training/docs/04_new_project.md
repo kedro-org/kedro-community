@@ -171,3 +171,6 @@ cars:
   filepath: s3://my_bucket/data/02_intermediate/company/cars.csv
   credentials: dev_s3
 ```
+
+### Next section
+[Go to the next section](./05_connecting-data-sources.md)

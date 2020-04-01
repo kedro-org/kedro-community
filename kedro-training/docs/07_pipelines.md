@@ -694,3 +694,6 @@ This command will run a server on http://127.0.0.1:4141 and will open up your vi
 
  - You can have a look at a retail ML use case [**here**](https://quantumblacklabs.github.io/kedro-viz/)
  - And an example of this Spaceflights pipeline [**here**](https://medium.com/@QuantumBlack/demystifying-machine-learning-complexity-through-visualisation-11a9d73db3c5)
+
+### Next section
+[Go to the next section](./08_transformers.md)

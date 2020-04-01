@@ -145,3 +145,6 @@ context.catalog.load('shuttles').head()
 ### Contributing a custom dataset implementation
 
 Kedro users create many custom dataset implementations while working on real-world projects, and it makes sense that they should be able to share their work with each other. Sharing your custom datasets implementations is possibly the easiest way to contribute back to Kedro and if you are interested in doing so, you can check out the [Kedro contribution guide](https://github.com/quantumblacklabs/kedro/blob/develop/CONTRIBUTING.md) in the GitHub.
+
+### Next section
+[Go to the next section](./14_extending-kedro.md)
