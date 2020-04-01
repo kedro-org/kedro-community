@@ -623,7 +623,7 @@ All intermediary datasets, however, can be missing from the `catalog.yml`, and y
 
 These `MemoryDataSet`s pass data across nodes during the run, but are automatically deleted after the run finishes, therefore if you want to have an access to those intermediary datasets after the run, you need to define them in `catalog.yml`.
 
-Let's say, we want to persist the `regressor` dataset to local disk. `regressor` is a `LinearRegression` object returned by the `train_model` node. We can't use, for instance, `CSVDataSet` since it only works with `pandas` DataFrames, but we can instead utilise `PickleDataSet` that allows to serialise Python objects and store them in the file system. Now all you have to do is to add the following dataset definition to `conf/base/catalog.yml`:
+Let's say, we want to persist the `regressor` dataset to local disk. `regressor` is a `LinearRegression` object returned by the `train_model` node. We can't use, for instance, `pandas.CSVDataSet` since it only works with `pandas` DataFrames, but we can instead utilise `pickle.PickleDataSet` that allows to serialise Python objects and store them in the file system. Now all you have to do is to add the following dataset definition to `conf/base/catalog.yml`:
 
 ```yaml
 regressor:

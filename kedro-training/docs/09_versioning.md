@@ -19,7 +19,7 @@ With the similar way, you can version your machine learning model. Enable versio
 
 ```yaml
 regressor:
-  type: PickleLocalDataSet
+  type: pickle.PickleDataSet
   filepath: data/06_models/regressor.pickle
   versioned: true
 ```

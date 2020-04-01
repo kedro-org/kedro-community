@@ -64,6 +64,6 @@ master_table:
   filepath: data/03_primary/master_table.csv
 
 regressor:
-  type: PickleLocalDataSet
+  type: pickle.PickleDataSet
   filepath: data/06_models/regressor.pickle
   versioned: true
