@@ -167,9 +167,8 @@ Example of the dataset using those credentials defined in `conf/base/catalog.yml
 
 ```yaml
 cars:
-  type: CSVS3DataSet
-  filepath: data/02_intermediate/company/cars.csv
-  bucket_name: my_bucket
+  type: pandas.CSVDataSet
+  filepath: s3://my_bucket/data/02_intermediate/company/cars.csv
   credentials: dev_s3
 ```
 

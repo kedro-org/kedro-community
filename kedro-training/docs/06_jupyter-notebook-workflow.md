@@ -60,7 +60,7 @@ Let's put the following dataset entry in `conf/base/catalog.yml`:
 
 ```yaml
 my_dataset:
-  type: JSONLocalDataSet
+  type: pandas.JSONDataSet
   filepath: data/01_raw/my_dataset.json
 ```
 

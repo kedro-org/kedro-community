@@ -623,11 +623,11 @@ All intermediary datasets, however, can be missing from the `catalog.yml`, and y
 
 These `MemoryDataSet`s pass data across nodes during the run, but are automatically deleted after the run finishes, therefore if you want to have an access to those intermediary datasets after the run, you need to define them in `catalog.yml`.
 
-Let's say, we want to persist the `regressor` dataset to local disk. `regressor` is a `LinearRegression` object returned by the `train_model` node. We can't use, for instance, `CSVLocalDataSet` since it only works with `pandas` DataFrames, but we can instead utilise `PickleLocalDataSet` that allows to serialise Python objects and store them in the file system. Now all you have to do is to add the following dataset definition to `conf/base/catalog.yml`:
+Let's say, we want to persist the `regressor` dataset to local disk. `regressor` is a `LinearRegression` object returned by the `train_model` node. We can't use, for instance, `pandas.CSVDataSet` since it only works with `pandas` DataFrames, but we can instead utilise `pickle.PickleDataSet` that allows to serialise Python objects and store them in the file system. Now all you have to do is to add the following dataset definition to `conf/base/catalog.yml`:
 
 ```yaml
 regressor:
-  type: PickleLocalDataSet
+  type: pickle.PickleDataSet
   filepath: data/06_models/regressor.pickle
   versioned: true
 ```
@@ -638,14 +638,17 @@ As you can see, dataset configuration contains `versioned: true` flag, which ena
 
 Kedro has a flexible mechanism to filter the pipeline that you intend to run. Here is a list of CLI options supported out of the box:
 
-| CLI command                                     | Description                                                      | Multiple options allowed? |
-| ----------------------------------------------- | ---------------------------------------------------------------- | ------------------------- |
-| `kedro run --pipeline de`                       | Run the whole pipeline by its name                               | No                        |
-| `kedro run --node debug_me --node debug_me_too` | Run only nodes with specified names                              | Yes                       |
-| `kedro run --from-nodes node1,node2`            | A list of node names which should be used as a starting point    | No                        |
-| `kedro run --to-nodes node3,node4`              | A list of node names which should be used as an end point        | No                        |
-| `kedro run --from-inputs dataset1,dataset2`     | A list of dataset names which should be used as a starting point | No                        |
-| `kedro run --tag some_tag1 --tag some_tag2`     | Run only nodes which have any of these tags attached             | Yes                       |
+| CLI command                                           | Description                                                                     | Multiple options allowed? |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------- |
+| `kedro run --pipeline de`                             | Run the whole pipeline by its name                                              | No                        |
+| `kedro run --node debug_me --node debug_me_too`       | Run only nodes with specified names                                             | Yes                       |
+| `kedro run --from-nodes node1,node2`                  | A list of node names which should be used as a starting point                   | No                        |
+| `kedro run --to-nodes node3,node4`                    | A list of node names which should be used as an end point                       | No                        |
+| `kedro run --from-inputs dataset1,dataset2`           | A list of dataset names which should be used as a starting point                | No                        |
+| `kedro run --tag some_tag1 --tag some_tag2`           | Run only nodes which have any of these tags attached                            | Yes                       |
+| `kedro run --params param_key1:value1,param_key2:2.0` | Does a parametrised kedro run with `{"param_key1": "value1", "param_key2": 2}`  | Yes                       |
+| `kedro run --env env_name`                            | Run the pipeline in the env_name environment. Defaults to local if not provided | No                        |
+| `kedro run --config config.yml`                       | Specify all command line options in a configuration file called `config.yml`    | No                        |
 
 You can also combine these options together, so the command `kedro run --from-nodes split --to-nodes predict,report` will run all the nodes from `split` to `predict` and `report`.
 

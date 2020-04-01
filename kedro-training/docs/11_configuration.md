@@ -49,11 +49,11 @@ If no `env` option is specified, this will default to `local` environment to ove
 
 ## Templating configuration
 
-Kedro also provides an extension `kedro.contrib.config.TemplatedConfigLoader` class that allows to template values in your configuration files. To apply `TemplatedConfigLoader` to your `ProjectContext` in `src/kedro_training/run.py`, you will need to overwrite the `_create_config_loader` method as follows:
+Kedro also provides an extension `kedro.config.TemplatedConfigLoader` class that allows to template values in your configuration files. To apply `TemplatedConfigLoader` to your `ProjectContext` in `src/kedro_training/run.py`, you will need to overwrite the `_create_config_loader` method as follows:
 
 ```python
 ...
-from kedro.contrib.config import TemplatedConfigLoader  # new import
+from kedro.config import TemplatedConfigLoader  # new import
 
 
 class ProjectContext(KedroContext):
@@ -77,8 +77,8 @@ bucket_name: "my_s3_bucket"
 key_prefix: "my/key/prefix/"
 
 datasets:
-    csv: "CSVS3DataSet"
-    spark: "SparkDataSet"
+    csv: "pandas.CSVDataSet"
+    spark: "spark.SparkDataSet"
 
 folders:
     raw: "01_raw"
@@ -95,8 +95,8 @@ The contents of the dictionary resulting from the `globals_pattern` get merged w
     "non_string_key": 10,
     "key_prefix": "my/key/prefix",
     "datasets": {
-        "csv": "CSVS3DataSet",
-        "spark": "SparkDataSet"
+        "csv": "pandas.CSVDataSet",
+        "spark": "spark.SparkDataSet"
     },
     "folders": {
         "raw": "01_raw",

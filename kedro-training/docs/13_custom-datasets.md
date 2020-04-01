@@ -134,7 +134,7 @@ shuttles:
   filepath: data/01_raw/shuttles.xlsx
 ```
 
-> *Note:* The `type` specified is `kedro_tutorial.io.xls_local.ExcelLocalDataSet` which points Kedro to use the custom dataset implementation. To use Kedro's internal support for reading Excel datasets, you can simply specify `ExcelLocalDataSet`, which is implemented similar to the code above.
+> *Note:* The `type` specified is `kedro_tutorial.io.xls_local.ExcelLocalDataSet` which points Kedro to use the custom dataset implementation. To use Kedro's internal support for reading Excel datasets, you can simply specify `pandas.ExcelDataSet`, which is implemented similar to the code above.
 
 A good way to test that everything works as expected is by trying to load the dataset within a new `kedro ipython` session:
 
@@ -144,7 +144,7 @@ context.catalog.load('shuttles').head()
 
 ### Contributing a custom dataset implementation
 
-Kedro users create many custom dataset implementations while working on real-world projects, and it makes sense that they should be able to share their work with each other. That is why Kedro has a `kedro.contrib.io` sub-package, where users can add new custom dataset implementations to help others in our community. Sharing your custom datasets implementations is possibly the easiest way to contribute back to Kedro and if you are interested in doing so, you can check out the [Kedro contribution guide](https://github.com/quantumblacklabs/kedro/blob/develop/CONTRIBUTING.md) in the GitHub.
+Kedro users create many custom dataset implementations while working on real-world projects, and it makes sense that they should be able to share their work with each other. Sharing your custom datasets implementations is possibly the easiest way to contribute back to Kedro and if you are interested in doing so, you can check out the [Kedro contribution guide](https://github.com/quantumblacklabs/kedro/blob/develop/CONTRIBUTING.md) in the GitHub.
 
 ### Next section
 [Go to the next section](./14_extending-kedro.md)
