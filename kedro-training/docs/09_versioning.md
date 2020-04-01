@@ -8,12 +8,12 @@ Suppose you want to version `master_table`. To enable versioning, simply add a `
 
 ```yaml
 master_table:
-  type: CSVLocalDataSet
+  type: pandas.CSVDataSet
   filepath: data/03_primary/master_table.csv
   versioned: true
 ```
 
-The `DataCatalog` will create a versioned `CSVLocalDataSet` called `master_table`. The actual csv file location will look like `data/03_primary/master_table.csv/<version>/master_table.csv`, where the first `/master_table.csv/` is a directory and `<version>` corresponds to a global save version string formatted as `YYYY-MM-DDThh.mm.ss.sssZ`.
+The `DataCatalog` will create a versioned `CSVDataSet` called `master_table`. The actual csv file location will look like `data/03_primary/master_table.csv/<version>/master_table.csv`, where the first `/master_table.csv/` is a directory and `<version>` corresponds to a global save version string formatted as `YYYY-MM-DDThh.mm.ss.sssZ`.
 
 With the similar way, you can version your machine learning model. Enable versioning for `regressor` as follow:
 

@@ -73,21 +73,21 @@ All Kedro projects have a `conf/base/catalog.yml` file where users register the 
 * Versioning (optional)
 * Any additional arguments (optional)
 
-Kedro supports a number of different data types, such as `csv`, which is implemented by `CSVLocalDataSet`. You can find all supported datasets in the API docs for ([core datasets](https://kedro.readthedocs.io/en/stable/kedro.io.html) and [contrib datasets](https://kedro.readthedocs.io/en/stable/kedro.contrib.io.html)). The difference between core and contrib dataset is that core datasets are well supported by Kedro team (e.g., all of them support data versioning), and contrib datasets were added by external contributors (e.g., some support data versioning).
+Kedro supports a number of different data types, such as `csv`, which is implemented by `pandas.CSVDataSet`. You can find all supported datasets in the API docs for [datasets](https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.html).
 
 Let’s start this process by registering the `csv` datasets by copying the following to the end of the `conf/base/catalog.yml` file:
 
 ```yaml
 companies:
-  type: CSVLocalDataSet
+  type: pandas.CSVDataSet
   filepath: data/01_raw/companies.csv
 
 reviews:
-  type: CSVLocalDataSet
+  type: pandas.CSVDataSet
   filepath: data/01_raw/reviews.csv
 
 shuttles:
-  type: ExcelLocalDataSet
+  type: pandas.ExcelDataSet
   filepath: data/01_raw/shuttles.xlsx
 ```
 

@@ -1,6 +1,6 @@
 # Kedro Training
 
-This repository contains training materials that will teach you how to use [Kedro](https://github.com/quantumblacklabs/kedro/). This content is based on the [Spaceflights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html) specified in our documentation.
+This repository contains training materials that will teach you how to use [Kedro](https://github.com/quantumblacklabs/kedro/). This content is based on the [Spaceflights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html) using Kedro 0.15.8 specified in our documentation.
 
 ## Scenario
 

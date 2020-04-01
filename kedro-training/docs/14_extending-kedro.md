@@ -129,3 +129,4 @@ kedro run --parameter="param_key:param_value"
 ```
 This way, `"params:param_key"` will become available in a node input in your pipeline.
 
+> *Note:* Kedro already has a build-in `--params` CLI flag by default.

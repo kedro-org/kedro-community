@@ -10,19 +10,19 @@ For instance, parquet files can not only be loaded via the `ParquetLocalDataSet`
 
 To enable transcoding, you will need to define two `DataCatalog` entries for the same dataset in a common format (Parquet, JSON, CSV, etc.) in your `conf/base/catalog.yml`:
 
-```
+```yaml
 my_dataframe@spark:
-  type: kedro.contrib.io.pyspark.SparkDataSet
+  type: kedro.extras.datasets.spark.SparkDataSet
   filepath: data/02_intermediate/data.parquet
 
 my_dataframe@pandas:
-  type: ParquetLocalDataSet
+  type: pandas.ParquetDataSet
   filepath: data/02_intermediate/data.parquet
 ```
 
 These entries will be used in the pipeline like this:
 
-```
+```python
 Pipeline([
     node(func=my_func1,
         inputs="spark_input",
@@ -37,7 +37,7 @@ Pipeline([
 
 ## How does it work?
 
-In this example, Kedro understands that `my_dataframe` is the same dataset in its `SparkDataSet` and `ParquetLocalDataSet` formats and helps resolve the node execution order.
+In this example, Kedro understands that `my_dataframe` is the same dataset in its `SparkDataSet` and `ParquetDataSet` formats and helps resolve the node execution order.
 
-In the pipeline, Kedro uses the `SparkDataSet` implementation for saving and `ParquetLocalDataSet`
+In the pipeline, Kedro uses the `SparkDataSet` implementation for saving and `ParquetDataSet`
 for loading, so the first node should output a `pyspark.sql.DataFrame`, while the second node would receive a `pandas.Dataframe`.

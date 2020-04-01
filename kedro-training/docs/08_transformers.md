@@ -1,14 +1,14 @@
 # Kedro transformers
 
-[Transformers](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transforming-datasets) intercept the load and save operations on Kedro `DataSet`s. Some use cases that transformers enable include: performing data validation, tracking operation performance and converting a data format (although we would recommend [Transcoding](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transcoding-datasets) for this). We will cover _tracking operation performance_ with the following: 
+[Transformers](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transforming-datasets) intercept the load and save operations on Kedro `DataSet`s. Some use cases that transformers enable include: performing data validation, tracking operation performance and converting a data format (although we would recommend [Transcoding](https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html#transcoding-datasets) for this). We will cover _tracking operation performance_ with the following:
 1. Applying built-in transformers for monitoring load and save operation latency
-2. Developing our own transformer for tracking memory consumption 
+2. Developing our own transformer for tracking memory consumption
 
 ## Applying built-in transformers
 
-Transformers are applied at the `DataCatalog` level. To apply the built-in `ProfileTimeTransformer`, you need to: 
+Transformers are applied at the `DataCatalog` level. To apply the built-in `ProfileTimeTransformer`, you need to:
 1. Navigate to `src/kedro_training/run.py`
-2. Override `_create_catalog` method for your `ProjectContext` class using the following:  
+2. Override `_create_catalog` method for your `ProjectContext` class using the following:
 
 ```python
 from typing import Dict, Any
@@ -49,12 +49,12 @@ Once complete, rerun the pipeline from the terminal and you should see the follo
 $ kedro run
 
 ...
-2019-11-13 15:09:01,784 - kedro.io.data_catalog - INFO - Loading data from `companies` (CSVLocalDataSet)...
+2019-11-13 15:09:01,784 - kedro.io.data_catalog - INFO - Loading data from `companies` (CSVDataSet)...
 2019-11-13 15:09:01,827 - ProfileTimeTransformer - INFO - Loading companies took 0.043 seconds
 2019-11-13 15:09:01,828 - kedro.pipeline.node - INFO - Running node: preprocess1: preprocess_companies([companies]) -> [preprocessed_companies]
 2019-11-13 15:09:01,880 - kedro_tutorial.nodes.data_engineering - INFO - Running 'preprocess_companies' took 0.05 seconds
 2019-11-13 15:09:01,880 - kedro_tutorial.nodes.data_engineering - INFO - Running 'preprocess_companies' took 0.05 seconds
-2019-11-13 15:09:01,880 - kedro.io.data_catalog - INFO - Saving data to `preprocessed_companies` (CSVLocalDataSet)...
+2019-11-13 15:09:01,880 - kedro.io.data_catalog - INFO - Saving data to `preprocessed_companies` (CSVDataSet)...
 2019-11-13 15:09:02,112 - ProfileTimeTransformer - INFO - Saving preprocessed_companies took 0.232 seconds
 2019-11-13 15:09:02,113 - kedro.runner.sequential_runner - INFO - Completed 1 out of 6 tasks
 ...
@@ -166,11 +166,11 @@ And rerun the pipeline:
 $ kedro run
 
 ...
-2019-11-13 15:55:01,674 - kedro.io.data_catalog - INFO - Saving data to `master_table` (CSVLocalDataSet)...
+2019-11-13 15:55:01,674 - kedro.io.data_catalog - INFO - Saving data to `master_table` (CSVDataSet)...
 2019-11-13 15:55:12,322 - ProfileMemoryTransformer - INFO - Saving master_table consumed 606.98MiB memory at peak time
 2019-11-13 15:55:12,322 - ProfileTimeTransformer - INFO - Saving master_table took 10.648 seconds
 2019-11-13 15:55:12,357 - kedro.runner.sequential_runner - INFO - Completed 3 out of 6 tasks
-2019-11-13 15:55:12,358 - kedro.io.data_catalog - INFO - Loading data from `master_table` (CSVLocalDataSet)...
+2019-11-13 15:55:12,358 - kedro.io.data_catalog - INFO - Loading data from `master_table` (CSVDataSet)...
 2019-11-13 15:55:13,933 - ProfileMemoryTransformer - INFO - Loading master_table consumed 533.05MiB memory at peak time
 2019-11-13 15:55:13,933 - ProfileTimeTransformer - INFO - Loading master_table took 1.576 seconds
 ...
