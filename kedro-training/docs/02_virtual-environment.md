@@ -79,3 +79,6 @@ mkdir kedro-environment && cd kedro-environment
 ```
 
 Once all the dependencies are installed you can run `pipenv shell` which will start a session with the correct virtual environment activated. To exit the shell session using `exit`.
+
+### Next section
+[Go to the next section](./03_install_kedro.md)

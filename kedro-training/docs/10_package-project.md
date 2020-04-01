@@ -27,3 +27,6 @@ Ensuring that you have accounted for all Python package versions that your proje
 - You can also check out [Kedro-Docker](https://github.com/quantumblacklabs/kedro-docker), an officially supported Kedro plugin for packaging and shipping Kedro projects within [Docker](https://www.docker.com/) containers.
 
 - We also support converting your Kedro project into an Airflow project with the [Kedro-Airflow](https://github.com/quantumblacklabs/kedro-airflow) plugin.
+
+### Next section
+[Go to the next section](./11_configuration.md)

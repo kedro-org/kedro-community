@@ -17,3 +17,6 @@ Install Kedro using `pipenv`:
 ```bash
 pipenv install kedro
 ```
+
+### Next section
+[Go to the next section](./04_new_project.md)

@@ -106,3 +106,6 @@ git checkout <git_sha>
 kedro run --load-version="dataset1:YYYY-MM-DDThh.mm.ss.sssZ" --load-version="dataset2:YYYY-MM-DDThh.mm.ss.sssZ"
 ```
 where `--load-version` should contain a dataset name and load version timestamp separated by `:`.
+
+### Next section
+[Go to the next section](./10_package-project.md)
