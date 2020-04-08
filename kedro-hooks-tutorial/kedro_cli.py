@@ -295,7 +295,7 @@ def lint(files):
     """Run flake8, isort and (on Python >=3.6) black."""
     # pylint: disable=unused-import
     if not files:
-        files = ("src/tests", "src/kedro_tutorial")
+        files = ("src/tests", "src/kedro_hooks_tutorial")
 
     try:
         import flake8
@@ -361,7 +361,7 @@ def build_docs(open_docs):
     python_call("pip", ["install", "src/[docs]"])
     python_call("pip", ["install", "-r", "src/requirements.txt"])
     python_call(
-        "ipykernel", ["install", "--user", "--name=kedro_tutorial"]
+        "ipykernel", ["install", "--user", "--name=kedro_hooks_tutorial"]
     )
     shutil.rmtree("docs/build", ignore_errors=True)
     call(
@@ -370,7 +370,7 @@ def build_docs(open_docs):
             "--module-first",
             "-o",
             "docs/source",
-            "src/kedro_tutorial",
+            "src/kedro_hooks_tutorial",
         ]
     )
     call(["sphinx-build", "-M", "html", "docs/source", "docs/build", "-a"])
@@ -552,7 +552,7 @@ def convert_notebook(all_flag, overwrite_flag, filepath):
         sys.exit(1)
 
     kedro_project_path = context.project_path
-    kedro_package_name = "kedro_tutorial"
+    kedro_package_name = "kedro_hooks_tutorial"
 
     if all_flag:
         # pathlib glob does not ignore hidden directories,
