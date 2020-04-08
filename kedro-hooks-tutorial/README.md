@@ -24,7 +24,7 @@ This tutorial project built upon the [basic tutorial](../kedro-tutorial) to illu
 To use this project, use `git clone` to clone it. You don’t need to create a new Kedro project. To make sure you have the required dependencies, run in your virtual environment (see [the documentation](https://kedro.readthedocs.io/en/stable/02_getting_started/01_prerequisites.html#python-virtual-environments) for how to set up your virtual environment):
 
 ```bash
-pip install kedro==0.15.8
+pip install kedro==0.16.0
 kedro install
 ```
 

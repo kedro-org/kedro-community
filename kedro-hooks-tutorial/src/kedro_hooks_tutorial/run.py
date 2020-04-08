@@ -47,7 +47,7 @@ class ProjectContext(KedroContext):
     """
 
     project_name = "kedro-hooks-tutorial"
-    project_version = "0.15.8"
+    project_version = "0.16.0"
 
     hooks = [
         DataValidationHooks(),
