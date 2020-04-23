@@ -2,12 +2,20 @@
 
 Your installation instructions will be virtual environment dependent.
 
-## Anaconda & `venv`
+## `venv`
 
 Install Kedro using `pip`:
 
 ```bash
 pip install kedro
+```
+
+## Using `Conda`
+
+Install Kedro using `conda-forge`:
+
+```bash
+conda install -c conda-forge kedro
 ```
 
 ## `pipenv`
