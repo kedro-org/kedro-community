@@ -10,9 +10,9 @@ Install Kedro using `pip`:
 pip install kedro
 ```
 
-## Using `Conda`
+## Using `conda`
 
-Install Kedro using `conda-forge`:
+Install Kedro using `conda` from the `conda-forge` channel:
 
 ```bash
 conda install -c conda-forge kedro
