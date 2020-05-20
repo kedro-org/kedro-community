@@ -29,7 +29,7 @@ import sys
 from typing import Dict, Any
 
 import statsd
-from kedro.hooks import hook_impl
+from kedro.framework.hooks import hook_impl
 from kedro.pipeline.node import Node
 
 

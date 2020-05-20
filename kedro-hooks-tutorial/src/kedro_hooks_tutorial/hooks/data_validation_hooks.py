@@ -28,7 +28,7 @@
 from typing import Dict, Any
 
 import great_expectations as ge
-from kedro.hooks import hook_impl
+from kedro.framework.hooks import hook_impl
 from kedro.io import DataCatalog
 
 
