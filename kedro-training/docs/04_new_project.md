@@ -10,7 +10,7 @@ This will ask you to specify:
 1. Project name - you can call it `Kedro Training`
 2. Repository name - accept the default
 3. Python package name - accept the default
-4. Whether you want an example pipeline to be generated for you - type in `y`
+4. Whether you want an example pipeline to be generated for you - type in `N`
 
 Alternatively, a Kedro project can be created in _non-interactive_ mode by calling
 
