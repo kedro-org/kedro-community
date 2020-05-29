@@ -35,6 +35,9 @@ from typing import Any, Dict
 
 import pandas as pd
 
+from kedro.pipeline import node
+
+
 
 def split_data(data: pd.DataFrame, example_test_data_ratio: float) -> Dict[str, Any]:
     """Node for splitting the classical Iris data set into training and test
@@ -76,3 +79,14 @@ def split_data(data: pd.DataFrame, example_test_data_ratio: float) -> Dict[str, 
         test_x=test_data_x,
         test_y=test_data_y,
     )
+
+split_data_node = node(
+    split_data,
+    ["example_iris_data", "params:example_test_data_ratio"],
+    dict(
+        train_x="example_train_x",
+        train_y="example_train_y",
+        test_x="example_test_x",
+        test_y="example_test_y",
+    ),
+)
