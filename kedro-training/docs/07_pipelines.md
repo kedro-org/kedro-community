@@ -257,7 +257,7 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 
-from kedro_training.pipelines import data_engineering as de
+from kedro_training.pipelines.data_engineering import pipelines as as de
 
 
 def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
