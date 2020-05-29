@@ -1,5 +1,7 @@
 # Find Kedro Iris
 
+This example was created as an example of using [find-kedro](https://github.com/WaylonWalker/find-kedro) in a kedro project.  Soon you will be able to follow along with more tutorials in the  [find-kedro](https://find-kedro.waylonwalker.com/examples/iris/) docs.  This example was constructed and extended from one of the existing examples.
+
 ## Overview
 
 This is your new Kedro project, which was generated using `Kedro 0.16.1` by running:
