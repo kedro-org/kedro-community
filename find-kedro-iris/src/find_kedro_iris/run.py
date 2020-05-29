@@ -30,9 +30,10 @@
 from pathlib import Path
 from typing import Dict
 
-from find_kedro_iris.pipeline import create_pipelines
 from kedro.framework.context import KedroContext, load_package_context
 from kedro.pipeline import Pipeline
+
+from find_kedro import find_kedro
 
 class ProjectContext(KedroContext):
     """Users can override the remaining methods from the parent class here,
@@ -45,7 +46,7 @@ class ProjectContext(KedroContext):
     package_name = "find_kedro_iris"
 
     def _get_pipelines(self) -> Dict[str, Pipeline]:
-        return create_pipelines()
+        return find_kedro()
 
 
 def run_package():
