@@ -39,6 +39,7 @@ from typing import Any, Dict
 import numpy as np
 import pandas as pd
 
+from kedro.pipeline import node
 
 def train_model(
     train_x: pd.DataFrame, train_y: pd.DataFrame, parameters: Dict[str, Any]
@@ -107,3 +108,17 @@ def report_accuracy(predictions: np.ndarray, test_y: pd.DataFrame) -> None:
 def _sigmoid(z):
     """A helper sigmoid function used by the training and the scoring nodes."""
     return 1 / (1 + np.exp(-z))
+
+nodes = [
+            node(
+                train_model,
+                ["example_train_x", "example_train_y", "parameters"],
+                "example_model",
+            ),
+            node(
+                predict,
+                dict(model="example_model", test_x="example_test_x"),
+                "example_predictions",
+            ),
+            node(report_accuracy, ["example_predictions", "example_test_y"], None),
+        ]
