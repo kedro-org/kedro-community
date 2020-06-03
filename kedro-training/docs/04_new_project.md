@@ -10,7 +10,7 @@ This will ask you to specify:
 1. Project name - you can call it `Kedro Training`
 2. Repository name - accept the default
 3. Python package name - accept the default
-4. Whether you want an example pipeline to be generated for you - type in `y`
+4. Whether you want an example pipeline to be generated for you - type in `N`
 
 Alternatively, a Kedro project can be created in _non-interactive_ mode by calling
 
@@ -39,17 +39,17 @@ Once you have successfully run `kedro new`, you should get the following project
 
 ```console
 kedro-training
+├── README.md
 ├── conf
+│   ├── README.md
 │   ├── base
 │   │   ├── catalog.yml
 │   │   ├── credentials.yml
 │   │   ├── logging.yml
 │   │   └── parameters.yml
-│   ├── local
-│   └── README.md
+│   └── local
 ├── data
 │   ├── 01_raw
-│   │   └── iris.csv
 │   ├── 02_intermediate
 │   ├── 03_primary
 │   ├── 04_features
@@ -58,33 +58,28 @@ kedro-training
 │   ├── 07_model_output
 │   └── 08_reporting
 ├── docs
-├── logs
-├── notebooks
-├── src
-│   ├── kedro_training
-│   │   ├── nodes
-│   │   │   └── __init__.py
-│   │   ├── pipelines
-│   │   │   ├── data_engineering
-│   │   │   │   ├── README.md
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── nodes.py
-│   │   │   │   └── pipeline.py
-│   │   │   ├── data_science
-│   │   │   │   ├── README.md
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── nodes.py
-│   │   │   │   └── pipeline.py
-│   │   │   └── __init__.py
-│   │   ├── __init__.py
-│   │   ├── pipeline.py
-│   │   └── run.py
-│   ├── tests
-│   ├── requirements.txt
-│   └── setup.py
-├── README.md
+│   └── source
+│       ├── conf.py
+│       └── index.rst
 ├── kedro_cli.py
-└── setup.cfg
+├── logs
+│   └── journals
+├── notebooks
+├── setup.cfg
+└── src
+    ├── kedro_training
+    │   ├── __init__.py
+    │   ├── nodes
+    │   │   └── __init__.py
+    │   ├── pipeline.py
+    │   ├── pipelines
+    │   │   └── __init__.py
+    │   └── run.py
+    ├── requirements.txt
+    ├── setup.py
+    └── tests
+        ├── __init__.py
+        └── test_run.py
 ```
 </details>
 
