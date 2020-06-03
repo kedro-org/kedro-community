@@ -34,10 +34,9 @@ from kedro.pipeline.node import Node
 
 
 class PipelineMonitoringHooks:
-
     def __init__(self):
         self._timers = {}
-        self._client = statsd.StatsClient(prefix='kedro')
+        self._client = statsd.StatsClient(prefix="kedro")
 
     @hook_impl
     def before_node_run(self, node: Node) -> None:
@@ -53,4 +52,4 @@ class PipelineMonitoringHooks:
 
     @hook_impl
     def after_pipeline_run(self):
-        self._client.incr('run')
+        self._client.incr("run")

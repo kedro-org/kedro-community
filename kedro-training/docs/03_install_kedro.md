@@ -7,7 +7,7 @@ Your installation instructions will be virtual environment dependent.
 Install Kedro using `pip`:
 
 ```bash
-pip install kedro==0.15.9
+pip install kedro
 ```
 
 ## Using `conda`
