@@ -7,7 +7,7 @@ Your installation instructions will be virtual environment dependent.
 Install Kedro using `pip`:
 
 ```bash
-pip install kedro
+pip install kedro==0.15.9
 ```
 
 ## Using `conda`
@@ -15,7 +15,7 @@ pip install kedro
 Install Kedro using `conda` from the `conda-forge` channel:
 
 ```bash
-conda install -c conda-forge kedro
+conda install -c conda-forge kedro==0.15.9
 ```
 
 ## `pipenv`
@@ -23,7 +23,7 @@ conda install -c conda-forge kedro
 Install Kedro using `pipenv`:
 
 ```bash
-pipenv install kedro
+pipenv install kedro==0.15.9
 ```
 
 ### Next section
