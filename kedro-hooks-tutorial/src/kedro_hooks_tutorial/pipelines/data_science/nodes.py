@@ -1,10 +1,10 @@
-# Copyright 2018-2019 QuantumBlack Visual Analytics Limited
+# Copyright 2020 QuantumBlack Visual Analytics Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
@@ -19,77 +19,91 @@
 # trademarks of QuantumBlack. The License does not grant you any right or
 # license to the QuantumBlack Trademarks. You may not use the QuantumBlack
 # Trademarks or any confusingly similar mark as a trademark for your product,
-#     or use the QuantumBlack Trademarks in any other manner that might cause
+# or use the QuantumBlack Trademarks in any other manner that might cause
 # confusion in the marketplace, including but not limited to in advertising,
 # on websites, or on software.
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Example code for the nodes in the example pipeline. This code is meant
+just for illustrating basic Kedro features.
+
+Delete this when you start working on your own Kedro project.
+"""
+# pylint: disable=invalid-name
+
 import logging
-from typing import Dict, List
+from typing import Any, Dict
 
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-from sklearn.model_selection import train_test_split
 
 
-def split_data(data: pd.DataFrame, parameters: Dict) -> List:
-    """Splits data into training and test sets.
-
-        Args:
-            data: Source data.
-            parameters: Parameters defined in parameters.yml.
-        Returns:
-            A list containing split data.
-
+def train_model(
+    train_x: pd.DataFrame, train_y: pd.DataFrame, parameters: Dict[str, Any]
+) -> np.ndarray:
+    """Node for training a simple multi-class logistic regression model. The
+    number of training iterations as well as the learning rate are taken from
+    conf/project/parameters.yml. All of the data as well as the parameters
+    will be provided to this function at the time of execution.
     """
-    X = data[
-        [
-            "engines",
-            "passenger_capacity",
-            "crew",
-            "d_check_complete",
-            "moon_clearance_complete",
-        ]
-    ].values
-    y = data["price"].values
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
-    )
+    num_iter = parameters["example_num_train_iter"]
+    lr = parameters["example_learning_rate"]
+    X = train_x.to_numpy()
+    Y = train_y.to_numpy()
 
-    return [X_train, X_test, y_train, y_test]
+    # Add bias to the features
+    bias = np.ones((X.shape[0], 1))
+    X = np.concatenate((bias, X), axis=1)
+
+    weights = []
+    # Train one model for each class in Y
+    for k in range(Y.shape[1]):
+        # Initialise weights
+        theta = np.zeros(X.shape[1])
+        y = Y[:, k]
+        for _ in range(num_iter):
+            z = np.dot(X, theta)
+            h = _sigmoid(z)
+            gradient = np.dot(X.T, (h - y)) / y.size
+            theta -= lr * gradient
+        # Save the weights for each model
+        weights.append(theta)
+
+    # Return a joint multi-class model with weights for all classes
+    return np.vstack(weights).transpose()
 
 
-def train_model(X_train: np.ndarray, y_train: np.ndarray) -> LinearRegression:
-    """Train the linear regression model.
-
-        Args:
-            X_train: Training data of independent features.
-            y_train: Training data for price.
-
-        Returns:
-            Trained model.
-
+def predict(model: np.ndarray, test_x: pd.DataFrame) -> np.ndarray:
+    """Node for making predictions given a pre-trained model and a test set.
     """
-    regressor = LinearRegression()
-    regressor.fit(X_train, y_train)
-    return regressor
+    X = test_x.to_numpy()
+
+    # Add bias to the features
+    bias = np.ones((X.shape[0], 1))
+    X = np.concatenate((bias, X), axis=1)
+
+    # Predict "probabilities" for each class
+    result = _sigmoid(np.dot(X, model))
+
+    # Return the index of the class with max probability for all samples
+    return np.argmax(result, axis=1)
 
 
-def evaluate_model(regressor: LinearRegression, X_test: np.ndarray, y_test: np.ndarray):
-    """Calculate the coefficient of determination and log the result.
-
-        Args:
-            regressor: Trained model.
-            X_test: Testing data of independent features.
-            y_test: Testing data for price.
-
+def report_accuracy(predictions: np.ndarray, test_y: pd.DataFrame) -> None:
+    """Node for reporting the accuracy of the predictions performed by the
+    previous node. Notice that this function has no outputs, except logging.
     """
-    y_pred = regressor.predict(X_test)
-    score = r2_score(y_test, y_pred)
-    logger = logging.getLogger(__name__)
-    logger.info("Model has a coefficient R^2 of %.3f.", score)
-    return score
+    # Get true class index
+    target = np.argmax(test_y.to_numpy(), axis=1)
+    # Calculate accuracy of predictions
+    accuracy = np.sum(predictions == target) / target.shape[0]
+    # Log the accuracy of the model
+    log = logging.getLogger(__name__)
+    log.info("Model accuracy on test set: %0.2f%%", accuracy * 100)
+
+
+def _sigmoid(z):
+    """A helper sigmoid function used by the training and the scoring nodes."""
+    return 1 / (1 + np.exp(-z))

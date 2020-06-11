@@ -25,11 +25,12 @@
 #
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from typing import Dict, Any
+from typing import Any, Dict
 
-import great_expectations as ge
 from kedro.framework.hooks import hook_impl
 from kedro.io import DataCatalog
+
+import great_expectations as ge
 
 
 class DataValidationHooks:

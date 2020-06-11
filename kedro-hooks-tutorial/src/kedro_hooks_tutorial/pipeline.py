@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
@@ -19,7 +19,7 @@
 # trademarks of QuantumBlack. The License does not grant you any right or
 # license to the QuantumBlack Trademarks. You may not use the QuantumBlack
 # Trademarks or any confusingly similar mark as a trademark for your product,
-#     or use the QuantumBlack Trademarks in any other manner that might cause
+# or use the QuantumBlack Trademarks in any other manner that might cause
 # confusion in the marketplace, including but not limited to in advertising,
 # on websites, or on software.
 #
@@ -29,12 +29,22 @@
 """Construction of the master pipeline.
 """
 
-from .pipelines.data_science import pipeline as ds
-from .pipelines.data_engineering import pipeline as de
-from .pipelines.data_engineering.nodes import log_running_time
+from typing import Dict
+
+from kedro.pipeline import Pipeline
+
+from kedro_hooks_tutorial.pipelines import data_engineering as de
+from kedro_hooks_tutorial.pipelines import data_science as ds
+
+###########################################################################
+# Here you can find an example pipeline, made of two modular pipelines.
+#
+# Delete this when you start working on your own Kedro project as
+# well as pipelines/data_science AND pipelines/data_engineering
+# -------------------------------------------------------------------------
 
 
-def create_pipelines(**kwargs):
+def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
     """Create the project's pipeline.
 
     Args:
@@ -44,8 +54,9 @@ def create_pipelines(**kwargs):
         A mapping from a pipeline name to a ``Pipeline`` object.
 
     """
-    data_engineering_pipeline = de.create_pipeline().decorate(log_running_time)
-    data_science_pipeline = ds.create_pipeline().decorate(log_running_time)
+
+    data_engineering_pipeline = de.create_pipeline()
+    data_science_pipeline = ds.create_pipeline()
 
     return {
         "de": data_engineering_pipeline,
