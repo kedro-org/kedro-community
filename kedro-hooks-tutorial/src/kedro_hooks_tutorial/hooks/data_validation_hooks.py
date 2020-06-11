@@ -37,7 +37,7 @@ class DataValidationHooks:
     # Map expectation to dataset
     DATASET_EXPECTATION_MAPPING = {
         "companies": "raw_companies_dataset_expectation",
-        "preprocessed_companies": "preprocessed_companies_dataset_expectation"
+        "preprocessed_companies": "preprocessed_companies_dataset_expectation",
     }
 
     @hook_impl
@@ -69,11 +69,9 @@ class DataValidationHooks:
 
             expectation_context = ge.data_context.DataContext()
             batch = expectation_context.get_batch(
-                {'path': dataset_path, 'datasource': 'files_datasource'},
-                expectation_suite
+                {"path": dataset_path, "datasource": "files_datasource"},
+                expectation_suite,
             )
             expectation_context.run_validation_operator(
-                "action_list_operator",
-                assets_to_validate=[batch],
-                run_id=run_id
+                "action_list_operator", assets_to_validate=[batch], run_id=run_id
             )

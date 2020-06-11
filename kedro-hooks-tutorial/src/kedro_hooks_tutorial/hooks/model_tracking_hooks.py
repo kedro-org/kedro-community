@@ -42,7 +42,7 @@ class ModelTrackingHooks:
         """Hook implementation to start an MLflow run
         with the same run_id as the Kedro pipeline run.
         """
-        mlflow.start_run(run_name=run_params['run_id'])
+        mlflow.start_run(run_name=run_params["run_id"])
         mlflow.log_params(run_params)
 
     @hook_impl
@@ -55,14 +55,14 @@ class ModelTrackingHooks:
         * Log the model after the model training node runs.
         * Log the model's metrics after the model evaluating node runs.
         """
-        if node._func_name == 'split_data':
-            mlflow.log_params(inputs['parameters'])
+        if node._func_name == "split_data":
+            mlflow.log_params(inputs["parameters"])
 
-        elif node._func_name == 'train_model':
-            model = outputs['regressor']
+        elif node._func_name == "train_model":
+            model = outputs["regressor"]
             mlflow.sklearn.log_model(model, "model")
 
-        elif node._func_name == 'evaluate_model':
+        elif node._func_name == "evaluate_model":
             mlflow.log_metric("r2", outputs["r2"])
 
     @hook_impl
