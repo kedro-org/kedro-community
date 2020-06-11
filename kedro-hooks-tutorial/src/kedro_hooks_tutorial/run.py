@@ -36,7 +36,6 @@ from kedro.pipeline import Pipeline
 
 from kedro_hooks_tutorial.hooks.model_tracking_hooks import ModelTrackingHooks
 from kedro_hooks_tutorial.hooks.pipeline_monitoring_hooks import PipelineMonitoringHooks
-from kedro_hooks_tutorial.pipeline import create_pipelines
 from kedro_hooks_tutorial.hooks.data_validation_hooks import DataValidationHooks
 
 
@@ -49,6 +48,8 @@ class ProjectContext(KedroContext):
     # `project_version` is the version of kedro used to generate the project
     project_version = "0.16.1"
     package_name = "kedro_hooks_tutorial"
+
+    hooks = (DataValidationHooks(), ModelTrackingHooks(), PipelineMonitoringHooks())
 
     def _get_pipelines(self) -> Dict[str, Pipeline]:
         return create_pipelines()
