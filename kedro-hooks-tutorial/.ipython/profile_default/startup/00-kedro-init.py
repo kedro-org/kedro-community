@@ -1,5 +1,4 @@
 import logging.config
-import os
 import sys
 from pathlib import Path
 
@@ -12,15 +11,15 @@ project_path = Path(__file__).parents[3].resolve()
 
 @register_line_magic
 def reload_kedro(path, line=None):
-    """"Line magic which reloads all Kedro default variables."""
+    """Line magic which reloads all Kedro default variables."""
     global startup_error
     global context
     global catalog
 
     try:
         import kedro.config.default_logger
-        from kedro.context import load_context
-        from kedro.cli.jupyter import collect_line_magic
+        from kedro.framework.context import load_context
+        from kedro.framework.cli.jupyter import collect_line_magic
     except ImportError:
         logging.error(
             "Kedro appears not to be installed in your current environment "
@@ -31,7 +30,6 @@ def reload_kedro(path, line=None):
     try:
         path = path or project_path
         logging.debug("Loading the context from %s", str(path))
-
         context = load_context(path)
         catalog = context.catalog
 

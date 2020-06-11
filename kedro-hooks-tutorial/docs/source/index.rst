@@ -3,7 +3,7 @@
    contain the root `toctree` directive.
 
 Welcome to project's kedro_hooks_tutorial API docs!
-=====================================================
+=============================================
 
 .. toctree::
    :maxdepth: 4

@@ -26,7 +26,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import sys
-from typing import Dict, Any
+from typing import Any, Dict
 
 import statsd
 from kedro.framework.hooks import hook_impl
