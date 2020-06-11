@@ -56,7 +56,7 @@ class ModelTrackingHooks:
         * Log the model's metrics after the model evaluating node runs.
         """
         if node._func_name == "split_data":
-            mlflow.log_metric("parameters", inputs["params:example_test_data_ratio"])
+            mlflow.log_params({"parameters": inputs["params:example_test_data_ratio"]})
 
         elif node._func_name == "train_model":
             model = outputs["example_model"]
