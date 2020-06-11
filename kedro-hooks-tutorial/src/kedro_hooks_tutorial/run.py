@@ -30,13 +30,13 @@
 from pathlib import Path
 from typing import Dict
 
-from kedro_hooks_tutorial.pipeline import create_pipelines
 from kedro.framework.context import KedroContext, load_package_context
 from kedro.pipeline import Pipeline
 
+from kedro_hooks_tutorial.hooks.data_validation_hooks import DataValidationHooks
 from kedro_hooks_tutorial.hooks.model_tracking_hooks import ModelTrackingHooks
 from kedro_hooks_tutorial.hooks.pipeline_monitoring_hooks import PipelineMonitoringHooks
-from kedro_hooks_tutorial.hooks.data_validation_hooks import DataValidationHooks
+from kedro_hooks_tutorial.pipeline import create_pipelines
 
 
 class ProjectContext(KedroContext):
