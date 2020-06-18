@@ -5,18 +5,15 @@ We assume that you understand these technologies and we won't be teaching how to
 
 - Intermediate Python knowledge
   - Basic Python
-    - Functions
-    - Classes
-    - Loops
-    - Conditional statements
-    - Common data structures (lists, dictionaries, tuples)
+    - Functions, classes, loops, conditional statements
+    - Common data structures: lists, dictionaries, tuples
     - IO operation (reading and writing data)
-  - Importing Python packages using `pip`.
+  - Importing Python packages using `pip`
   - Dependency management with `requirements.txt`
-  - Working on multiple Python files in nested directory structures.
+  - Working on multiple Python files in nested directory structures
   - Python modules (e.g how to use `__init__.py` and relative and absolute imports)
-  - Familiarity with Python data science libraries (e.g `Pandas`, `PySpark`, `scikit-learn`, Jupyter notebook/labs, iPython)
-  - Using virtual environment (Anaconda, venv, pipenv)
+  - Familiarity with Python data science libraries (e.g `Pandas`, `scikit-learn`, Jupyter notebook/labs, iPython)
+  - Using virtual environment (Anaconda, `venv`, `pipenv`)
 - Object-oriented programming (overriding class methods, class inheritance).
 - Basic YAML syntax
 - Working with the command line (aka. cmd, CLI, prompt, console or terminal)
