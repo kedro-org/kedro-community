@@ -1,7 +1,7 @@
 # Training pre-requisites
 This Kedro training materials assume the following pre-requisites for your technical understanding.
 
-We assume that you understand these technology and won't be teaching how to do any of them. In order to maximise your learning experience from the Kedro training, please review them before the training if you are not familiar with any of them.
+We assume that you understand these technologies and we won't be teaching how to do any of them during the training. In order to maximise your learning experience from the Kedro training, please review them before the training if you are not familiar with any of them.
 
 - Intermediate Python knowledge
   - Basic Python
@@ -10,11 +10,11 @@ We assume that you understand these technology and won't be teaching how to do a
     - Loops
     - Conditional statements
     - Common data structures (lists, dictionaries, tuples)
-    - IO operation (reading and writing data using Python)
-  - Using Python modules (e.g how to use `__init__.py` and [relative and absolute imports](https://realpython.com/absolute-vs-relative-python-imports/))
-  - Importing Python packages with `pip`.
+    - IO operation (reading and writing data)
+  - Importing Python packages using `pip`.
   - Dependency management with `requirements.txt`
-  - Working on many Python files in nested directory structures.
+  - Working on multiple Python files in nested directory structures.
+  - Python modules (e.g how to use `__init__.py` and relative and absolute imports)
   - Familiarity with Python data science libraries (e.g `Pandas`, `PySpark`, `scikit-learn`, Jupyter notebook/labs, iPython)
   - Using virtual environment (Anaconda, venv, pipenv)
 - Object-oriented programming (overriding class methods, class inheritance).
@@ -24,7 +24,7 @@ We assume that you understand these technology and won't be teaching how to do a
   -  `ls` to list files and directories
   -  Executing a command and Python program from a command line
 
-Below is optional and won't cause any issues if you don't know them (but Kedro integrates well with these technologies)
+Below is optional and it won't cause any issues of following the training materials if you don't know them (but Kedro integrates well with these technologies).
 - Version Control with Git
 - Cloud storage (S3, Azure Blob, GCP)
 - PySpark
@@ -34,23 +34,23 @@ Below is optional and won't cause any issues if you don't know them (but Kedro i
 # Checklist
 Please use this checklist to make sure you have everything necessary to participate in the Kedro training.
 
-- [ ] You have Python 3 (3.6, 3.7 or 3.8) installed in your laptop (check with `python --version` or `python3 --version`)
+- [ ] You have Python 3 installed in your laptop.
 - [ ] You have Anaconda installed. An alternative to Anaconda can be found [here](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md)
 - [ ] You have an editor installed for writing Python code
 - [ ] You have a Terminal installed
 
 After you have installed above, please make sure that you are able to execute the following commands in your Terminal
+- [ ]  `python --version` or `python3 --version` returns a correct Python version (either 3.6, 3.7 or 3.8).
+- [ ] `git clone https://github.com/quantumblacklabs/kedro-examples` downloads this training Github repository (or [manually download a zip file from the link](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github)).
 
-- [ ] `git clone https://github.com/quantumblacklabs/kedro-examples` will download this training Github repository (or download a zip file from the link).
+- [ ] `conda create --name=training python=3.6 -y && conda activate training` creates an virtual environment called `training` and activate the environment.
 
-- [ ] `conda create --name=training python=3.6 -y && conda activate training` will create an virtual environment called "training" and activate the environment.
+- [ ] `pip install kedro` installs Kedro in your conda environment.
 
-- [ ] `pip install kedro` will install Kedro in your conda environment.
-
-- [ ]  `kedro --version` will show [the latest Kedro version](https://pypi.org/project/kedro/).
+- [ ]  `kedro --version` shows [the latest Kedro version](https://pypi.org/project/kedro/).
 
 
-If you are able to complete all of the above points, you are ready for the workshop! In case you have any problems or questions in any of the above checklist, please contact an instructor and resolve the issue before the training.
+If you are able to complete all of the above, you are ready for the training! In case you have any problems or questions in any of the above checklist, please contact an instructor and resolve the issues before the training.
 
 # Installation prerequisites
 
