@@ -1,7 +1,7 @@
 # Training pre-requisites
 This Kedro training materials assume the following pre-requisites for your technical understanding.
 
-We assume that you understand these technologies and we won't be teaching how to do any of them during the training. In order to maximise your learning experience from the Kedro training, please review them before the training if you are not familiar with any of them.
+We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training.
 
 - Intermediate Python knowledge
   - Basic Python
@@ -35,7 +35,7 @@ Below is optional and it won't cause any issues of following the training materi
 Please use this checklist to make sure you have everything necessary to participate in the Kedro training.
 
 - [ ] You have Python 3 installed in your laptop.
-- [ ] You have Anaconda installed. An alternative to Anaconda can be found [here](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md)
+- [ ] You have Anaconda or an [alternative](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md) virtual environment manager
 - [ ] You have an editor installed for writing Python code
 - [ ] You have a Terminal installed
 
@@ -43,7 +43,7 @@ After you have installed above, please make sure that you are able to execute th
 - [ ]  `python --version` or `python3 --version` returns a correct Python version (either 3.6, 3.7 or 3.8).
 - [ ] `git clone https://github.com/quantumblacklabs/kedro-examples` downloads this training Github repository (or [manually download a zip file from the link](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github)).
 
-- [ ] `conda create --name=training python=3.6 -y && conda activate training` creates an virtual environment called `training` and activate the environment.
+- [ ] `conda create --name=training python=3.6 -y && conda activate training` creates an virtual environment called `training` and activates the environment.
 
 - [ ] `pip install kedro` installs Kedro in your conda environment.
 
