@@ -1,7 +1,7 @@
 # Training pre-requisites
 This Kedro training materials assume the following pre-requisites for your technical understanding.
 
-We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training (there are external resource links for you to get a refresher for each topic).
+We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training (there are external resource links for you to get a refresher on each topic).
 
 - Intermediate Python knowledge
   - [Basic Python](https://developers.google.com/edu/python)
