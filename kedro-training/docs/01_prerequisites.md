@@ -1,32 +1,31 @@
 # Training pre-requisites
 This Kedro training materials assume the following pre-requisites for your technical understanding.
 
-We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training.
+We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training (there are external resource links for you to get a refresher for each topic).
 
 - Intermediate Python knowledge
-  - Basic Python
-    - Functions, classes, loops, conditional statements
+  - [Basic Python](https://developers.google.com/edu/python)
+    - Functions, loops, conditional statements
     - Common data structures: lists, dictionaries, tuples
-    - IO operation (reading and writing data)
-  - Importing Python packages using `pip`
-  - Dependency management with `requirements.txt`
-  - Working on multiple Python files in nested directory structures
-  - Python modules (e.g how to use `__init__.py` and relative and absolute imports)
-  - Familiarity with Python data science libraries (e.g `Pandas`, `scikit-learn`, Jupyter notebook/labs, iPython)
-  - Using virtual environment (Anaconda, `venv`, `pipenv`)
-- Object-oriented programming (overriding class methods, class inheritance).
-- Basic YAML syntax
-- Working with the command line (aka. cmd, CLI, prompt, console or terminal)
+    - [IO operation](https://realpython.com/working-with-files-in-python/) (reading and writing data)
+  - [Importing Python packages using `pip`](https://www.w3schools.com/python/python_pip.asp) and [Dependency management with `requirements.txt`](https://note.nkmk.me/en/python-pip-install-requirements/)
+  - [Working on multiple Python files in nested directory structures](https://drivendata.github.io/cookiecutter-data-science/)
+  - [Python modules](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html) (e.g how to use `__init__.py` and relative and absolute imports)
+  - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
+  - [Using virtual environment](https://towardsdatascience.com/getting-started-with-python-environments-using-conda-32e9f2779307) (Anaconda, `venv`, `pipenv`)
+- [Object-oriented programming](https://realpython.com/python3-object-oriented-programming/), especially Python classes, overriding class methods and inheritance.
+- [Basic YAML syntax](https://www.tutorialspoint.com/yaml/yaml_basics.htm)
+- [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (aka. cmd, CLI, prompt, console or terminal)
   -  `cd` to navigate directories
   -  `ls` to list files and directories
-  -  Executing a command and Python program from a command line
+  -  [Executing a command and Python program from a command line](https://realpython.com/run-python-scripts/#how-to-run-python-scripts-using-the-command-line)
 
 Below is optional and it won't cause any issues of following the training materials if you don't know them (but Kedro integrates well with these technologies).
-- Version Control with Git
-- Cloud storage (S3, Azure Blob, GCP)
-- PySpark
-- Docker for managing deployment
-- Airflow for scheduling pipeline execution
+- [Version Control with Git](https://www.codecademy.com/learn/learn-git)
+- Cloud storage ([S3](https://aws.amazon.com/s3/), [Azure Blob](https://azure.microsoft.com/en-gb/services/storage/blobs/), [GCS](https://cloud.google.com/storage))
+- [PySpark](https://towardsdatascience.com/a-brief-introduction-to-pyspark-ff4284701873)
+- [Docker](https://docker-curriculum.com/) for managing deployment
+- [Airflow](https://airflow.apache.org/docs/stable/tutorial.html) for scheduling pipeline execution
 
 # Checklist
 Please use this checklist to make sure you have everything necessary to participate in the Kedro training.
