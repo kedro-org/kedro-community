@@ -4,27 +4,25 @@ This Kedro training materials assume the following pre-requisites for your techn
 We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training (there are external resource links for you to get a refresher on each topic).
 
 - Intermediate Python knowledge
-  - [Basic Python](https://developers.google.com/edu/python)
-    - Functions, loops, conditional statements
+  - [Basic Python](https://docs.python.org/3/tutorial/)
+    - Functions, loops, conditional statements, IO operation
     - Common data structures: lists, dictionaries, tuples
-    - [IO operation](https://realpython.com/working-with-files-in-python/) (reading and writing data)
-  - [Importing Python packages using `pip`](https://www.w3schools.com/python/python_pip.asp) and [Dependency management with `requirements.txt`](https://note.nkmk.me/en/python-pip-install-requirements/)
-  - [Working on multiple Python files in nested directory structures](https://drivendata.github.io/cookiecutter-data-science/)
-  - [Python modules](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html) (e.g how to use `__init__.py` and relative and absolute imports)
+  - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/) and [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
+  - [Python modules](https://docs.python.org/3/tutorial/modules.html) (e.g how to use `__init__.py` and relative and absolute imports)
   - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
-  - [Using virtual environment](https://towardsdatascience.com/getting-started-with-python-environments-using-conda-32e9f2779307) (Anaconda, `venv`, `pipenv`)
+  - [Using virtual environment](https://docs.python.org/3/tutorial/venv.html) (Anaconda, `venv`, `pipenv`)
 - [Object-oriented programming](https://realpython.com/python3-object-oriented-programming/), especially Python classes, overriding class methods and inheritance.
-- [Basic YAML syntax](https://www.tutorialspoint.com/yaml/yaml_basics.htm)
+- [Basic YAML syntax](https://yaml.org/)
 - [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (aka. cmd, CLI, prompt, console or terminal)
   -  `cd` to navigate directories
   -  `ls` to list files and directories
   -  [Executing a command and Python program from a command line](https://realpython.com/run-python-scripts/#how-to-run-python-scripts-using-the-command-line)
 
 Below is optional and it won't cause any issues of following the training materials if you don't know them (but Kedro integrates well with these technologies).
-- [Version Control with Git](https://www.codecademy.com/learn/learn-git)
+- [Version Control with Git](https://git-scm.com/doc)
 - Cloud storage ([S3](https://aws.amazon.com/s3/), [Azure Blob](https://azure.microsoft.com/en-gb/services/storage/blobs/), [GCS](https://cloud.google.com/storage))
-- [PySpark](https://towardsdatascience.com/a-brief-introduction-to-pyspark-ff4284701873)
-- [Docker](https://docker-curriculum.com/) for managing deployment
+- [PySpark](https://spark.apache.org/docs/latest/api/python/index.html)
+- [Docker](https://docs.docker.com/) for managing deployment
 - [Airflow](https://airflow.apache.org/docs/stable/tutorial.html) for scheduling pipeline execution
 
 # Checklist
