@@ -4,8 +4,8 @@ The Kedro training materials assume a pre-requisite level of technical understan
 To optimise your experience and learn the most you can from the Kedro training, please review the following before your training session. We provide external resource links for each topic.
 
 - [Introduction to Python](https://docs.python.org/3/tutorial/)
-    - Functions, loops, conditional statements, IO operation
-    - Common data structures: lists, dictionaries, tuples
+  - Functions, loops, conditional statements, IO operation
+  - Common data structures: lists, dictionaries, tuples
 - Intermediate Python
   - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/)
   - [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
