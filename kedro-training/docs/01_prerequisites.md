@@ -4,10 +4,10 @@ The Kedro training materials assume a pre-requisite level of technical understan
 To optimise your experience and learn the most you can from the Kedro training, please review the following before your training session. We provide external resource links for each topic.
 
 - Intermediate Python knowledge
-  - [Basic Python](https://docs.python.org/3/tutorial/)
+  - [Basic fundamentals](https://docs.python.org/3/tutorial/)
     - Functions, loops, conditional statements, IO operation
     - Common data structures: lists, dictionaries, tuples
-  - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/) 
+  - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/)
   - [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
   - [Python modules](https://docs.python.org/3/tutorial/modules.html) (e.g how to use `__init__.py` and relative and absolute imports)
   - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
@@ -29,9 +29,9 @@ The following lists technologies that Kedro integrates with, but it won't cause 
 # Checklist
 Please use this checklist to make sure you have everything necessary to participate in the Kedro training.
 
-- [ ] You have Python 3 installed in your laptop.
+- [ ] You have [Python 3 (either 3.6, 3.7 or 3.8)](https://www.python.org/downloads/) installed in your laptop.
 - [ ] You have Anaconda or an [alternative](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md) virtual environment manager
-- [ ] You have an editor installed for writing Python code
+- [ ] You have [an editor](#text-editors-and-ides) installed for writing Python code
 - [ ] You have a Terminal installed
 
 Having completed the above checklist, make sure that you are able to execute the following commands in your Terminal
@@ -53,9 +53,9 @@ Kedro supports macOS, Linux and Windows (7 / 8 / 10 and Windows Server 2016+). I
 
 ## Python
 
-Kedro supports Python 3.5, 3.6 and 3.7. We recommend using [Anaconda](https://www.anaconda.com/download) (Python 3.7 version) to install Python packages. However, if Anaconda is not preferred then this [tutorial](https://realpython.com/installing-python/) can help you with installation and setup.
+Kedro supports Python 3.6, 3.7 and 3.. We recommend using [Anaconda](https://www.anaconda.com/download) (Python 3.7 version) to install Python packages. However, if Anaconda is not preferred then this [tutorial](https://realpython.com/installing-python/) can help you with installation and setup.
 
-### Text editors & IDEs
+### Text editors and IDEs
 Text editors are tools with powerful features designed to optimize writing code. There are many text editors that you can choose from. Here are some we recommend:
 
 - [PyCharm](https://www.jetbrains.com/pycharm/download/)
