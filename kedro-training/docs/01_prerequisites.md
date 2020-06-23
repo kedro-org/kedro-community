@@ -11,7 +11,7 @@ To optimise your experience and learn the most you can from the Kedro training, 
   - [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
   - [Python modules](https://docs.python.org/3/tutorial/modules.html) (e.g how to use `__init__.py` and relative and absolute imports)
   - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
-  - [Using a virtual environment](https://docs.python.org/3/tutorial/venv.html) (Anaconda, `venv`, `pipenv`)
+  - [Using a virtual environment](https://docs.python.org/3/tutorial/venv.html) (we recommend using `conda`, but you can also use `venv` or `pipenv`)
 - [Basic YAML syntax](https://yaml.org/)
 - [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (aka. cmd, CLI, prompt, console or terminal)
   -  `cd` to navigate directories
