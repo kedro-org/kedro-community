@@ -1,16 +1,17 @@
 # Training pre-requisites
-This Kedro training materials assume the following pre-requisites for your technical understanding.
+The Kedro training materials assume a pre-requisite level of technical understanding.
 
-We assume understanding of these technologies and concepts during the training. In order to maximise your learning experience from the Kedro training, please review them before going through the training (there are external resource links for you to get a refresher on each topic).
+To optimise your experience and learn the most you can from the Kedro training, please review the following before your training session. We provide external resource links for each topic.
 
 - Intermediate Python knowledge
   - [Basic Python](https://docs.python.org/3/tutorial/)
     - Functions, loops, conditional statements, IO operation
     - Common data structures: lists, dictionaries, tuples
-  - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/) and [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
+  - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/) 
+  - [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
   - [Python modules](https://docs.python.org/3/tutorial/modules.html) (e.g how to use `__init__.py` and relative and absolute imports)
   - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
-  - [Using virtual environment](https://docs.python.org/3/tutorial/venv.html) (Anaconda, `venv`, `pipenv`)
+  - [Using a virtual environment](https://docs.python.org/3/tutorial/venv.html) (Anaconda, `venv`, `pipenv`)
 - [Object-oriented programming](https://realpython.com/python3-object-oriented-programming/), especially Python classes, overriding class methods and inheritance.
 - [Basic YAML syntax](https://yaml.org/)
 - [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (aka. cmd, CLI, prompt, console or terminal)
@@ -18,7 +19,7 @@ We assume understanding of these technologies and concepts during the training. 
   -  `ls` to list files and directories
   -  [Executing a command and Python program from a command line](https://realpython.com/run-python-scripts/#how-to-run-python-scripts-using-the-command-line)
 
-Below is optional and it won't cause any issues of following the training materials if you don't know them (but Kedro integrates well with these technologies).
+The following lists technologies that Kedro integrates with, but it won't cause any issues if you are not yet familiar with them.
 - [Version Control with Git](https://git-scm.com/doc)
 - Cloud storage ([S3](https://aws.amazon.com/s3/), [Azure Blob](https://azure.microsoft.com/en-gb/services/storage/blobs/), [GCS](https://cloud.google.com/storage))
 - [PySpark](https://spark.apache.org/docs/latest/api/python/index.html)
@@ -33,7 +34,7 @@ Please use this checklist to make sure you have everything necessary to particip
 - [ ] You have an editor installed for writing Python code
 - [ ] You have a Terminal installed
 
-After you have installed above, please make sure that you are able to execute the following commands in your Terminal
+Having completed the above checklist, make sure that you are able to execute the following commands in your Terminal
 - [ ]  `python --version` or `python3 --version` returns a correct Python version (either 3.6, 3.7 or 3.8).
 - [ ] `git clone https://github.com/quantumblacklabs/kedro-examples` downloads this training Github repository (or [manually download a zip file from the link](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github)).
 
