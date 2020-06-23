@@ -12,7 +12,6 @@ To optimise your experience and learn the most you can from the Kedro training, 
   - [Python modules](https://docs.python.org/3/tutorial/modules.html) (e.g how to use `__init__.py` and relative and absolute imports)
   - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
   - [Using a virtual environment](https://docs.python.org/3/tutorial/venv.html) (Anaconda, `venv`, `pipenv`)
-- [Object-oriented programming](https://realpython.com/python3-object-oriented-programming/), especially Python classes, overriding class methods and inheritance.
 - [Basic YAML syntax](https://yaml.org/)
 - [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (aka. cmd, CLI, prompt, console or terminal)
   -  `cd` to navigate directories
