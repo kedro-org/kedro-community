@@ -38,7 +38,7 @@ Having completed the above checklist, make sure that you are able to execute the
 - [ ]  `python --version` or `python3 --version` returns a correct Python version (either 3.6, 3.7 or 3.8).
 - [ ] Download the [Kedro training repository](https://github.com/quantumblacklabs/kedro-examples) by following [these instructions](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github).
 
-- [ ] `conda create --name=kedro-environment python=3.6 -y && conda activate training` creates an virtual environment called `kedro-environment` and activates the environment (you can find how to do this with `venv` or `pipenv` in [here](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md)).
+- [ ] `conda create --name=kedro-environment python=3.6 -y && conda activate kedro-environment` creates an virtual environment called `kedro-environment` and activates the environment (you can find how to do this with `venv` or `pipenv` in [here](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md)).
 
 - [ ] `pip install kedro` installs Kedro in your conda environment.
 
