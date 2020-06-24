@@ -4,38 +4,39 @@ The Kedro training materials assume a pre-requisite level of technical understan
 To optimise your experience and learn the most you can from the Kedro training, please review the following before your training session. We provide external resource links for each topic.
 
 - [Introduction to Python](https://docs.python.org/3/tutorial/)
-  - Functions, loops, conditional statements, IO operation
-  - Common data structures: lists, dictionaries, tuples
+  - Functions, loops, conditional statements and IO operation
+  - Common data structures including lists, dictionaries and tuples
 - Intermediate Python
   - [Installing Python packages using `pip`](https://pip.pypa.io/en/stable/quickstart/)
   - [Dependency management with `requirements.txt`](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
   - [Python modules](https://docs.python.org/3/tutorial/modules.html) (e.g how to use `__init__.py` and relative and absolute imports)
-  - [Some familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas`, `scikit-learn`, [Jupyter notebook/labs](https://www.dataquest.io/blog/jupyter-notebook-tutorial/), [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
+  - [Familiarity with Python data science libraries](https://towardsdatascience.com/top-10-python-libraries-for-data-science-cd82294ec266), especially `Pandas` and `scikit-learn`
+  - An understanding of how to use [Jupyter Notebook/Lab](https://www.dataquest.io/blog/jupyter-notebook-tutorial/) and [iPython](https://www.codecademy.com/articles/how-to-use-ipython))
   - [Using a virtual environment](https://docs.python.org/3/tutorial/venv.html) (we recommend using `conda`, but you can also use `venv` or `pipenv`)
 - [Basic YAML syntax](https://yaml.org/)
-- [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (aka. cmd, CLI, prompt, console or terminal)
+- [Working with the command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) (also known as cmd, CLI, prompt, console or terminal)
   -  `cd` to navigate directories
   -  `ls` to list files and directories
   -  [Executing a command and Python program from a command line](https://realpython.com/run-python-scripts/#how-to-run-python-scripts-using-the-command-line)
 
-The following lists technologies that Kedro integrates with, but it won't cause any issues if you are not yet familiar with them.
+The following lists software that Kedro integrates with; however, during training these are optional requirements.
 - [Version Control with Git](https://git-scm.com/doc)
-- Cloud storage ([S3](https://aws.amazon.com/s3/), [Azure Blob](https://azure.microsoft.com/en-gb/services/storage/blobs/), [GCS](https://cloud.google.com/storage))
+- Cloud storage ([S3](https://aws.amazon.com/s3/), [Azure Blob](https://azure.microsoft.com/en-gb/services/storage/blobs/) and [GCS](https://cloud.google.com/storage))
 - [PySpark](https://spark.apache.org/docs/latest/api/python/index.html)
-- [Docker](https://docs.docker.com/) for managing deployment
+- [Docker](https://docs.docker.com/) as a deployment option
 - [Airflow](https://airflow.apache.org/docs/stable/tutorial.html) for scheduling pipeline execution
 
 # Checklist
 Please use this checklist to make sure you have everything necessary to participate in the Kedro training.
 
-- [ ] You have [Python 3 (either 3.6, 3.7 or 3.8)](https://www.python.org/downloads/) installed in your laptop.
+- [ ] You have [Python 3 (either 3.6, 3.7 or 3.8)](https://www.python.org/downloads/) installed on your laptop
 - [ ] You have Anaconda or an [alternative](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md) virtual environment manager
-- [ ] You have [an editor](#text-editors-and-ides) installed for writing Python code
+- [ ] You have [a code editor](#text-editors-and-ides) installed for writing Python code
 - [ ] You have a Terminal installed
 
-Having completed the above checklist, make sure that you are able to execute the following commands in your Terminal
+Having completed the above checklist, make sure that you are able to execute the following commands in your Terminal:
 - [ ]  `python --version` or `python3 --version` returns a correct Python version (either 3.6, 3.7 or 3.8).
-- [ ] `git clone https://github.com/quantumblacklabs/kedro-examples` downloads this training Github repository (or [manually download a zip file from the link](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github)).
+- [ ] Download the [Kedro training repository](https://github.com/quantumblacklabs/kedro-examples) by following [these instructions](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github).
 
 - [ ] `conda create --name=training python=3.6 -y && conda activate training` creates an virtual environment called `training` and activates the environment.
 
@@ -52,7 +53,7 @@ Kedro supports macOS, Linux and Windows (7 / 8 / 10 and Windows Server 2016+). I
 
 ## Python
 
-Kedro supports Python 3.6, 3.7 and 3.. We recommend using [Anaconda](https://www.anaconda.com/download) (Python 3.7 version) to install Python packages. However, if Anaconda is not preferred then this [tutorial](https://realpython.com/installing-python/) can help you with installation and setup.
+Kedro supports Python 3.6, 3.7 and 3.8. We recommend using [Anaconda](https://www.anaconda.com/download) (Python 3.7 version) to install Python packages. However, if Anaconda is not preferred then this [tutorial](https://realpython.com/installing-python/) can help you with installation and setup.
 
 ### Text editors and IDEs
 Text editors are tools with powerful features designed to optimize writing code. There are many text editors that you can choose from. Here are some we recommend:
