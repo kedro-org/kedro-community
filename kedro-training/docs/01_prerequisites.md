@@ -32,13 +32,13 @@ Please use this checklist to make sure you have everything necessary to particip
 - [ ] You have [Python 3 (either 3.6, 3.7 or 3.8)](https://www.python.org/downloads/) installed on your laptop
 - [ ] You have Anaconda or an [alternative](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md) virtual environment manager
 - [ ] You have [a code editor](#text-editors-and-ides) installed for writing Python code
-- [ ] You have a Terminal installed
+- [ ] You have a [command line](#command-line) installed
 
 Having completed the above checklist, make sure that you are able to execute the following commands in your Terminal:
 - [ ]  `python --version` or `python3 --version` returns a correct Python version (either 3.6, 3.7 or 3.8).
 - [ ] Download the [Kedro training repository](https://github.com/quantumblacklabs/kedro-examples) by following [these instructions](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github).
 
-- [ ] `conda create --name=training python=3.6 -y && conda activate training` creates an virtual environment called `training` and activates the environment.
+- [ ] `conda create --name=kedro-environment python=3.6 -y && conda activate training` creates an virtual environment called `kedro-environment` and activates the environment (you can find how to do this with `venv` or `pipenv` in [here](https://github.com/quantumblacklabs/kedro-examples/blob/master/kedro-training/docs/02_virtual-environment.md)).
 
 - [ ] `pip install kedro` installs Kedro in your conda environment.
 
@@ -54,6 +54,11 @@ Kedro supports macOS, Linux and Windows (7 / 8 / 10 and Windows Server 2016+). I
 ## Python
 
 Kedro supports Python 3.6, 3.7 and 3.8. We recommend using [Anaconda](https://www.anaconda.com/download) (Python 3.7 version) to install Python packages. However, if Anaconda is not preferred then this [tutorial](https://realpython.com/installing-python/) can help you with installation and setup.
+
+## Command line
+The command line works as a text-based application for viewing, navigating and manipulating files on your computer. You can find more information for each OS platform:
+- [Terminal in macOS](https://support.apple.com/en-gb/guide/terminal/welcome/mac)
+- [Windows command line](https://www.computerhope.com/issues/chusedos.htm)
 
 ### Text editors and IDEs
 Text editors are tools with powerful features designed to optimize writing code. There are many text editors that you can choose from. Here are some we recommend:
