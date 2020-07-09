@@ -11,9 +11,7 @@ def return_greeting():
     return "Hello"
 
 
-return_greeting_node = node(
-    return_greeting, inputs=None, outputs="my_salutation"
-)
+return_greeting_node = node(return_greeting, inputs=None, outputs="my_salutation")
 
 
 def join_statements(greeting):
