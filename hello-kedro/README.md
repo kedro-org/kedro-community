@@ -1,6 +1,6 @@
 # Hello Kedro Example
 
-This is the example code described in the [Hello Kedro](https://github.com/quantumblacklabs/private-kedro/blob/develop/docs/source/02_getting_started/04_hello_kedro.md) documentation. 
+This is the example code described in the [Hello Kedro](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_kedro.md) documentation. 
 
 <!-- NOTE: LINK TO CHANGE SHORTLY -->
 
