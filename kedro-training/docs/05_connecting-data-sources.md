@@ -15,11 +15,11 @@ Here is an example of how you can [download the files from GitHub](https://www.q
 
 ```bash
 # reviews
-curl -o data/01_raw/reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
+curl -o data/01_raw/reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/reviews.csv
 # companies
-curl -o data/01_raw/companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/companies.csv
+curl -o data/01_raw/companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/companies.csv
 # shuttles
-curl -o data/01_raw/shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
+curl -o data/01_raw/shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/shuttles.xlsx
 ```
 </details>
 
@@ -30,11 +30,11 @@ Or through using [Wget](https://www.gnu.org/software/wget/):
 
 ```bash
 # reviews
-wget -O data/01_raw/reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
+wget -O data/01_raw/reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/reviews.csv
 # companies
-wget -O data/01_raw/companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/companies.csv
+wget -O data/01_raw/companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/companies.csv
 # shuttles
-wget -O data/01_raw/shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
+wget -O data/01_raw/shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/shuttles.xlsx
 ```
 </details>
 
@@ -44,9 +44,12 @@ Alternatively, if you are a Windows user, try [Wget for Windows](https://eternal
 <summary><b>CLICK TO EXPAND</b></summary>
 
 ```bat
-wget -O data\01_raw\reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
-wget -O data\01_raw\companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/companies.csv
-wget -O data\01_raw\shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
+# reviews
+wget -O data\01_raw\reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/reviews.csv
+# companies
+wget -O data\01_raw\companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/companies.csv
+# shuttles
+wget -O data\01_raw\shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/shuttles.xlsx
 ```
 </details>
 
@@ -56,9 +59,12 @@ or [cURL for Windows](https://curl.haxx.se/windows/):
 <summary><b>CLICK TO EXPAND</b></summary>
 
 ```bat
-curl -o data\01_raw\reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/reviews.csv
-curl -o data\01_raw\companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/companies.csv
-curl -o data\01_raw\shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/docs/source/03_tutorial/data/shuttles.xlsx
+# reviews
+curl -o data\01_raw\reviews.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/reviews.csv
+# companies
+curl -o data\01_raw\companies.csv https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/companies.csv
+# shuttles
+curl -o data\01_raw\shuttles.xlsx https://raw.githubusercontent.com/quantumblacklabs/kedro-examples/master/kedro-tutorial/data/01_raw/shuttles.xlsx
 ```
 </details>
 
