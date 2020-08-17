@@ -15,6 +15,7 @@ Each example has an README.md that explains what each project does and how to wo
   - [Kedro 0.15.5](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.5)
   - [Kedro 0.15.8](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.8)
   - [Kedro 0.16.1](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.1)
+  - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4)
 - Documentation that you can use to deliver Kedro training in [`kedro-training`](https://github.com/quantumblacklabs/kedro-examples/tree/master/kedro-training)
 
 ## Where can I find more `kedro-examples`?
