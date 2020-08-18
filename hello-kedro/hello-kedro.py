@@ -26,4 +26,4 @@ pipeline = Pipeline([return_greeting_node, join_statements_node])
 runner = SequentialRunner()
 
 # Run the pipeline
-runner.run(pipeline, data_catalog)
+print(runner.run(pipeline, data_catalog))
