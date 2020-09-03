@@ -108,6 +108,7 @@ def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
     return shuttles
 
 
+@log_running_time
 def create_master_table(
     shuttles: pd.DataFrame, companies: pd.DataFrame, reviews: pd.DataFrame
 ) -> pd.DataFrame:
