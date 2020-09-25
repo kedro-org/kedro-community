@@ -1,6 +1,6 @@
 # What is `kedro-examples`?
 
-This repo contains links to all official and community created example Kedro projects as well as the complete version of the [Space Flights tutorial]((https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html)).
+This repo contains links to all official and community created example Kedro projects as well as the complete version of the [Space Flights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html).
 
 ## What will I find in this repository?
 
