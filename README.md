@@ -1,10 +1,6 @@
 # What is `kedro-examples`?
 
-This repo contains example code to help you learn how to use [Kedro](https://github.com/quantumblacklabs/kedro).
-
-## How do I use it?
-
-Each example has an README.md that explains what each project does and how to work with it.
+This repo contains links to all official and community created example Kedro projects as well as the complete version of the [Space Flights tutorial]((https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html)).
 
 ## What will I find in this repository?
 
@@ -16,9 +12,16 @@ Each example has an README.md that explains what each project does and how to wo
   - [Kedro 0.15.8](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.8)
   - [Kedro 0.16.1](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.1)
   - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4)
-- Documentation that you can use to deliver Kedro training in [`kedro-training`](https://github.com/quantumblacklabs/kedro-examples/tree/master/kedro-training)
 
-## Where can I find more `kedro-examples`?
+
+## Where can I find more learning material and `kedro-examples`?
+
+The [`Kedro-Training`](https://github.com/quantumblacklabs/kedro-training) repository contains documentation that you can use to deliver Kedro training.
+
+These repositories contain the official Kedro tutorial projects, also known as starters:
+- [Space Flights tutorial](https://github.com/quantumblacklabs/kedro-starter-spaceflights)
+- [Iris dataset tutorial with pandas](https://github.com/quantumblacklabs/kedro-starter-pandas-iris)
+- [Iris dataset tutorial with pyspark](https://github.com/quantumblacklabs/kedro-starter-pyspark-iris)
 
 Our community of Kedro users are creating their own profile projects, you can have a look at:
 
