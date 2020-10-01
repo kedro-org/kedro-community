@@ -1,4 +1,4 @@
-# What is `kedro-examples`?
+# What is `kedro-examples`
 
 This repo contains links to all official and community created example Kedro projects as well as the complete version of the [spaceflights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html).
 
@@ -14,7 +14,7 @@ This repo contains links to all official and community created example Kedro pro
   - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4)
 
 
-## Where can I find more learning material and `kedro-examples`?
+## Where can I find more learning material and `kedro-examples`
 
 The [`Kedro-Training`](https://github.com/quantumblacklabs/kedro-training) repository contains documentation that you can use to deliver Kedro training.
 
@@ -31,6 +31,6 @@ Our community of Kedro users are creating their own profile projects, you can ha
 - [PipelineX](https://github.com/Minyus/pipelinex) by [Yusuke Minami](https://github.com/Minyus), a Python package to develop pipelines for rapid Machine/Deep Learning experimentation using Kedro and MLflow. Example projects using PyTorch, Pandas, and OpenCV are available.
 - [kedro-mlflow-example](https://github.com/tgoldenberg/kedro-mlflow-example) by [Tom Goldenberg](https://github.com/tgoldenberg), a project that demonstrates how to integrate MLflow with a Kedro codebase
 
-## What licence do you use?
+## What licence do you use
 
 Kedro is licensed under the [Apache 2.0](https://github.com/quantumblacklabs/kedro-example/blob/master/LICENSE.md) License.
