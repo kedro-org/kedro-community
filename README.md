@@ -11,7 +11,7 @@ This repo contains links to all official and community created examples of Kedro
   - [Kedro 0.15.5](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.5)
   - [Kedro 0.15.8](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.8)
   - [Kedro 0.16.1](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.1)
-  - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4) 
+  - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4)
 
 ## Where can I find more learning material and `kedro-community`?
 
