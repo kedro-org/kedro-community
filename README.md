@@ -1,6 +1,6 @@
-# What is `kedro-examples`?
+# What is `kedro-community`?
 
-This repo contains links to all official and community created example Kedro projects as well as the complete version of the [spaceflights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html).
+This repo contains links to all official and community created examples of Kedro projects, as well as the complete version of the [spaceflights tutorial](https://kedro.readthedocs.io/en/stable/03_tutorial/02_tutorial_template.html).
 
 ## What will I find in this repository?
 
@@ -11,10 +11,9 @@ This repo contains links to all official and community created example Kedro pro
   - [Kedro 0.15.5](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.5)
   - [Kedro 0.15.8](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.15.8)
   - [Kedro 0.16.1](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.1)
-  - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4)
+  - [Kedro 0.16.4](https://github.com/quantumblacklabs/kedro-examples/tree/example/0.16.4) 
 
-
-## Where can I find more learning material and `kedro-examples`?
+## Where can I find more learning material and `kedro-community`?
 
 The [`Kedro-Training`](https://github.com/quantumblacklabs/kedro-training) repository contains documentation that you can use to deliver Kedro training.
 
