@@ -1,6 +1,6 @@
 # What is `kedro-community`?
 
-This repo contains links to articles, podcasts and videos about Kedro, as well as, community created examples of Kedro projects. If you're looking to engage with the community then we suggest checking out the [Kedro Community Discourse](https://discourse.kedro.community/) channel.
+This repo contains links to articles, podcasts and videos about Kedro, as well as, community created examples of Kedro projects. If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
 
 ## Where can I find articles, podcasts and videos about Kedro? 
 
