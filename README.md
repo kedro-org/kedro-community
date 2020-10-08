@@ -31,6 +31,7 @@ Our community of Kedro users are creating their own profile projects, you can ha
 - [PipelineX](https://github.com/Minyus/pipelinex) by [Yusuke Minami](https://github.com/Minyus), a Python package to develop pipelines for rapid Machine/Deep Learning experimentation using Kedro and MLflow. Example projects using PyTorch, Pandas, and OpenCV are available.
 - [kedro-mlflow-example](https://github.com/tgoldenberg/kedro-mlflow-example) by [Tom Goldenberg](https://github.com/tgoldenberg), a project that demonstrates how to integrate MLflow with a Kedro codebase
 - [kedro-wdbc-tf](https://github.com/abhinavsp0730/kedro-wdbc-tf) by [Abhinav Prakash](https://github.com/abhinavsp0730), this project uses a Kedro template to create Deep Learning workflow. The model training was done with TensorFlow  against the wdbc (Breast Cancer) dataset.
+- [twitter-sentiment-analysis](https://github.com/avidiotic/twitter-sentiment-analysis/blob/main/README.md) by [Avi Agarwal](https://github.com/avidiotic), a project that demonstrates how to use Kedro to train and evaluate an NLP-based machine learning model.
 
 ## What licence do you use?
 
