@@ -2,6 +2,21 @@
 
 This repo contains links to articles, podcasts and videos about Kedro, as well as, community created examples of Kedro projects. If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
 
+## Where can I find more example projects using Kedro?
+
+The Kedro team maintains the following official Kedro tutorial projects, also known as starters:
+- [Spaceflights tutorial](https://github.com/quantumblacklabs/kedro-starter-spaceflights)
+- [Iris dataset tutorial with pandas](https://github.com/quantumblacklabs/kedro-starter-pandas-iris)
+- [Iris dataset tutorial with pyspark](https://github.com/quantumblacklabs/kedro-starter-pyspark-iris)
+
+Our community of Kedro users are creating their own profile projects, you can have a look at:
+
+- [Response Recommendation System for BarefootLaw](https://github.com/dssg/barefoot-winnie-public) by Kasun Amarasinghe, Carlos Caro, Nupoor Gandhi and Raphaelle Roffo, an extensive Data Science for Social Good (DSSG) at Imperial College London project that recommends responses to law related queries
+- [Augury](https://github.com/tipresias/augury) by [Craig Franklin](https://github.com/cfranklin11), machine-learning functionality for predicting AFL match results in the Tipresias app
+- [CausalLift](https://github.com/Minyus/causallift) by [Yusuke Minami](https://github.com/Minyus), a Python package for Uplift Modeling in real-world business
+- [PipelineX](https://github.com/Minyus/pipelinex) by [Yusuke Minami](https://github.com/Minyus), a Python package to develop pipelines for rapid Machine/Deep Learning experimentation using Kedro and MLflow. Example projects using PyTorch, Pandas, and OpenCV are available.
+- [kedro-mlflow-example](https://github.com/tgoldenberg/kedro-mlflow-example) by [Tom Goldenberg](https://github.com/tgoldenberg), a project that demonstrates how to integrate MLflow with a Kedro codebase
+
 ## Where can I find articles, podcasts and videos about Kedro? 
 
 | Date       | Title                                                                               | Author                      | Audience                      | Format       | Language   | URL                                                                                                                               |
@@ -37,21 +52,6 @@ This repo contains links to articles, podcasts and videos about Kedro, as well a
 | 01/10/2019 | Ship Faster With An Opinionated Data Pipeline Framework Episode** 100               | Tom Goldenberg              | Data Engineering Podcast      | Podcast      | English    | https://www.dataengineeringpodcast.com/kedro-data-pipeline-episode-100/                                                           |
 | 11/07/2019 | Some cool open-source Python packages for Machine Learning                          | François Pacul              | Architecture & Performance    | Article      | English    | https://aetperf.github.io/2019/07/11/Some-cool-open-source-Python-packages-for-Machine-Learning.html                              |
 | 04/06/2019 | Kedro: A New Tool For Data Science                                                  | Jo Stichbury                | Towards Data Science          | Article      | English    | https://towardsdatascience.com/kedro-prepare-to-pimp-your-pipeline-f8f68c263466                                                   |
-
-## Where can I find more example projects using Kedro?
-
-The Kedro team maintains the following official Kedro tutorial projects, also known as starters:
-- [Spaceflights tutorial](https://github.com/quantumblacklabs/kedro-starter-spaceflights)
-- [Iris dataset tutorial with pandas](https://github.com/quantumblacklabs/kedro-starter-pandas-iris)
-- [Iris dataset tutorial with pyspark](https://github.com/quantumblacklabs/kedro-starter-pyspark-iris)
-
-Our community of Kedro users are creating their own profile projects, you can have a look at:
-
-- [Response Recommendation System for BarefootLaw](https://github.com/dssg/barefoot-winnie-public) by Kasun Amarasinghe, Carlos Caro, Nupoor Gandhi and Raphaelle Roffo, an extensive Data Science for Social Good (DSSG) at Imperial College London project that recommends responses to law related queries
-- [Augury](https://github.com/tipresias/augury) by [Craig Franklin](https://github.com/cfranklin11), machine-learning functionality for predicting AFL match results in the Tipresias app
-- [CausalLift](https://github.com/Minyus/causallift) by [Yusuke Minami](https://github.com/Minyus), a Python package for Uplift Modeling in real-world business
-- [PipelineX](https://github.com/Minyus/pipelinex) by [Yusuke Minami](https://github.com/Minyus), a Python package to develop pipelines for rapid Machine/Deep Learning experimentation using Kedro and MLflow. Example projects using PyTorch, Pandas, and OpenCV are available.
-- [kedro-mlflow-example](https://github.com/tgoldenberg/kedro-mlflow-example) by [Tom Goldenberg](https://github.com/tgoldenberg), a project that demonstrates how to integrate MLflow with a Kedro codebase
 
 ## What licence do you use?
 
