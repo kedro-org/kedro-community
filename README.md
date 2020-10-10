@@ -56,6 +56,10 @@ Our community of Kedro users are creating their own profile projects, you can ha
 | 11/07/2019 | Some cool open-source Python packages for Machine Learning                          | François Pacul              | Architecture & Performance    | Article      | English    | https://aetperf.github.io/2019/07/11/Some-cool-open-source-Python-packages-for-Machine-Learning.html                              |
 | 04/06/2019 | Kedro: A New Tool For Data Science                                                  | Jo Stichbury                | Towards Data Science          | Article      | English    | https://towardsdatascience.com/kedro-prepare-to-pimp-your-pipeline-f8f68c263466                                                   |
 
+## Where can I find plugins, extensions, and kedro related packages
+
+The community of plugin authors tag each project on GitHub with the [kedro-plugin](https://github.com/topics/kedro-plugin) tag.  You can find a listing of all plugins right on GitHub.
+
 ## What licence do you use?
 
 Kedro is licensed under the [Apache 2.0](https://github.com/quantumblacklabs/kedro-example/blob/master/LICENSE.md) License.
