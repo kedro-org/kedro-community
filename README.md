@@ -1,3 +1,5 @@
+![](https://aws1.discourse-cdn.com/standard17/uploads/kedro/original/1X/69e3b3e540a7a37961ee860bb1421e91c0261de8.png)
+
 # What is `kedro-community`?
 
 This repo contains links to articles, podcasts and videos about Kedro, as well as, community created examples of Kedro projects. If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
