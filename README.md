@@ -1,3 +1,5 @@
+![kedro-community banner](./artwork/kedro-community-wide-grey.png)
+
 # What is `kedro-community`?
 
 This repo contains links to articles, podcasts and videos about Kedro, as well as, community created examples of Kedro projects. If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
