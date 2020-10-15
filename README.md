@@ -1,4 +1,4 @@
-![](https://aws1.discourse-cdn.com/standard17/uploads/kedro/original/1X/69e3b3e540a7a37961ee860bb1421e91c0261de8.png)
+![kedro-community banner](./artwork/kedro-community-wide-grey.png)
 
 # What is `kedro-community`?
 
