@@ -2,7 +2,9 @@
 
 ## What is `kedro-community`?
 
-This repo contains links to articles, podcasts and videos about Kedro, as well as, community created examples of Kedro projects. If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
+This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
+
+If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
 
 ## Where can I find more example projects using Kedro?
 
@@ -23,9 +25,9 @@ Our community of Kedro users are creating their own profile projects, you can ha
 
 ## Where can I find articles, podcasts and videos about Kedro? 
 
-| Date       | Title                                                                               | Author                      | Audience                      | Format       | Language   | URL                                                                                                                               |
+| Date       | Title                                                                               | Author                      | Channel                      | Format       | Language   | URL                                                                                                                               |
 |------------|-------------------------------------------------------------------------------------|-----------------------------|-------------------------------|--------------|------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| N/A        | DataEngineerOne Kedro Youtube channel                                               | Tam-Sanh Nguyen             | YouTube                       | Recording    | English    | https://youtube.com/c/DataEngineerOne                                                                                             |
+| N/A        | [DataEngineerOne Kedro Youtube channel](https://youtube.com/c/DataEngineerOne)                                               | Tam-Sanh Nguyen             | YouTube                       | Recording    | English    |                                                                                              |
 | 26/10/2020 | What's New in Kedro 0.16.6                                                          | Waylon Walker               | Personal Blog                 | Article      | English    | https://dev.to/waylonwalker/what-s-new-in-kedro-0-16-6-397f                                                                       |
 | 08/10/2020 | Designing a "Router" for kedro                                                      | Waylon Walker               | Personal Blog                 | Article      | English    | https://waylonwalker.com/blog/designing-kedro-router                                                                              |
 | 06/10/2020 | Power is nothing without control                                                    | Jo Stichburg                | Towards Data Science          | Article      | English    | https://towardsdatascience.com/power-is-nothing-without-control-aa43523745b6                                                      |
