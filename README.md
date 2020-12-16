@@ -23,6 +23,8 @@ Our community of Kedro users are creating their own profile projects, you can ha
 - [kedro-wdbc-tf](https://github.com/abhinavsp0730/kedro-wdbc-tf) by [Abhinav Prakash](https://github.com/abhinavsp0730), this project uses a Kedro template to create Deep Learning workflow. The model training was done with TensorFlow  against the wdbc (Breast Cancer) dataset.
 - [twitter-sentiment-analysis](https://github.com/avidiotic/twitter-sentiment-analysis/blob/main/README.md) by [Avi Agarwal](https://github.com/avidiotic), a project that demonstrates how to use Kedro to train and evaluate an NLP-based machine learning model.
 
+You can find a useful list of Kedro-related plugins, blog posts, videos, and other resources over on [Florian Kromer's Github awesome-kedro repository](https://github.com/fkromer/awesome-kedro).
+
 ## Where can I find articles, podcasts and videos about Kedro? 
 
 | Date       | Title                                                                               | Author                      | Channel                      | Format       | Language   | 
