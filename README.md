@@ -64,7 +64,7 @@ You can find a useful list of Kedro-related plugins, blog posts, videos, and oth
 | 01/10/2019 | [Ship Faster With An Opinionated Data Pipeline Framework Episode** 100](https://www.dataengineeringpodcast.com/kedro-data-pipeline-episode-100/)               | Tom Goldenberg              | Data Engineering Podcast      | Podcast      | English    |                                                            
 | 11/07/2019 | [Some cool open-source Python packages for Machine Learning](https://aetperf.github.io/2019/07/11/Some-cool-open-source-Python-packages-for-Machine-Learning.html)                          | François Pacul              | Architecture & Performance    | Article      | English    |                               
 | 04/06/2019 | [Kedro: A New Tool For Data Science ](https://towardsdatascience.com/kedro-prepare-to-pimp-your-pipeline-f8f68c263466)                                                 | Jo Stichbury                | Towards Data Science          | Article      | English    |                                                    
-
+| 23/12/2020 | [Standardization of End-to-End Data Pipeline for AI Project Using Kedro ](https://www.lftechnology.com/blog/ai-pipeline-kedro/)                                                 | Anish Pandey & Sushil Ghimire                | Industrial use case        | Article      | English    |   
 ## Where can I find plugins, extensions, and `kedro`-related packages?
 
 The community of plugin authors tag each project on GitHub with the [`kedro-plugin`](https://github.com/topics/kedro-plugin) tag.  You can find a listing of all plugins on GitHub.
