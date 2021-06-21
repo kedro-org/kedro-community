@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="392" height="392" viewBox="0 0 392 392">
+    <defs>
+        <linearGradient id="o6uenk2bka" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFBC00"/>
+        </linearGradient>
+        <linearGradient id="d96jdpsm4b" x1="78.872%" x2="9.415%" y1="16.556%" y2="87.55%">
+            <stop offset="0%" stop-color="#FFCA36"/>
+            <stop offset="100%" stop-color="#FFB700"/>
+        </linearGradient>
+        <linearGradient id="na2kwgp20c" x1="50%" x2="50%" y1="100%" y2="-16.576%">
+            <stop offset="0%" stop-color="#FFBC00"/>
+            <stop offset="100%" stop-color="#00F3FF"/>
+            <stop offset="100%" stop-color="#FF6A00"/>
+        </linearGradient>
+        <linearGradient id="ojhu3hqn8d" x1="50%" x2="50%" y1="100%" y2="-16.576%">
+            <stop offset="0%" stop-color="#FF00A7"/>
+            <stop offset="100%" stop-color="#00F3FF"/>
+            <stop offset="100%" stop-color="#FF6A00"/>
+        </linearGradient>
+        <linearGradient id="f94xkipx7e" x1="50%" x2="50%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#00B8FF"/>
+            <stop offset="100%" stop-color="#8A00FF"/>
+            <stop offset="100%" stop-color="#FFBC00"/>
+        </linearGradient>
+        <linearGradient id="1xcpfdyzzh" x1="50%" x2="50%" y1="0%" y2="62.097%">
+            <stop offset="0%"/>
+            <stop offset="100%" stop-opacity=".092"/>
+        </linearGradient>
+        <linearGradient id="k6rq4ceqci" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFBC00"/>
+            <stop offset="100%" stop-color="#FFC700"/>
+        </linearGradient>
+        <rect id="665wq4kttf" width="101" height="29" x="0" y="0" rx="14.5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <path d="M0 0H390V390H0z" transform="translate(1 1)"/>
+            </g>
+            <g>
+                <g transform="translate(1 1) translate(63 15)">
+                    <path fill="url(#o6uenk2bka)" d="M69 64.669h126c27.614 0 50 22.386 50 50v125c0 27.614-22.386 50-50 50H69c-27.614 0-50-22.386-50-50v-125c0-27.614 22.386-50 50-50z" opacity=".8"/>
+                    <path fill="url(#d96jdpsm4b)" d="M195 281.169H69c-27.614 0-50-22.386-50-50v-116c0-27.614 22.386-50 50-50h126c27.614 0 50 22.386 50 50v116c0 27.614-22.386 50-50 50z"/>
+                    <path fill="url(#na2kwgp20c)" d="M131.5 124.669c36.667-27.96 55-44.793 55-50.5 0-8.56-24.624-15.5-55-15.5s-55 6.94-55 15.5c0 5.707 18.333 22.54 55 50.5z"/>
+                    <rect width="19" height="77" y="137.669" fill="url(#ojhu3hqn8d)" rx="8"/>
+                    <rect width="19" height="77" x="245" y="137.669" fill="url(#ojhu3hqn8d)" rx="8"/>
+                    <g transform="translate(48 124.669)">
+                        <circle cx="32.5" cy="32.5" r="32.5" fill="#FFF" opacity=".8" transform="rotate(-180 32.5 32.5)"/>
+                        <circle cx="133.5" cy="32.5" r="32.5" fill="#FFF" opacity=".8" transform="rotate(-180 133.5 32.5)"/>
+                        <path fill="url(#f94xkipx7e)" d="M69.45 80.33c1.45 3.463 26.552 3.463 28.003 0 1.452-3.462-10.196-33.402-14.002-33.402-3.806 0-15.453 29.94-14.002 33.403z"/>
+                        <g transform="translate(33 98)">
+                            <mask id="e5vu51czkg" fill="#fff">
+                                <use xlink:href="#665wq4kttf"/>
+                            </mask>
+                            <use fill="#000" xlink:href="#665wq4kttf"/>
+                            <path fill="#FFF" d="M-15-13h123V9c-23.151 2.333-42.151 3.5-57 3.5-14.849 0-36.849-1.167-66-3.5v-22zM-15 21c29.07-1.209 51.07-1.813 66-1.813s33.93.604 57 1.813v22H-15V21z" mask="url(#e5vu51czkg)"/>
+                            <path fill="url(#1xcpfdyzzh)" d="M-8 -5H110V35H-8z" mask="url(#e5vu51czkg)"/>
+                        </g>
+                        <g fill="#000" transform="translate(11.5 11.5)">
+                            <circle cx="21" cy="21" r="21"/>
+                        </g>
+                        <g fill="#000" transform="translate(112.5 11.5)">
+                            <circle cx="21" cy="21" r="21"/>
+                        </g>
+                    </g>
+                    <path fill="url(#k6rq4ceqci)" fill-rule="nonzero" d="M170.5 15.947v77h-77v-77h77zm-25 25h-27v27h27v-27z" transform="rotate(-45 132 54.447)"/>
+                </g>
+                <path fill="#FFF" fill-rule="nonzero" d="M48.9 359v-13.05l4.6-.5L59.2 359h7.95l-7.6-16.95 7.4-17.05H59.1l-5.6 14.45-4.6.5V325H42v34h6.9zm33.671.6c3.1 0 6.567-.467 10.4-1.4l-.1-4.95-1.4.15c-2.433.2-5.2.3-8.3.3-1.466 0-2.591-.342-3.375-1.025-.783-.683-1.191-1.792-1.225-3.325h14.7l.5-4.65c0-7.533-3.633-11.3-10.9-11.3-7.366 0-11.05 4.483-11.05 13.45 0 4.5.85 7.75 2.55 9.75 1.7 2 4.434 3 8.2 3zm4.6-15.35h-8.65c.034-1.933.375-3.308 1.025-4.125.65-.817 1.767-1.225 3.35-1.225 1.584 0 2.692.392 3.325 1.175.634.783.95 2.175.95 4.175zm22.822 15.35c1.7 0 3.717-.55 6.05-1.65V359h6.65v-35h-6.7v10.1l-.95-.2c-1.9-.333-3.383-.5-4.45-.5-3.467 0-6.058 1.042-7.775 3.125-1.717 2.083-2.575 5.4-2.575 9.95 0 4.55.717 7.875 2.15 9.975 1.433 2.1 3.967 3.15 7.6 3.15zm.925-6c-1.383 0-2.375-.55-2.975-1.65-.6-1.1-.9-2.95-.9-5.55 0-4.8 1.35-7.2 4.05-7.2 1.433 0 3.067.167 4.9.5v13.15l-.7.15c-1.533.4-2.992.6-4.375.6zm27.546 5.4v-16.75l1-.35c1.934-.6 4.25-1.183 6.95-1.75v-6.75c-2.533.5-5.2 1.583-8 3.25V334h-6.65v25h6.7zm24.972.6c7.666 0 11.5-4.383 11.5-13.15 0-4.133-.884-7.342-2.65-9.625-1.767-2.283-4.717-3.425-8.85-3.425-4.134 0-7.084 1.15-8.85 3.45-1.767 2.267-2.65 5.467-2.65 9.6 0 8.767 3.833 13.15 11.5 13.15zm0-5.7c-1.767 0-3-.6-3.7-1.8-.667-1.2-1-3.083-1-5.65s.341-4.433 1.025-5.6c.683-1.167 1.908-1.75 3.675-1.75 1.766 0 2.991.583 3.675 1.75.683 1.167 1.025 3.033 1.025 5.6 0 2.567-.342 4.45-1.025 5.65-.684 1.2-1.909 1.8-3.675 1.8zm25.971-23.1V324h-6.7v6.8h6.7zm0 28.2v-25h-6.7v25h6.7zm17.622.6c1.7 0 3.716-.55 6.05-1.65V359h6.65v-35h-6.7v10.1l-.95-.2c-1.9-.333-3.384-.5-4.45-.5-3.467 0-6.059 1.042-7.775 3.125-1.717 2.083-2.575 5.4-2.575 9.95 0 4.55.716 7.875 2.15 9.975 1.433 2.1 3.966 3.15 7.6 3.15zm.925-6c-1.384 0-2.375-.55-2.975-1.65-.6-1.1-.9-2.95-.9-5.55 0-4.8 1.35-7.2 4.05-7.2 1.433 0 3.066.167 4.9.5v13.15l-.7.15c-1.534.4-2.992.6-4.375.6z" transform="translate(1 1) translate(63 15)"/>
+            </g>
+        </g>
+    </g>
+</svg>
