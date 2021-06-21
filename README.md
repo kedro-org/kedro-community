@@ -1,5 +1,5 @@
 
-
+![](./artwork/kedro_icon_no-type_whitebg.svg)
 
 ## What is `kedro-community`?
 
