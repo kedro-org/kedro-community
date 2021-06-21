@@ -14,7 +14,7 @@ If you're looking to engage with the community then we suggest checking our [Dis
 
 ## Become a Kedroid <img src="./artwork/kedroid.png" width="25" >
 
-This our affectionate the term power users and people who really help out other users in the community. Do get involved and, we'll do our best to make sure you earn the official Kedroid [badge of honour](./artwork/kedroid.png).
+This our affectionate the term power users and people who really help out other users in the community. Do get involved and, we'll do our best to make sure you earn the official Kedroid [badge of honour](./artwork/kedroid.png)
 
 
 ## Where can I find more example projects using Kedro?
