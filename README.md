@@ -1,10 +1,21 @@
-![kedro-community banner](./artwork/kedro-community-wide-grey.png)
+
+
 
 ## What is `kedro-community`?
 
 This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
 
-If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
+
+![GitHub Discussions](https://img.shields.io/github/discussions/quantumblacklabs/kedro?logo=GitHub) ![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)
+
+If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](). 
+
+## The Kedroids
+
+This our affectionate the term power users and people who really help out other users in the community. Do get involved and, we'll do our best to make sure you earn the official Kedroid badge of honour...
+
+![kedroid](./artwork/kedroid.png =200x)
+
 
 ## Where can I find more example projects using Kedro?
 
