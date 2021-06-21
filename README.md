@@ -1,5 +1,7 @@
 
-![](./artwork/kedro_icon_no-type_whitebg.svg)
+<p align="center">
+  <img src="./artwork/kedro_icon_no-type_whitebg.svg" width="300" >
+</p>
 
 ## What is `kedro-community`?
 
@@ -10,12 +12,9 @@ This repo contains links to articles, podcasts and videos about Kedro, as well a
 
 If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](). 
 
-## Become a Kedroid
+## Become a Kedroid <img src="./artwork/kedroid.png" width="25" >
 
-This our affectionate the term power users and people who really help out other users in the community. Do get involved and, we'll do our best to make sure you earn the official Kedroid badge of honour...
-
-<img src="./artwork/kedroid.png" width="100" >
-
+This our affectionate the term power users and people who really help out other users in the community. Do get involved and, we'll do our best to make sure you earn the official Kedroid [badge of honour](./artwork/kedroid.png).
 
 
 ## Where can I find more example projects using Kedro?
