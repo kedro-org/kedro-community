@@ -15,6 +15,8 @@ jobs:
       - name: Change directory
         run: |
           cd ./showcases/2021-06/
+          echo | ls
+          echo | pwd
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
