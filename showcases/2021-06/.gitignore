@@ -1,7 +1,0 @@
-node_modules
-.DS_Store
-dist
-*.local
-.remote-assets
-.vscode/spellright.dict
-yarn.lock
