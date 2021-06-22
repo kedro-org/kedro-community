@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Change directory
-        run: |
-          cd ./showcases/2021-06/
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
+      - name: Change directory
+          run: |
+            cd ./showcases/2021-06/
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
