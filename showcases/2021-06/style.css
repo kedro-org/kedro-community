@@ -1,0 +1,36 @@
+.slidev-layout ul {
+  list-style-type: none;
+}
+
+li::before {
+  content: "◦";
+  margin-right: 1em;
+  color: #fcbf25;
+}
+
+h1 {
+  color: #fcbf25;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote,
+td,
+th,
+li {
+  font-family: "Titillium Web", sans-serif;
+}
+
+
+td {
+  font-size: smaller;
+}
+
+th {
+  font-size: x-small;
+  color: grey;
+}
+
+

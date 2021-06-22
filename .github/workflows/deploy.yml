@@ -1,0 +1,37 @@
+name: Deploy pages
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [update/june-2021]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Change directory
+        run: |
+          cd ./showcases/2021-06/
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '14'
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: |
+          yarn install
+      - name: Build application
+        run: |
+          yarn build
+          cp dist/index.html dist/404.html
+      - name: Deploy pages
+        uses: crazy-max/ghaction-github-pages@v2.3.0
+        with:
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
