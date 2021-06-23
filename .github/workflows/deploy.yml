@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set up showcase variable(s)
+        run: |
+            export  SHOWCASE=./showcases/2021-06
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.5
         with:
@@ -21,19 +24,13 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
-          cd ./showcases/2021-06/
+          cd $SHOWCASE
           yarn install
-      - name: Build application
-        run: |
-          cd ./showcases/2021-06/
           yarn build
           cp dist/index.html dist/404.html
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2.3.0
         with:
-          build_dir: ./showcases/2021-06/dist
+          build_dir: "$SHOWCASE/dist"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Clean up
-        run: |
-            echo | tree
