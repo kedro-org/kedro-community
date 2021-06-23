@@ -8,7 +8,7 @@
 This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
 
 
-![GitHub Discussions](https://img.shields.io/github/discussions/quantumblacklabs/kedro?logo=GitHub) ![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)
+[![GitHub Discussions](https://img.shields.io/github/discussions/quantumblacklabs/kedro?logo=GitHub)](https://github.com/quantumblacklabs/kedro/discussions) [![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)](https://discord.com/invite/akJDeVaxnB)
 
 If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](https://github.com/quantumblacklabs/kedro/discussions). 
 
