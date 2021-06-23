@@ -26,6 +26,9 @@ jobs:
         run: |
           cd $SHOWCASE
           yarn install
+      - name: Build application
+        run: |
+          cd $SHOWCASE
           yarn build
           cp dist/index.html dist/404.html
       - name: Deploy pages
