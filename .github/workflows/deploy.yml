@@ -9,34 +9,35 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./showcases/2021-06
 
     steps:
-      - name: Set up showcase variable(s)
-        run: |
-            echo "SHOWCASE=./showcases/2021-06" >> $GITHUB_ENV
       - uses: actions/checkout@v2
+        working-directory: ${{env.wokring.directory}}
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
+        working-directory: ${{env.wokring.directory}}
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+        working-directory: ${{env.wokring.directory}}
       - name: Install dependencies
         run: |
-          cd "$SHOWCASE"
           yarn install
+        working-directory: ${{env.wokring.directory}}
       - name: Build application
         run: |
-          cd "$SHOWCASE"
           yarn build
           cp dist/index.html dist/404.html
+        working-directory: ${{env.wokring.directory}}
       - name: Deploy pages
-        run: |
-          cd "$SHOWCASE"
         uses: crazy-max/ghaction-github-pages@v2.3.0
         with:
           build_dir: "dist"
           verbose: true
+        working-directory: ${{env.wokring.directory}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
