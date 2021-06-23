@@ -1,10 +1,28 @@
-![kedro-community banner](./artwork/kedro-community-wide-grey.png)
+
+<p align="center">
+  <img src="./artwork/kedro_icon_no-type_whitebg.svg" width="300" >
+</p>
 
 ## What is `kedro-community`?
 
 This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
 
-If you're looking to engage with the community then we suggest checking out the [Kedro Community forum](https://discourse.kedro.community/) channel.
+
+[![GitHub Discussions](https://img.shields.io/github/discussions/quantumblacklabs/kedro?logo=GitHub)](https://github.com/quantumblacklabs/kedro/discussions) [![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)](https://discord.com/invite/akJDeVaxnB)
+
+If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](https://github.com/quantumblacklabs/kedro/discussions). 
+
+## Become a Kedroid <img src="./artwork/kedroid.png" width="25" >
+
+This is our affectionate term for power users and people who really help out other users in the community. Do get involved and, we'll do our best to make sure you earn the official Kedroid [badge of honour](./artwork/kedroid.png)
+
+## Public Showcases
+
+
+|Date|Deck|Recording|
+|---|---|---|
+|June 2020|[Link](https://quantumblacklabs.github.io/kedro-community/)|[YouTube link](https://youtu.be/fULOrO-QpsE)|
+
 
 ## Where can I find more example projects using Kedro?
 
@@ -29,6 +47,7 @@ You can find a useful list of Kedro-related plugins, blog posts, videos, and oth
 
 | Date       | Title                                                                               | Author                      | Channel                      | Format       | Language   | 
 |------------|-------------------------------------------------------------------------------------|-----------------------------|-------------------------------|--------------|------------|
+| 04/06/20201 | [PyConUS 20201 - Reproducible and maintainable data science code with Kedro](https://www.youtube.com/watch?v=JLTYNPoK7nw) | Yetunde Dada             | YouTube                       | Recording    | English    |                                                                                              |
 | N/A        | [DataEngineerOne Kedro Youtube channel](https://youtube.com/c/DataEngineerOne)                                               | Tam-Sanh Nguyen             | YouTube                       | Recording    | English    |                                                                                              |
 | 27/10/2020 | [Jungle Scout case study: Kedro, Airflow, and MLFlow use on production code](https://junglescouteng.medium.com/jungle-scout-case-study-kedro-airflow-and-mlflow-use-on-production-code-150d7231d42e)                                               | Eduardo Ohe       | Jungle Scout Engineering                       | Article    | English    |                                                                                              |
 | 26/10/2020 | [What's New in Kedro 0.16.6?](https://dev.to/waylonwalker/what-s-new-in-kedro-0-16-6-397f)                                                          | Waylon Walker               | Personal Blog                 | Article      | English    |                                                                        |
