@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build --base /kedro-retro-june-2021/",
+    "build": "slidev build --base /kedro-community/kedro-retro-june-2021/",
     "export": "slidev export"
   },
   "dependencies": {
