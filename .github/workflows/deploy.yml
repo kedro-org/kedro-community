@@ -32,8 +32,11 @@ jobs:
           yarn build
           cp dist/index.html dist/404.html
       - name: Deploy pages
+        run: |
+          cd "$SHOWCASE"
         uses: crazy-max/ghaction-github-pages@v2.3.0
         with:
-          build_dir: "$SHOWCASE/dist"
+          build_dir: "dist"
+          verbose: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
