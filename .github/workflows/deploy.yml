@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: Set up showcase variable(s)
         run: |
-            export  SHOWCASE=/showcases/2021-06
-            echo "::set-env name=FOO::$FOO"
+            echo "SHOWCASE=/showcases/2021-06" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.5
         with:
