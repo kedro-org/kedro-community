@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Set up showcase variable(s)
         run: |
-            export  SHOWCASE=./showcases/2021-06
+            export  SHOWCASE=/showcases/2021-06
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.5
         with:
@@ -24,11 +24,11 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
-          cd $SHOWCASE
+          cd "$SHOWCASE"
           yarn install
       - name: Build application
         run: |
-          cd $SHOWCASE
+          cd "$SHOWCASE"
           yarn build
           cp dist/index.html dist/404.html
       - name: Deploy pages
