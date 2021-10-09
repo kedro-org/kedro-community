@@ -47,6 +47,7 @@ You can find a useful list of Kedro-related plugins, blog posts, videos, and oth
 
 | Date       | Title                                                                               | Author                      | Channel                      | Format       | Language   | 
 |------------|-------------------------------------------------------------------------------------|-----------------------------|-------------------------------|--------------|------------|
+| N/A        | [Deploying Kedro Pipelines to Apache Airflow](https://www.astronomer.io/guides/airflow-kedro)  | astronomer.io    | Astronomer Blog               | Article      | English    |
 | 13/09/2021 | [Writing your first kedro Nodes](https://waylonwalker.com/kedro-your-first-nodes/)  | Waylon Walker               | Personal Blog                 | Article      | English    |
 | 19/09/2021 | [Setting Parameters in kedro](https://waylonwalker.com/kedro-parameters/)           | Waylon Walker               | Personal Blog                 | Article      | English    |
 | 24/08/2021 | [Add New Dependencies to Your Kedro Project](https://waylonwalker.com/kedro-new-dependencies/) | Waylon Walker    | Personal Blog                 | Article      | English    |
