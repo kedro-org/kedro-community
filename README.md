@@ -45,6 +45,11 @@ You can find a useful list of Kedro-related plugins, blog posts, videos, and oth
 
 ## Where can I find articles, podcasts and videos about Kedro? 
 
+<!--
+Template 
+| 16/06/2021 | []() |  | | Article    | English    |                                                                                              | -->
+-->
+
 | Date       | Title                                                                               | Author                      | Channel                      | Format       | Language   | 
 |------------|-------------------------------------------------------------------------------------|-----------------------------|-------------------------------|--------------|------------|
 | N/A        | [Deploying Kedro Pipelines to Apache Airflow](https://www.astronomer.io/guides/airflow-kedro)  | astronomer.io    | Astronomer Blog               | Article      | English    |
