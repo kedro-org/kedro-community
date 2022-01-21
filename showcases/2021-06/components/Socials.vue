@@ -17,7 +17,7 @@
       <carbon-logo-discord />
     </a>
     <a
-      href="https://github.com/quantumblacklabs/kedro"
+      href="https://github.com/kedro-org/kedro"
       target="_blank"
       alt="GitHub"
       class="icon-btn opacity-80 rounded-full !border-none !hover:text-white"
@@ -29,7 +29,7 @@
   <span abs class="m-1 abs-bl">
     <div class="inline">
         <a
-          href="https://github.com/quantumblacklabs/kedro"
+          href="https://github.com/kedro-org/kedro"
           target="_blank"
           alt="Kedro Retro June 2021"
           class="icon-btn rounded-full opacity-100 !border-none"
