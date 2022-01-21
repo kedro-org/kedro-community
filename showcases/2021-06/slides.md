@@ -26,7 +26,7 @@ theme: apple-basic
 class: text-left
 highlighter: shiki
 layout: iframe-right
-url: https://quantumblacklabs.github.io/kedro-viz
+url: https://github.com/kedro-org/kedro-viz
 ---
 
 # Today's agenda
@@ -156,7 +156,7 @@ url: https://kedro.readthedocs.io/en/stable/10_deployment/01_deployment_guide.ht
 <Socials />
 ---
 layout: iframe-right
-url: https://quantumblacklabs.github.io/kedro-viz
+url: https://github.com/kedro-org/kedro-viz
 ---
 <Overview />
 <Pointer class="absolute bottom-16"/>
@@ -391,7 +391,7 @@ layout: quote
 
 # 💅 Kedro Viz: Not just a pretty face
 
-Also - we've just posted this [neat guide](https://github.com/quantumblacklabs/kedro-viz/blob/main/LAYOUT_ENGINE.md)  to how our layout engine works
+Also - we've just posted this [neat guide](https://github.com/kedro-org/kedro-viz/blob/main/LAYOUT_ENGINE.md)  to how our layout engine works
 <div abs class=" abs-tr mr-25 mt-45">
 <img src="/showtime.gif" class="rounded rounded-lg shadow-lg h-50"/>
 </div>

@@ -8,9 +8,9 @@
 This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
 
 
-[![GitHub Discussions](https://img.shields.io/github/discussions/quantumblacklabs/kedro?logo=GitHub)](https://github.com/quantumblacklabs/kedro/discussions) [![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)](https://discord.com/invite/akJDeVaxnB)
+[![GitHub Discussions](https://img.shields.io/github/discussions/kedro-org/kedro?logo=GitHub)](https://github.com/kedro-org/kedro/discussions) [![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)](https://discord.com/invite/akJDeVaxnB)
 
-If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](https://github.com/quantumblacklabs/kedro/discussions). 
+If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](https://github.com/kedro-org/kedro/discussions). 
 
 ## Become a Kedroid <img src="./artwork/kedroid.png" width="25" >
 
@@ -21,15 +21,15 @@ This is our affectionate term for power users and people who really help out oth
 
 |Date|Deck|Recording|
 |---|---|---|
-|June 2020|[Link](https://quantumblacklabs.github.io/kedro-community/)|[YouTube link](https://youtu.be/fULOrO-QpsE)|
+|June 2020|[Link](https://github.com/kedro-org/kedro-community)|[YouTube link](https://youtu.be/fULOrO-QpsE)|
 
 
 ## Where can I find more example projects using Kedro?
 
 The Kedro team maintains the following official Kedro tutorial projects, also known as starters:
-- [Spaceflights tutorial](https://github.com/quantumblacklabs/kedro-starter-spaceflights)
-- [Iris dataset tutorial with pandas](https://github.com/quantumblacklabs/kedro-starter-pandas-iris)
-- [Iris dataset tutorial with pyspark](https://github.com/quantumblacklabs/kedro-starter-pyspark-iris)
+- [Spaceflights tutorial](https://github.com/kedro-org/kedro-starters/tree/main/spaceflights)
+- [Iris dataset tutorial with pandas](https://github.com/kedro-org/kedro-starters/tree/main/pandas-iris)
+- [Iris dataset tutorial with pyspark](https://github.com/kedro-org/kedro-starters/tree/main/pyspark)
 
 Our community of Kedro users are creating their own profile projects, you can have a look at:
 
@@ -118,4 +118,4 @@ The community of plugin authors tag each project on GitHub with the [`kedro-plug
 
 ## What licence do you use?
 
-Kedro is licensed under the [Apache 2.0](https://github.com/quantumblacklabs/kedro-example/blob/master/LICENSE.md) License.
+Kedro is licensed under the [Apache 2.0](https://github.com/kedro-org/kedro/blob/main/LICENSE.md) License.
