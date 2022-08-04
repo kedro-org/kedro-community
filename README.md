@@ -40,18 +40,20 @@ Our community of Kedro users are creating their own profile projects, you can ha
 - [kedro-mlflow-example](https://github.com/tgoldenberg/kedro-mlflow-example) by [Tom Goldenberg](https://github.com/tgoldenberg), a project that demonstrates how to integrate MLflow with a Kedro codebase
 - [kedro-wdbc-tf](https://github.com/abhinavsp0730/kedro-wdbc-tf) by [Abhinav Prakash](https://github.com/abhinavsp0730), this project uses a Kedro template to create Deep Learning workflow. The model training was done with TensorFlow  against the wdbc (Breast Cancer) dataset.
 - [twitter-sentiment-analysis](https://github.com/aviagarwal1212/twitter-sentiment-analysis/blob/main/README.md) by [Avi Agarwal](https://github.com/aviagarwal1212), a project that demonstrates how to use Kedro to train and evaluate an NLP-based machine learning model.
-
+- [Anomaly Detection Pipeline with Kedro](https://github.com/kennethleungty/Anomaly-Detection-Pipeline-Kedro) by [Kenneth Leung](https://github.com/kennethleungty), a project that demonstrates how to use Kedro for fraud detection on credit card transaction data using an Isolation Forest machine learning model.
 You can find a useful list of Kedro-related plugins, blog posts, videos, and other resources over on [Florian Kromer's Github awesome-kedro repository](https://github.com/fkromer/awesome-kedro).
 
 ## Where can I find articles, podcasts and videos about Kedro? 
 
 <!--
 Template 
-| 16/06/2021 | []() |  | | Article    | English    |                                                                                              | -->
--->
+| 16/06/2021 | []() |  | | Article    | English    |                                                                                              |
+ -->
+
 
 | Date       | Title                                                                               | Author                      | Channel                      | Format       | Language   | 
 |------------|-------------------------------------------------------------------------------------|-----------------------------|-------------------------------|--------------|------------|
+| 22/07/2022 | [Building and Managing Data Science Pipelines with Kedro](https://neptune.ai/blog/data-science-pipelines-with-kedro) | Kenneth Leung    | Neptune Blog           | Article    | English    |
 | N/A        | [Deploying Kedro Pipelines to Apache Airflow](https://www.astronomer.io/guides/airflow-kedro)  | astronomer.io    | Astronomer Blog               | Article      | English    |
 | 13/09/2021 | [Writing your first kedro Nodes](https://waylonwalker.com/kedro-your-first-nodes/)  | Waylon Walker               | Personal Blog                 | Article      | English    |
 | 19/09/2021 | [Setting Parameters in kedro](https://waylonwalker.com/kedro-parameters/)           | Waylon Walker               | Personal Blog                 | Article      | English    |
