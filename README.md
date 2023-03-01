@@ -8,9 +8,9 @@
 This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
 
 
-[![GitHub Discussions](https://img.shields.io/github/discussions/kedro-org/kedro?logo=GitHub)](https://github.com/kedro-org/kedro/discussions) [![Discord](https://img.shields.io/discord/778216384475693066?color=57c&logo=discord)](https://discord.com/invite/akJDeVaxnB)
+[![GitHub Discussions](https://img.shields.io/github/discussions/kedro-org/kedro?logo=GitHub)](https://github.com/kedro-org/kedro/discussions)
 
-If you're looking to engage with the community then we suggest checking our [Discord server](https://discord.com/invite/akJDeVaxnB) or [GitHub discussions](https://github.com/kedro-org/kedro/discussions). 
+If you're looking to engage with the community then we suggest checking our [Slack organization](https://slack.kedro.org) or [GitHub discussions](https://github.com/kedro-org/kedro/discussions). 
 
 ## Become a Kedroid <img src="./artwork/kedroid.png" width="25" >
 
