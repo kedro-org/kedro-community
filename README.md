@@ -1,9 +1,9 @@
-
-<p align="center">
-  <img src="./artwork/kedro_icon_no-type_whitebg.svg" width="300" >
-</p>
-
 ## What is `kedro-community`?
+
+> **Warning**
+> This repository is archived in favor of https://github.com/kedro-org/awesome-kedro.
+
+---
 
 This repo contains links to articles, podcasts and videos about Kedro, as well as community created examples of Kedro projects. 
 
